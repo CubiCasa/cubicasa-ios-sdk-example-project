@@ -1,0 +1,91 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 effective-4.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name CubiCapture
+import ARKit
+import AVFoundation
+import CoreGraphics
+import CoreMotion
+@_exported import CubiCapture
+import Foundation
+import SceneKit
+import Speech
+import Swift
+import UIKit
+import Zip
+extension UIDevice {
+  public static let modelName: Swift.String
+}
+extension CCCapture : ARKit.ARSCNViewDelegate {
+  @objc dynamic public func renderer(_ renderer: SceneKit.SCNSceneRenderer, nodeFor anchor: ARKit.ARAnchor) -> SceneKit.SCNNode?
+  @objc dynamic public func renderer(_ renderer: SceneKit.SCNSceneRenderer, didUpdate node: SceneKit.SCNNode, for anchor: ARKit.ARAnchor)
+}
+public typealias VideoWriterCompletionBlock = (Foundation.URL) -> Swift.Void
+@objc public class VideoWriter : ObjectiveC.NSObject {
+  public init(codec: Swift.String, width: Swift.Int, height: Swift.Int, folderName: Swift.String)
+  public func startWriting(frame: ARKit.ARFrame) -> Swift.Bool
+  public func stopWriting(completion: @escaping CubiCapture.VideoWriterCompletionBlock)
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension CCCapture : ARKit.ARSessionDelegate {
+  @objc dynamic public func session(_ session: ARKit.ARSession, didUpdate frame: ARKit.ARFrame)
+  @objc dynamic public func session(_ session: ARKit.ARSession, cameraDidChangeTrackingState camera: ARKit.ARCamera)
+}
+public protocol CCCaptureDelegate : AnyObject {
+  func processReadyDelegationFunc(_ controller: CubiCapture.CCCapture)
+  func dataZippedDelegationFunc(_ controller: CubiCapture.CCCapture)
+  func zippedDataLocation(_ controller: CubiCapture.CCCapture, location: Foundation.URL)
+  func scanTrackingFailed(_ controller: CubiCapture.CCCapture)
+  func messenger(_ controller: CubiCapture.CCCapture, errorCode: Swift.Int, message: Swift.String)
+}
+public struct CaptureOptions : Swift.OptionSet {
+  public init(rawValue: Swift.Int)
+  public let rawValue: Swift.Int
+  public typealias Element = CubiCapture.CaptureOptions
+  public typealias ArrayLiteralElement = CubiCapture.CaptureOptions
+  public typealias RawValue = Swift.Int
+}
+@objc @_inheritsConvenienceInitializers public class CCCapture : UIKit.UIView {
+  weak public var delegateCapture: CubiCapture.CCCaptureDelegate?
+  public var options: CubiCapture.CaptureOptions
+  public var fileName: Swift.String
+  public var number: Swift.String
+  public var postCode: Swift.String
+  public var city: Swift.String
+  public var state: Swift.String
+  public var country: Swift.String
+  public var suite: Swift.String
+  public var warningTextMovement: Swift.String
+  public var warningTextDark: Swift.String
+  public var warningTextLost: Swift.String
+  public var warningTextInitializing: Swift.String
+  public var recordHintText: Swift.String
+  public var speechHintInitialText: Swift.String
+  public var speechHintText: Swift.String
+  public var speechNoResults: Swift.String
+  public var sidewaysWalkImageRight: UIKit.UIImage
+  public var sidewaysWalkImageLeft: UIKit.UIImage
+  public var greenBorderImage: UIKit.UIImage
+  public var orangeBorderImage: UIKit.UIImage
+  public var ceilingWarningImage: UIKit.UIImage
+  public var floorWarningImage: UIKit.UIImage
+  public var rotatePhoneWarningImage: UIKit.UIImage
+  public var speechButtonIndicatorColor: UIKit.UIColor
+  public var speechResultTextColor: UIKit.UIColor
+  public var speechResultBackgroundColor: UIKit.UIColor
+  public var speechCancelTextColor: UIKit.UIColor
+  public var speechCancelBackgroundColor: UIKit.UIColor
+  public var speechLabelTextColor: UIKit.UIColor
+  public var speechLabelBackgroundColor: UIKit.UIColor
+  public var hintTextColor: UIKit.UIColor
+  public var hintBorderColor: UIKit.UIColor
+  public var hintBackgroundColor: UIKit.UIColor
+  public var meshColor: UIKit.UIColor
+  public func setView(sceneToController: UIKit.UIViewController)
+  public func startCapture()
+  public func endCaptureSession()
+  public func removeScan()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}

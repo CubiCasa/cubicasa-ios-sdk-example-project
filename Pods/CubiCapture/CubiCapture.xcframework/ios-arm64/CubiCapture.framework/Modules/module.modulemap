@@ -1,0 +1,11 @@
+framework module CubiCapture {
+  umbrella header "CubiCapture.h"
+
+  export *
+  module * { export * }
+}
+
+module CubiCapture.Swift {
+    header "CubiCapture-Swift.h"
+    requires objc
+}
