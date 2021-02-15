@@ -19,14 +19,6 @@ extension CCCapture : ARKit.ARSCNViewDelegate {
   @objc dynamic public func renderer(_ renderer: SceneKit.SCNSceneRenderer, nodeFor anchor: ARKit.ARAnchor) -> SceneKit.SCNNode?
   @objc dynamic public func renderer(_ renderer: SceneKit.SCNSceneRenderer, didUpdate node: SceneKit.SCNNode, for anchor: ARKit.ARAnchor)
 }
-public typealias VideoWriterCompletionBlock = (Foundation.URL) -> Swift.Void
-@objc public class VideoWriter : ObjectiveC.NSObject {
-  public init(codec: Swift.String, width: Swift.Int, height: Swift.Int, folderName: Swift.String)
-  public func startWriting(frame: ARKit.ARFrame) -> Swift.Bool
-  public func stopWriting(completion: @escaping CubiCapture.VideoWriterCompletionBlock)
-  @objc deinit
-  @objc override dynamic public init()
-}
 extension CCCapture : ARKit.ARSessionDelegate {
   @objc dynamic public func session(_ session: ARKit.ARSession, didUpdate frame: ARKit.ARFrame)
   @objc dynamic public func session(_ session: ARKit.ARSession, cameraDidChangeTrackingState camera: ARKit.ARCamera)
@@ -45,7 +37,7 @@ public struct CaptureOptions : Swift.OptionSet {
   public typealias ArrayLiteralElement = CubiCapture.CaptureOptions
   public typealias RawValue = Swift.Int
 }
-@objc @_inheritsConvenienceInitializers public class CCCapture : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers public class CCCapture : ObjectiveC.NSObject {
   weak public var delegateCapture: CubiCapture.CCCaptureDelegate?
   public var options: CubiCapture.CaptureOptions
   public var fileName: Swift.String
@@ -86,6 +78,5 @@ public struct CaptureOptions : Swift.OptionSet {
   public func endCaptureSession()
   public func removeScan()
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc override dynamic public init()
 }

@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/CubiCapture-Swift.h</key>
 		<data>
-		fGKfGLmgagllox7uepyOj3Fobn0=
+		v9PmuaBV/nL9KHxgGC3gPdgKA2w=
 		</data>
 		<key>Headers/CubiCapture.h</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		opNyaBQCo2uoEz7k0F9RYQeOOdk=
+		AiNxPikVc52z+zLd4x4R4AsyxFo=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		aComaQSf9PsrHj9oT3LMWURxK/U=
+		UdSnB3ZrN7m3fORT2xKklSLM6fM=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		cN8iUvCb7u/edkVPvrswFxLr5SI=
+		loF8mpTnz6/4ixv9mfcULjRgPUY=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		aComaQSf9PsrHj9oT3LMWURxK/U=
+		UdSnB3ZrN7m3fORT2xKklSLM6fM=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		cN8iUvCb7u/edkVPvrswFxLr5SI=
+		loF8mpTnz6/4ixv9mfcULjRgPUY=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ntaHI6osIhQmUQUtKE6hl3lNN4M=
+		zg4RUQxPpq7eshv/fsvUIHtreGU=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		vt7cnaxJbHCXM5MyWq4gLZCkCbU=
+		PFxykAtnecX9c+Jnl6gChSOsFng=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -70,11 +70,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		ntaHI6osIhQmUQUtKE6hl3lNN4M=
+		zg4RUQxPpq7eshv/fsvUIHtreGU=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		vt7cnaxJbHCXM5MyWq4gLZCkCbU=
+		PFxykAtnecX9c+Jnl6gChSOsFng=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -164,7 +164,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			s0vDRxc1JOHNRSiulO+3ka8U1QK9PTX1RrEVlanytZE=
+			0rp9H+pHWtPBUTLr275SwkowReglD5keXEm9L9+K3tk=
 			</data>
 		</dict>
 		<key>Headers/CubiCapture.h</key>
@@ -185,14 +185,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			elpIiVPiwKJI8UHRfzZ7DWzBUtKCAcaK8tw19frJhu8=
+			zuHTDVriSgRdG84eEI+IbsuE/t9hmM/YzVOkSz/pCos=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			b8pmgO1v5azi3uWCgN8gCeCmqnTxPs/Y/Ika6HxvxnI=
+			FfhZpTYF1oPUhTEOeh96h3gn32Po30SxoCDB7B0vlDs=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftdoc</key>
@@ -206,14 +206,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			elpIiVPiwKJI8UHRfzZ7DWzBUtKCAcaK8tw19frJhu8=
+			zuHTDVriSgRdG84eEI+IbsuE/t9hmM/YzVOkSz/pCos=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			b8pmgO1v5azi3uWCgN8gCeCmqnTxPs/Y/Ika6HxvxnI=
+			FfhZpTYF1oPUhTEOeh96h3gn32Po30SxoCDB7B0vlDs=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -227,14 +227,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aUqMnc+rX9f0XoKWg+mvSEZN1e8RhHORTqNNnANfgXA=
+			lXoONp6WVNlkg9NuZCDxDnw/f2hXCJ4k5oIxxPuhsGk=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			in39ZgZixwQWPK91tAZggRiNIkKmP5Q2io2SG0p/nEI=
+			2TJbqAu+cKOpexm9vMFKnELPqPuysM6PJ7bTbt0rslg=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftdoc</key>
@@ -248,14 +248,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aUqMnc+rX9f0XoKWg+mvSEZN1e8RhHORTqNNnANfgXA=
+			lXoONp6WVNlkg9NuZCDxDnw/f2hXCJ4k5oIxxPuhsGk=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			in39ZgZixwQWPK91tAZggRiNIkKmP5Q2io2SG0p/nEI=
+			2TJbqAu+cKOpexm9vMFKnELPqPuysM6PJ7bTbt0rslg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
