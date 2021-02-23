@@ -16,21 +16,25 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 ## Release Notes
 
 - Depth capturing support for the following devices; iPhone 12 Pro, iPhone 12 Pro Max, iPad Pro 2020
-- Depth visualization to show which spaces have been scanned (visualization colours can be changed)
+- Mesh visualisation to show which spaces have been scanned (visualisation colours can be changed, visualisation can be turned off altogether)
 - New status codes (code 3, 5, 18, 27, 29, 30 and 40-49 and 57 to match Android SDK statuses)
 - Updated dependencies
 - Speech recognition for room labels (Now you can directly say the labels you want to have in the finished floorplan, UI colours can be changed)
 - Adjusted lighting for dark spaces (Camera flash will turn on in dark spaces to ensure tracking and data quality)
 - UI adjustments for new features see #Updating from CubiCapture 2.0 to CubiCapture 2.2
+- Debug symbols (`dSYM`) included in the `CubiCapture.xcframework`
+- Various bugfixes
 
 
 ## Glossary
 
 Term | Description
 -----|------------
-Scan | The process of capturing the surroundings indoor space using the phone's camera.
+Scan | The process of capturing the surroundings indoor space using the phone's camera
 ARKit | Apple Augementer Reality library that is used in CubiCasa SDK for scanning
 Sideways walk | An error which occurs during a scan when the user walks sideways. Walking sideways makes it hard to tract the position of the device and can affect the quality of the scan.
+Scene Reconstruction | The process of building a 3D model (mesh) from a video stream (scan)
+Mesh visualisation | Showing the reconstructed scene mesh on-screen, during scanning
 
 ## Installation
 
@@ -52,22 +56,15 @@ Replace `YourTarget` with the name of your build target. Run `pod install`.
 
 Cubicasa SDK 2.2 features the new Adaptive Lighting technique. During the scan if the lighting is too dark `CCCapture`automatically lights up the torch/flashlight of the phone to illuminate the surroundings. The brightness level of the torch depends on the surrounding lightgning conditions. Less light, more torch and the other way around.
 
-### Speech Recognition
+### Speech Recognition for Room Labels
 
-CubiCapture SDK utilizes speech recognition. During a scan your users can use the speech recognition to add room labels. If you don't want to use speech recognition you can set empty `CubicaptureOptions` to `CCCapture` before calling `setView`.
+CubiCapture SDK utilizes speech recognition. During a scan your users can use the speech recognition to add room labels. If you don't want to use speech recognition you can omit it from the options.
 
-```swift
-let captureView = CCCapture()
-...
-captureView.options = []
-captureView.setView(sceneToController: self)
-```
-
-#### Permissions
+##### Permissions
 
 If you plan to use speech recognition remember to add microphone and speech recognition privacy usages to your `Info.plist`.
 
-#### UI Customization
+##### UI Customization
 
 Speech recognition feature introduces new UI elements: The speech recognition record button, speech recognition info label, and the result table view. The colors of these elements can be customized to your liking. All colors are members of the `CCCapture` view you must change the values before calling the `setView` method. Checkout the list below:
 
@@ -84,13 +81,7 @@ Variable name | Description
 `hintBorderColor` | The color of the border for the arrow view
 `hintBackgroundColor` | Background color for the arrow labels
 
-On LiDAR-enabled devices, the reconstructed scene mesh is shown on-screen during the scan, to give the user an idea of which parts of the space have been scanned already. The color of the mesh is configurable:
-
-Variable name | Description
---------------|------------
-`meshColor`   | The `UIColor` to use for mesh visualization. Set to `UIColor.clear` to not show the mesh.
-
-#### New texts
+##### New texts
 
 Speech recognition features the following new customizable texts:
 
@@ -100,10 +91,20 @@ Name | Description | Default value
 `speechHintText` | Displayed on the label next to speech recognition record button when the button is tapped |  *Say the room name*
 `speechNoResults` | Displayed in the label next speech recording button if no results are found | *No results*
 
+### Scene Reconstruction
+
+On LiDAR-equiped devices, the reconstructed scene mesh is shown on-screen during the scan, to give the user an idea of which parts of the space have been scanned already. Scene reconstruction can be disabled by omitting it from the `.options` of `CCCapture`.
+
+The color of the mesh is configurable:
+
+Variable name | Description
+--------------|------------
+`meshColor`   | The `UIColor` to use for mesh visualization.
+
 
 ## Permissions
 
-CubiCasa SDK uses the device camera to capture the surroundings so you need to add the "Privacy - Camera Usage Description" to your projects `Info.plist` if you already haven't done so. Also if you want to use speech recognition add "Privacy - Microphone Usage Description" and the "Privacy - Speech Recognition Usage Description".
+CubiCasa SDK uses the device camera to capture the surroundings so you need to add the "Privacy - Camera Usage Description" to your projects `Info.plist` if you already haven't done so. The camera permission is required for the CubiCasa SDK, it cannot function without it. Also if you want to use speech recognition (optional) add "Privacy - Microphone Usage Description" and the "Privacy - Speech Recognition Usage Description". 
 
 ## Device Orientation
 
@@ -117,24 +118,49 @@ You can specify where the scan will be placed in the app document directory with
 
 ### Starting the scan
 
-Before the scan can be started you need to display the CCCapture view in your viewcontroller using the `.setView(sceneToController:)` method. 
-
-Like in the demo app:
+The recommended way to use `CCCapture` is as a `UIViewController`:
 
 ```swift
-let viewController = UIViewController()
-viewController.modalPresentationStyle = .fullScreen
-// set any UI customisation options now, before calling setView
-ccCapture.setView(sceneToController: viewController)
-ccCapture.delegateCapture = self
-present(viewController, animated: true, completion: nil)
+import CubiCapture
+...
+let cubiCapture = CCCapture()
+cubiCapture.delegateCapture = self
+present(cubiCapture, animated: true, completion: nil)
 ```
+
+For backward compatibility, the following method also still works:
+
+```swift
+import CubiCapture
+...
+private let cubiCapture = CCCapture()
+...
+cubiCapture.delegateCapture = self
+cubiCapture(sceneToController: self)
+```
+Note that in this case, you need to assign `CCCapture()` to a property (`private let cubiCapture`) of your class, to retain it.
 
 You can add the address of the place to be scanned by adding the address information to `CCCapture` view. See "Adding the Address".
 
 When the user has oriented the device to landscape and presses the record button the scan starts.
 
 Remember to add CCCaptures delegate to controlling viewcontrollor to get messages about the scan progress. 
+
+### Configuration
+CubiCasa capture session features can be configured by assigning an option set:
+
+```swift
+cubiCapture.options = [.speechRecognition, .meshVisualisation]
+present(cubiCapture, animated: true, completion: nil)
+```
+
+The following options can be set:
+
+Option name          | Description | Default
+---------------------|-------------|--------
+`.speechRecognition` | Use speech recognition for making room labels | enabled
+`.meshVisualisation` | Reconstruct the scene as a 3D mesh and visualise it (only on LiDAR-equiped devices) | enabled
+
 
 ### During the scan
 
@@ -163,7 +189,7 @@ Please note that the scan may end if the SDK encounters an unrecovable error.
     │   ├── video.mp4
     │   └── allDepthFrames.bin
 ```
-You can easily inspect the data but do not touch the zip file. Please note that the `allDepthFrames.bin` will be present for LiDAR devices.
+You can easily inspect the data but do not touch the zip file. Please note that the `allDepthFrames.bin` will be present for LiDAR devices (only).
 
 ### Errors
 
@@ -232,7 +258,7 @@ In the SDK the following codes can be received
 CubiCasa SDK's visual guides and assets are customizable for example:
 
 ~~~swift
-ccView.recordButton.backgroundImage = UIImage(named : "customButton")
+cubiCapture.recordButton.backgroundImage = UIImage(named : "customButton")
 ~~~
 
  Object | Type | Description 
@@ -258,7 +284,7 @@ ccView.recordButton.backgroundImage = UIImage(named : "customButton")
 Example:
 
 ~~~swift
-ccView.greenBorderImage = UIImage(named: "customized-status-ok.png")
+cubiCapture.greenBorderImage = UIImage(named: "customized-status-ok.png")
 ~~~
 
 ### Strings
