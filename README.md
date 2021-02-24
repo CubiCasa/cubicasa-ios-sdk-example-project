@@ -23,6 +23,7 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 - Adjusted lighting for dark spaces (Camera flash will turn on in dark spaces to ensure tracking and data quality)
 - UI adjustments for new features see #Updating from CubiCapture 2.0 to CubiCapture 2.2
 - Debug symbols (`dSYM`) included in the `CubiCapture.xcframework`
+- `CCCapture` is now a `UIViewController`, see #Starting the scan
 - Various bugfixes
 
 
