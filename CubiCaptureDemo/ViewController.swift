@@ -12,27 +12,22 @@ import CubiCapture
 
 class ViewController: UIViewController {
     
-    
-    // Initiate CCCapture
-    let ccCapture = CCCapture()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
     @IBAction func startPressed(_ sender: UIButton) {
-        // Wrap the view to a view controller
-        let viewController = UIViewController()
-        viewController.modalPresentationStyle = .fullScreen
-        ccCapture.setView(sceneToController: viewController)
+        // Initiate CCCapture
+        let ccCapture = CCCapture()
         ccCapture.delegateCapture = self
-        present(viewController, animated: true, completion: nil)
+        ccCapture.options = [.speechRecognition, .meshVisualisation]
+        present(ccCapture, animated: true, completion: nil)
     }
 
-    func scanEnded() {
+    private func endScan(_ controller: CCCapture) {
         // End the session
-        ccCapture.endCaptureSession()
+        controller.endCaptureSession()
 
         DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
@@ -68,7 +63,7 @@ extension ViewController: CCCaptureDelegate {
             // Recording was successfull but too short
             break
         case 5:
-            scanEnded()
+            endScan(controller)
         case 7:
             // Zipping is done.
             break
@@ -92,7 +87,7 @@ extension ViewController: CCCaptureDelegate {
             break
         case 13:
             // Scan drifted! Position changed by over 10 meters during 2 second interval
-            scanEnded()
+            endScan(controller)
         case 40 :
             // Started listening for speech.
             break
@@ -140,7 +135,7 @@ extension ViewController: CCCaptureDelegate {
             fallthrough
         case 15:
             // Error, removing scan
-            scanEnded()
+            endScan(controller)
         default:
             break
         }
@@ -149,15 +144,10 @@ extension ViewController: CCCaptureDelegate {
     func processReadyDelegationFunc(_ controller: CCCapture) {
         print("processReady")
     }
+
     func scanTrackingFailed(_ controller: CCCapture) {
         print("tracking failed")
-        ccCapture.endCaptureSession()
-        DispatchQueue.main.async {
-            self.dismiss(animated: true, completion: nil)
-        }
+        endScan(controller)
     }
-    
-    
-    
 }
 
