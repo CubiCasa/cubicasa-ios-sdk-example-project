@@ -36,6 +36,7 @@ ARKit | Apple Augementer Reality library that is used in CubiCasa SDK for scanni
 Sideways walk | An error which occurs during a scan when the user walks sideways. Walking sideways makes it hard to tract the position of the device and can affect the quality of the scan.
 Scene Reconstruction | The process of building a 3D model (mesh) from a video stream (scan)
 Mesh visualisation | Showing the reconstructed scene mesh on-screen, during scanning
+Drifting | An unrecovable event where the device loses tracking of its surroundings. Can happen if there is a conflict in the sensor data. The scan is lost if drifting occurs.
 
 ## Installation
 
@@ -81,6 +82,8 @@ Variable name | Description
 `hintTextColor` | Text color for the arrowy labels next to buttons in initial view
 `hintBorderColor` | The color of the border for the arrow view
 `hintBackgroundColor` | Background color for the arrow labels
+`meshColor` | The `UIColor` to use for mesh visualization.
+
 
 ##### New texts
 
@@ -101,7 +104,6 @@ The color of the mesh is configurable:
 Variable name | Description
 --------------|------------
 `meshColor`   | The `UIColor` to use for mesh visualization.
-
 
 ## Permissions
 
@@ -188,6 +190,7 @@ Please note that the scan may end if the SDK encounters an unrecovable error.
     │   ├── arkitData.json
     │   ├── config.json
     │   ├── video.mp4
+    │   ├── scan.log
     │   └── allDepthFrames.bin
 ```
 You can easily inspect the data but do not touch the zip file. Please note that the `allDepthFrames.bin` will be present for LiDAR devices (only).
@@ -258,17 +261,8 @@ In the SDK the following codes can be received
 
 CubiCasa SDK's visual guides and assets are customizable for example:
 
-~~~swift
-cubiCapture.recordButton.backgroundImage = UIImage(named : "customButton")
-~~~
-
  Object | Type | Description 
 --------|------|-------------
- `trackingLabel` | `UILabel` | Displayed in the middle of the screen. Is used to display warnings for the user (e.g. `warningTextDark`)
- `recordButton` | `UIButton` | Presented in the right-hand side on the screen. When pressed the scan starts.
- `timerLabel` | `UILabel` | Presented in the top left-hand corner on the screen. Displays the scan time  |
-`progressSpinner` | `UIActivityIndicatorView`| Displayed when the scan is ended and the processing of the capture is started.
-`guideImage` | `UIImageView` | Used to display guiding images to the user. Images such as `sidewaysWalkImageRight` are put to this view
 `warningTextMovement` | `String` | Displayed when exessive motion on the device is detected. Default value is `"You are moving too fast"`
 `warningTextDark` | `String` | Displayed when the lighting condions are poor. Default value is `"Please move back few steps, there is too dark"`
 `warningTextLost` | `String`| Displayed when tracking is lost. Default value is `"We are sorry but your tracking was lost"``
@@ -277,9 +271,8 @@ cubiCapture.recordButton.backgroundImage = UIImage(named : "customButton")
 `greendBorderImage`| `UIImage` | Displayed during the scan when the scan is proceeding normally. The default image is a green frame for the scanning view.
 `orangeBorderImage`| `UIImage` | Displayed if something is affecting the quality of the scan (e.g. poor lighting). The default image is an orage frame for the scanning view
 `ceilingWarningImage` | `UIImage` | Displayed when the device is pointing too much upwards.
-| `floorWarningImage` | `UIImage` | Displayed when the device is pointing too much downwars.
+`floorWarningImage` | `UIImage` | Displayed when the device is pointing too much downwars.
 `rotatePhoneWarningImage` | `UIImage` | Displayed when the devices is rotated too much or the device is in wrong orientation.
-`startHereToScanImage` | `UIImage`| A Visual guide pointing the user to press the start button
 
 
 Example:
@@ -299,7 +292,8 @@ Name | Description | Default value
 `warningTextDark` | Displayed when there aren't enough features in the scanned area. | *Please move back few steps, there is too dark*
 `warningTextLost`| Displayed if the scan is interrupted unrecoverably. All data is lost | *We are sorry but your tracking was lost*
 `warningTextInitializing`| Displayed in the very beginning of the scan. Guides the user to be the device around for `CCCapture` to get bearings on the surrounding space | *Move your device to start tracking*
-`recordHintText`| | *1. Start scanning*
+`recordHintText`| Displayed on the arrowy button next to record button before the scan is started | *1. Start scanning*
 `speechHintInitialText` | Displayed on the arrowy button next to speech recording button before the scan is started | *2. Say the room name*
 `speechHintText` | Displayed on the label next to speech recognition record button when the button is tapped |  *Say the room name*
 `speechNoResults` | Displayed in the label next speech recording button if no results are found | *No results*
+`scanEnded`| Displayed after the user has stopped the scans. Informs the user not to close the application while the scan is being processed | *Finalizing scan. Please do not exit the application.*
