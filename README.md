@@ -271,6 +271,9 @@ You can change the used images and change texts by changing the in the `CCCaptur
 
  Object | Type | Description 
 --------|------|-------------
+`warningTextMovement` | `String` | Displayed when exessive motion on the device is detected. Default value is `"You are moving too fast"`
+`warningTextDark` | `String` | Displayed when the lighting condions are poor. Default value is `"Please move back few steps, there is too dark"`
+`warningTextLost` | `String`| Displayed when tracking is lost. Default value is `"We are sorry but your tracking was lost"``
 `sidewaysWalkImageRight` | `UIImage` | Displayed when user is walking sideways to the right 
 `sidewaysWalkImageLeft` | `UIImage` | Displayed when user is walking sideways to the left 
 `greendBorderImage`| `UIImage` | Displayed during the scan when the scan is proceeding normally. The default image is a green frame for the scanning view.
