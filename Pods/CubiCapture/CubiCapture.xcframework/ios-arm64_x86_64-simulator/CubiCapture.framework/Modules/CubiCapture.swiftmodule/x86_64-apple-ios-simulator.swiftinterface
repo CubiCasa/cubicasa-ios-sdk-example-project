@@ -20,6 +20,33 @@ extension UIDevice {
     get
   }
 }
+@objc @_hasMissingDesignatedInitializers public class OverlayView : UIKit.UIView {
+  public var trackingLabel: UIKit.UILabel
+  public var progressSpinner: UIKit.UIActivityIndicatorView
+  public var recordButton: UIKit.UIButton
+  public var timerLabel: UIKit.UILabel
+  public var speechButtonIndicatorColor: UIKit.UIColor
+  public var speechResultTextColor: UIKit.UIColor
+  public var speechResultBackgroundColor: UIKit.UIColor
+  public var speechCancelTextColor: UIKit.UIColor
+  public var speechCancelBackgroundColor: UIKit.UIColor
+  public var speechLabelTextColor: UIKit.UIColor
+  public var speechLabelBackgroundColor: UIKit.UIColor
+  public var hintTextColor: UIKit.UIColor
+  public var hintBorderColor: UIKit.UIColor
+  public var hintBackgroundColor: UIKit.UIColor
+  public var guideImage: UIKit.UIImageView
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+}
+extension OverlayView : UIKit.UITableViewDelegate {
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, willDisplay cell: UIKit.UITableViewCell, forRowAt indexPath: Foundation.IndexPath)
+}
+extension OverlayView : UIKit.UITableViewDataSource {
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+}
 extension CCCapture : ARKit.ARSCNViewDelegate {
   @objc dynamic public func renderer(_ renderer: SceneKit.SCNSceneRenderer, nodeFor anchor: ARKit.ARAnchor) -> SceneKit.SCNNode?
   @objc dynamic public func renderer(_ renderer: SceneKit.SCNSceneRenderer, didUpdate node: SceneKit.SCNNode, for anchor: ARKit.ARAnchor)
@@ -75,17 +102,8 @@ public struct CaptureOptions : Swift.OptionSet, Swift.CaseIterable {
   public var ceilingWarningImage: UIKit.UIImage
   public var floorWarningImage: UIKit.UIImage
   public var rotatePhoneWarningImage: UIKit.UIImage
-  public var speechButtonIndicatorColor: UIKit.UIColor
-  public var speechResultTextColor: UIKit.UIColor
-  public var speechResultBackgroundColor: UIKit.UIColor
-  public var speechCancelTextColor: UIKit.UIColor
-  public var speechCancelBackgroundColor: UIKit.UIColor
-  public var speechLabelTextColor: UIKit.UIColor
-  public var speechLabelBackgroundColor: UIKit.UIColor
-  public var hintTextColor: UIKit.UIColor
-  public var hintBorderColor: UIKit.UIColor
-  public var hintBackgroundColor: UIKit.UIColor
   public var meshColor: UIKit.UIColor
+  final public let overlayView: CubiCapture.OverlayView
   @available(*, deprecated, message: "CCCapture is an UIViewController instead of calling setView you should present CCCapture in your view controller.")
   public func setView(sceneToController: UIKit.UIViewController)
   @objc dynamic public init()

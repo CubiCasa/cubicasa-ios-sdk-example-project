@@ -10,7 +10,7 @@
 		</data>
 		<key>Assets.scnassets/CameraSetup.scn</key>
 		<data>
-		LA6T2EntisYJv4T4WKRX6KkaIww=
+		kBq+pxNr2JElDCFxDMmGkoteyZ4=
 		</data>
 		<key>Assets.scnassets/wireframe_shader.metal</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/CubiCapture-Swift.h</key>
 		<data>
-		o832BmRjb/3Tb4GbDI2b865JLdM=
+		CuoGOmgNrcDloZJu+MBZ0D4+oPg=
 		</data>
 		<key>Headers/CubiCapture.h</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		y/wypjvXoavRyYbRiWW8dvHGvg0=
+		x4s2365Tc2jD2PEPVP1o+dPpVLM=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		xzysIwi5+2R8H8IJ5KgjJiYw1zo=
+		u2nnyfcwXLvo6LyAfLZY9GkVOow=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		teZarp7o7+o/faCr4bP5gRm3zVY=
+		fFblo2TfAjvbe1GQ20p/NjQBb3k=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		xzysIwi5+2R8H8IJ5KgjJiYw1zo=
+		u2nnyfcwXLvo6LyAfLZY9GkVOow=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		teZarp7o7+o/faCr4bP5gRm3zVY=
+		fFblo2TfAjvbe1GQ20p/NjQBb3k=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		pO87RlvY1uiqy/V1ZclhjK6TG0Q=
+		FXeq2S8a9LdyVoDBzHZMCXYReq8=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		5SW3Qv6a/kbZNG4V+WASna7a/Wo=
+		9b120J7qj1d0VyPhqlMj4REzRhU=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -70,11 +70,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		pO87RlvY1uiqy/V1ZclhjK6TG0Q=
+		FXeq2S8a9LdyVoDBzHZMCXYReq8=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		5SW3Qv6a/kbZNG4V+WASna7a/Wo=
+		9b120J7qj1d0VyPhqlMj4REzRhU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -150,7 +150,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			j8muXdgeYD5iipzngQRYxIr52XDI74yURxPxfTRqlpc=
+			Iw7nm3JMvP5enysztSjiUq6qDBTt8qCYPTE3QSIfUJY=
 			</data>
 		</dict>
 		<key>Assets.scnassets/wireframe_shader.metal</key>
@@ -164,7 +164,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+UYoaHgORCApcRk4r5OBo/JER/yMxm35CYoxPGBz2dY=
+			NUOiMoc4qOcmratbqf51y6NmpPz0Vd39hGgQbJaVb3U=
 			</data>
 		</dict>
 		<key>Headers/CubiCapture.h</key>
@@ -185,14 +185,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JL48ajpAAbrhNDLXPY97q+T8IjG5hfWXgXXzsd2NxIE=
+			5FkNEYuZXltYeSuA6N44XORBPypYHkaj+GPD8fYiwwA=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			E/DrZWVMRnaF7uxWe+GaEC4ATJyVkL7ct8ddbtTilPM=
+			b7F+kDSnpr2Z9iXDCSHzCNpFmxGWDXizshz++kgeHeA=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftdoc</key>
@@ -206,14 +206,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JL48ajpAAbrhNDLXPY97q+T8IjG5hfWXgXXzsd2NxIE=
+			5FkNEYuZXltYeSuA6N44XORBPypYHkaj+GPD8fYiwwA=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			E/DrZWVMRnaF7uxWe+GaEC4ATJyVkL7ct8ddbtTilPM=
+			b7F+kDSnpr2Z9iXDCSHzCNpFmxGWDXizshz++kgeHeA=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -227,14 +227,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2us/qZ4hOC3jXGb0Ld8HwE7pj+1LvCeBQvJmKxZAWDg=
+			KpyhJvFAlFTsOD3e0SL0aWo/JAA09bdveW4tfegiSw8=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FHAGEzDEU65kJf/lZP5o6HVN1ATC9/On+MfeDb5zLWA=
+			JMFqroiYZTe4O28NZKBcdE0xyMAJ97OHqVcL3GqiTu0=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftdoc</key>
@@ -248,14 +248,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2us/qZ4hOC3jXGb0Ld8HwE7pj+1LvCeBQvJmKxZAWDg=
+			KpyhJvFAlFTsOD3e0SL0aWo/JAA09bdveW4tfegiSw8=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FHAGEzDEU65kJf/lZP5o6HVN1ATC9/On+MfeDb5zLWA=
+			JMFqroiYZTe4O28NZKBcdE0xyMAJ97OHqVcL3GqiTu0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
