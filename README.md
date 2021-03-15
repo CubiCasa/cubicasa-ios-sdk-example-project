@@ -68,7 +68,7 @@ If you plan to use speech recognition remember to add microphone and speech reco
 
 ##### UI Customization
 
-Speech recognition feature introduces new UI elements: The speech recognition record button, speech recognition info label, and the result table view. The colors of these elements can be customized to your liking. All colors are members of the `CCCapture` view you must change the values before calling the `setView` method. Checkout the list below:
+Speech recognition feature introduces new UI elements: The speech recognition record button, speech recognition info label, and the result table view. The colors of these elements can be customized to your liking. All colors are members of the `overlayView` of `CCCapture` view you must change the values before calling the `setView` method or presenting `CCCapture`. Checkout the list below:
 
 Variable name | Description
 --------------|------------
@@ -84,6 +84,12 @@ Variable name | Description
 `hintBackgroundColor` | Background color for the arrow labels
 `meshColor` | The `UIColor` to use for mesh visualization.
 
+###### Example
+
+To set the text color of the hint label to blue would be 
+```swift
+cubiCapture.overlay.hintTextColor = .blue
+```
 
 ##### New texts
 
@@ -259,7 +265,9 @@ In the SDK the following codes can be received
 
 ### Visual 
 
-CubiCasa SDK's visual guides and assets are customizable for example:
+#### Warning and Guide Images
+
+You can change the used images and change texts by changing the in the `CCCapture`. The following items can be changed:
 
  Object | Type | Description 
 --------|------|-------------
@@ -274,12 +282,30 @@ CubiCasa SDK's visual guides and assets are customizable for example:
 `floorWarningImage` | `UIImage` | Displayed when the device is pointing too much downwars.
 `rotatePhoneWarningImage` | `UIImage` | Displayed when the devices is rotated too much or the device is in wrong orientation.
 
-
 Example:
 
 ~~~swift
 cubiCapture.greenBorderImage = UIImage(named: "customized-status-ok.png")
 ~~~
+
+#### UI Elements
+
+You can change the appearance of some of the UI elements through the `overlayView` object of `CCCapture`. You can change the font of and label and images for a button etc. The following elements are accessible in `overlayView`:
+
+
+ Object | Type | Description 
+--------|------|-------------
+`trackingLabel` | `UILabel` | The label in the middle of screen that guides the user
+`progressSpinner`| `UIActivityIndicatorView` | The spinner displayed when the scan is processing
+`recordButton` | `UIButton` | The record button on right hand side of the UI
+`timerLabel` | `UILabel` | The label displaying scanning time on the top left-hand corder of the scanning view
+
+Example:
+
+~~~swift
+cubiCapture.overlayView.recordButton.setImage(UIImage.init(named: "customized-record-button.png"), for: UIControl.State.normal)
+~~~
+
 
 ### Strings
 

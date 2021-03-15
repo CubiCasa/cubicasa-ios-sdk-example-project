@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         ccCapture.delegateCapture = self
         ccCapture.options = [.speechRecognition, .meshVisualisation]
         present(ccCapture, animated: true, completion: nil)
+
     }
 
     private func endScan(_ controller: CCCapture) {
