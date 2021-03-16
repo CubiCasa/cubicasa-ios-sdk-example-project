@@ -1,3 +1,38 @@
+# Table of Contents
+
+   * [CubiCaptureDemo](#cubicapturedemo)
+      * [Description](#description)
+   * [Cubicasa SDK](#cubicasa-sdk)
+      * [Release Notes](#release-notes)
+      * [Glossary](#glossary)
+      * [Installation](#installation)
+         * [Cocoapods](#cocoapods)
+      * [Updating from CubiCapture 2.0 to CubiCapture 2.2](#updating-from-cubicapture-20-to-cubicapture-22)
+         * [Adaptive Lighting](#adaptive-lighting)
+         * [Speech Recognition for Room Labels](#speech-recognition-for-room-labels)
+               * [Permissions](#permissions)
+               * [UI Customization](#ui-customization)
+                  * [Example](#example)
+               * [New texts](#new-texts)
+         * [Scene Reconstruction](#scene-reconstruction)
+      * [Permissions](#permissions-1)
+      * [Device Orientation](#device-orientation)
+      * [Scan lifecycle](#scan-lifecycle)
+         * [Setting up](#setting-up)
+         * [Starting the scan](#starting-the-scan)
+         * [Configuration](#configuration)
+         * [During the scan](#during-the-scan)
+         * [Ending the scan](#ending-the-scan)
+            * [After scan the data is stored to the passed filename](#after-scan-the-data-is-stored-to-the-passed-filename)
+         * [Errors](#errors)
+      * [Adding the Address](#adding-the-address)
+         * [The event codes](#the-event-codes)
+      * [Customization Options](#customization-options)
+         * [Visual](#visual)
+            * [Warning and Guide Images](#warning-and-guide-images)
+            * [UI Elements](#ui-elements)
+         * [Strings](#strings)
+
 # CubiCaptureDemo
 
 Is a simple project which has the CubiCasa SDK integrated.
