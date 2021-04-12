@@ -7,7 +7,7 @@
       * [Glossary](#glossary)
       * [Installation](#installation)
          * [Cocoapods](#cocoapods)
-      * [Updating from CubiCapture 2.0 to CubiCapture 2.2](#updating-from-cubicapture-20-to-cubicapture-22)
+      * [Updating from CubiCapture 2.0 to CubiCapture 2.3](#updating-from-cubicapture-20-to-cubicapture-23)
          * [Adaptive Lighting](#adaptive-lighting)
          * [Speech Recognition for Room Labels](#speech-recognition-for-room-labels)
                * [Permissions](#permissions)
@@ -50,6 +50,8 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 
 ## Release Notes
 
+- Can resume scanning after returning from background and can recover from drift
+- System monitoring, will warn about thermal throttling and memory
 - Depth capturing support for the following devices; iPhone 12 Pro, iPhone 12 Pro Max, iPad Pro 2020
 - Mesh visualisation to show which spaces have been scanned (visualisation colours can be changed, visualisation can be turned off altogether)
 - New status codes (code 3, 5, 18, 27, 29, 30 and 40-49 and 57 to match Android SDK statuses)
@@ -84,14 +86,27 @@ target 'YourTarget' do
   use_frameworks!
   pod 'CubiCapture'
 end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.deployment_target = '13.0'
+    target.build_configurations.each do |config|
+        config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+    end
+  end
+end
 ```
 Replace `YourTarget` with the name of your build target. Run `pod install`.
 
-## Updating from CubiCapture 2.0 to CubiCapture 2.2
+## Updating from CubiCapture 2.0 to CubiCapture 2.3
+
+### Resume scan when returning from background
+
+CubiCapture 2.3 adds support for resuming a scan when the app returns from being sent to the background during a scan. The user will be prompted to return to a previously scanned location and the SDK will attempt to relocate. If this succeeds, the scan is continued.
 
 ### Adaptive Lighting
 
-Cubicasa SDK 2.2 features the new Adaptive Lighting technique. During the scan if the lighting is too dark `CCCapture`automatically lights up the torch/flashlight of the phone to illuminate the surroundings. The brightness level of the torch depends on the surrounding lightgning conditions. Less light, more torch and the other way around.
+CubiCapture SDK 2.2 features the new Adaptive Lighting technique. During the scan if the lighting is too dark `CCCapture`automatically lights up the torch/flashlight of the phone to illuminate the surroundings. The brightness level of the torch depends on the surrounding lightgning conditions. Less light, more torch and the other way around.
 
 ### Speech Recognition for Room Labels
 
@@ -194,7 +209,7 @@ Remember to add CCCaptures delegate to controlling viewcontrollor to get message
 CubiCasa capture session features can be configured by assigning an option set:
 
 ```swift
-cubiCapture.options = [.speechRecognition, .meshVisualisation]
+cubiCapture.options = [.speechRecognition, .meshVisualisation, .backgroundResume]
 present(cubiCapture, animated: true, completion: nil)
 ```
 
@@ -204,7 +219,7 @@ Option name          | Description | Default
 ---------------------|-------------|--------
 `.speechRecognition` | Use speech recognition for making room labels | enabled
 `.meshVisualisation` | Reconstruct the scene as a 3D mesh and visualise it (only on LiDAR-equiped devices) | enabled
-
+`.backgroundResume`  | Resume scan when returning from background (aborts scan if disabled) | disabled
 
 ### During the scan
 
@@ -295,6 +310,19 @@ In the SDK the following codes can be received
 | `57` | Failed to start write depth data to file |
 | `58` | Could not find filepath. |
 | `59` | Depth map or AVasset writer could not take frames in. Received when there was an error in writing the data to disk. |
+| `70` |	Thermal state nominal
+| `71` |	Thermal state fair
+| `72` |	Thermal state serious
+| `73` |	Thermal state critical
+| `74` |	Low power mode activated
+| `75` |	Low power mode deactivated
+| `76` |	Active processor count is X of Y
+| `77` |	Received memory warning
+| `80` |	Scanning pause due to drift/user error
+| `81` |	Resume scanning
+| `82` |	No snapshot for relocation. Cannot relocate.
+| `83` |	Scanning aborted due to App going to the background
+| `90` |	Failed to start writing scan log
 
 ## Customization Options
 
