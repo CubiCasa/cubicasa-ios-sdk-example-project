@@ -66,5 +66,7 @@
 	<string>We use the micropohone to record room labels</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>We use the speech recognition to recognize room labels</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We use the location to data to find north</string>
 </dict>
 </plist>

@@ -1,0 +1,74 @@
+/* 
+  Localizable.strings
+  CubiCaptureDemo
+
+  Created by CubiCasa on 13.4.2021.
+  
+*/
+
+/* Displayed next to a label to scan button before the scan is started */
+"cc_record_hint_text" = "1. Start scanning";
+
+/* Displayed when the user is moving to fast while scanning */
+"cc_scan_ended" = "Finalizing scan. Please do not exit the application.";
+
+/* Displayed next to the speech button label before the scan is started */
+"cc_speech_hint_initial_text" = "2. Say the room name";
+
+/* Displayed ne the user is moving to fast while scanning */
+"cc_speech_hint_text" = "Say the room name";
+
+/* Displayed when the user is moving to fast while scanning */
+"cc_speech_no_results" = "No results";
+
+/* Displayed if the scanned environment is too dark or lacking features */
+"cc_warning_text_dark" = "Please move back few steps, there is too dark";
+
+/* Displayed when the ARKit is initializing. Guides user to move the device */
+"cc_warning_text_initializing" = "Move your device to start tracking";
+
+/* Displayed if the scan is lost due to an unrecovable error */
+"cc_warning_text_lost" = "We are sorry but your tracking was lost";
+
+/* Displayed if the user is moving to fast while scanning */
+"cc_warning_text_movement" = "You are moving too fast";
+
+/* Dispalyed title for the sideways warning */
+"cc_warning_sideways_title" = "Do not walk sideways";
+
+/* Displayed info text for sideways left warning */
+"cc_warning_sideways_left_info" = "Turn left and point the camera forward.\nWalk parallel to the wall.";
+
+/* Displayed info text for sideways right warning */
+"cc_warning_sideways_right_info" = "Turn right and point the camera forward.\nWalk parallel to the wall.";
+
+/* Displayed info text for the rotate warning*/
+"cc_warning_rotate_info" = "Turn your device 180° to the left.\nMake sure the record button is on the right.";
+
+/* Displayed title for ceiling scanning warnign */
+"cc_warning_ceiling_title" = "Do not scan ceilings";
+
+/* Displayed info text for ceiling scanning warning */
+"cc_warning_ceiling_info" = "The app can lose tracking if ceilings are scanned.";
+
+/* Displayed title for floor scanning warning */
+"cc_warning_floor_title" = "Lift your phone up a bit";
+
+/* Displayed info text for floor scaning warning */
+"cc_warning_floor_info" = "Point the camera approximately 8ft / 2.5m in front of you.\nKeep at least 3ft / 1m distance from all objects";
+
+/* Displayed on the guide screen before the device is turned to landscape */
+"cc_guide_turn_device_info" = "Turn your device to landscape orientation";
+
+/* Displayed info text for too much horizontal scanning */
+"cc_warning_tilt_down" = "Focus on the floor about\n 8ft / 2.5m in front of you!";
+
+/* Title of the alert view when the scan has drifted */
+"cc_drift_title" = "Scan drifted";
+
+/* Message of the alert view when the scan has drifted */
+"cc_drift_message" = "There was an error in your scan and tracking was lost. Please return to a previously scanned room to resume scanning.";
+
+/* OK for alert message */
+"cc_alert_ok" = "OK";
+
