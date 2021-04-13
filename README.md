@@ -53,7 +53,7 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 
 - Recording true north/azimuth
 - Zip file check (and re-zip)
-- Localisation support (see [Localication)(#Localization) )
+- Localisation support (see [Localization](#localization))
 - Thermal state and memory monitoring, auto safe-mode
 - Scan UI improvements
 - Scan log (extra information about the scanning session, included in the zip)
