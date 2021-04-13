@@ -1,37 +1,36 @@
 # Table of Contents
 
+   * [Table of Contents](#table-of-contents)
    * [CubiCaptureDemo](#cubicapturedemo)
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
+         * [2.3.1](#231)
       * [Glossary](#glossary)
       * [Installation](#installation)
          * [Cocoapods](#cocoapods)
-      * [Updating from CubiCapture 2.0 to CubiCapture 2.2](#updating-from-cubicapture-20-to-cubicapture-22)
-         * [Adaptive Lighting](#adaptive-lighting)
-         * [Speech Recognition for Room Labels](#speech-recognition-for-room-labels)
-               * [Permissions](#permissions)
-               * [UI Customization](#ui-customization)
-                  * [Example](#example)
-               * [New texts](#new-texts)
-         * [Scene Reconstruction](#scene-reconstruction)
-      * [Permissions](#permissions-1)
       * [Device Orientation](#device-orientation)
+      * [CubiCapture Features](#cubicapture-features)
+         * [Scene Reconstruction](#scene-reconstruction)
+         * [Adaptive Lighting](#adaptive-lighting)
+         * [Azimuth](#azimuth)
+         * [Speech Recognition for Room Labels](#speech-recognition-for-room-labels)
+      * [Permissions](#permissions)
       * [Scan lifecycle](#scan-lifecycle)
          * [Setting up](#setting-up)
-         * [Starting the scan](#starting-the-scan)
+         * [Starting the Scan](#starting-the-scan)
          * [Configuration](#configuration)
-         * [During the scan](#during-the-scan)
-         * [Ending the scan](#ending-the-scan)
+         * [Adding the Address](#adding-the-address)
+         * [During the Scan](#during-the-scan)
+         * [Ending the Scan](#ending-the-scan)
             * [After scan the data is stored to the passed filename](#after-scan-the-data-is-stored-to-the-passed-filename)
          * [Errors](#errors)
-      * [Adding the Address](#adding-the-address)
          * [The event codes](#the-event-codes)
-      * [Customization Options](#customization-options)
-         * [Visual](#visual)
-            * [Warning and Guide Images](#warning-and-guide-images)
-            * [UI Elements](#ui-elements)
-         * [Strings](#strings)
+      * [Customization and Localization](#customization-and-localization)
+         * [Localization](#localization)
+         * [Colors](#colors)
+         * [Images](#images)
+         * [UI Elements](#ui-elements)
 
 # CubiCaptureDemo
 
@@ -50,17 +49,26 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 
 ## Release Notes
 
-- Depth capturing support for the following devices; iPhone 12 Pro, iPhone 12 Pro Max, iPad Pro 2020
-- Mesh visualisation to show which spaces have been scanned (visualisation colours can be changed, visualisation can be turned off altogether)
+### 2.3.1
+
+- Recording true north/azimuth
+- Zip file check (and re-zip)
+- Localisation support (see [Localization](#localization))
+- Thermal state and memory monitoring, auto safe-mode
+- Scan UI improvements
+- Scan log (extra information about the scanning session, included in the zip)
+- Horizontal scanning warning
 - New status codes (code 3, 5, 18, 27, 29, 30 and 40-49 and 57 to match Android SDK statuses)
 - Updated dependencies
-- Speech recognition for room labels (Now you can directly say the labels you want to have in the finished floorplan, UI colours can be changed)
-- Adjusted lighting for dark spaces (Camera flash will turn on in dark spaces to ensure tracking and data quality)
-- UI adjustments for new features see #Updating from CubiCapture 2.0 to CubiCapture 2.2
-- Debug symbols (`dSYM`) included in the `CubiCapture.xcframework`
-- `CCCapture` is now a `UIViewController`, see #Starting the scan
-- Various bugfixes
-
+ - We start to utilize Bundle in all Customization. If you want to replace assets from the SDK
+   you just define the value with the same key in your application and (main bundle) and Cubicasa SDK will automatically
+   override the default values.
+    - Removed all warning and guide images (e.g. `turn-screen.png`)
+- We have replaced the old border images in CCCapture with an UIView. The reason is that with the new solution
+    it is easier to match the curvature of the screen corner with newer iPhones.
+ - Removed:
+    - `status-ok.png` and `status-unsure.png`
+    - Use `cc_scan_border_ok` and `cc_scan_border_warning` color definitions instead
 
 ## Glossary
 
@@ -84,75 +92,44 @@ target 'YourTarget' do
   use_frameworks!
   pod 'CubiCapture'
 end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.deployment_target = '13.0'
+    target.build_configurations.each do |config|
+        config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+    end
+  end
+end
 ```
 Replace `YourTarget` with the name of your build target. Run `pod install`.
 
-## Updating from CubiCapture 2.0 to CubiCapture 2.2
-
-### Adaptive Lighting
-
-Cubicasa SDK 2.2 features the new Adaptive Lighting technique. During the scan if the lighting is too dark `CCCapture`automatically lights up the torch/flashlight of the phone to illuminate the surroundings. The brightness level of the torch depends on the surrounding lightgning conditions. Less light, more torch and the other way around.
-
-### Speech Recognition for Room Labels
-
-CubiCapture SDK utilizes speech recognition. During a scan your users can use the speech recognition to add room labels. If you don't want to use speech recognition you can omit it from the options.
-
-##### Permissions
-
-If you plan to use speech recognition remember to add microphone and speech recognition privacy usages to your `Info.plist`.
-
-##### UI Customization
-
-Speech recognition feature introduces new UI elements: The speech recognition record button, speech recognition info label, and the result table view. The colors of these elements can be customized to your liking. All colors are members of the `overlayView` of `CCCapture` view you must change the values before calling the `setView` method or presenting `CCCapture`. Checkout the list below:
-
-Variable name | Description
---------------|------------
-`speechButtonIndicatorColor`| The color of the animated circle behind speech recognition record button
-`speechResultTextColor` | The color of text in displayed result cells
-`speechResultBackgroundColor`| The background color for speechrecognition result cells
-`speechCancelTextColor` | The color of text for the cancel button in speech recognition result list
-`speechCancelBackgroundColor` | Background color for the cancel button in speech recognition result list
-`speechLabelTextColor` | Text color for the label next to speech recognition record button. Displays the "Say room name" and "No results" texts.
-`speechLabelBackgroundColor` | Background color for the label next to speech recognition record button.
-`hintTextColor` | Text color for the arrowy labels next to buttons in initial view
-`hintBorderColor` | The color of the border for the arrow view
-`hintBackgroundColor` | Background color for the arrow labels
-`meshColor` | The `UIColor` to use for mesh visualization.
-
-###### Example
-
-To set the text color of the hint label to blue would be 
-```swift
-cubiCapture.overlay.hintTextColor = .blue
-```
-
-##### New texts
-
-Speech recognition features the following new customizable texts:
-
-Name | Description | Default value
------|-------------|--------------
-`speechHintInitialText` | Displayed on the arrowy button next to speech recording button before the scan is started | *2. Say the room name*
-`speechHintText` | Displayed on the label next to speech recognition record button when the button is tapped |  *Say the room name*
-`speechNoResults` | Displayed in the label next speech recording button if no results are found | *No results*
-
-### Scene Reconstruction
-
-On LiDAR-equiped devices, the reconstructed scene mesh is shown on-screen during the scan, to give the user an idea of which parts of the space have been scanned already. Scene reconstruction can be disabled by omitting it from the `.options` of `CCCapture`.
-
-The color of the mesh is configurable:
-
-Variable name | Description
---------------|------------
-`meshColor`   | The `UIColor` to use for mesh visualization.
-
-## Permissions
-
-CubiCasa SDK uses the device camera to capture the surroundings so you need to add the "Privacy - Camera Usage Description" to your projects `Info.plist` if you already haven't done so. The camera permission is required for the CubiCasa SDK, it cannot function without it. Also if you want to use speech recognition (optional) add "Privacy - Microphone Usage Description" and the "Privacy - Speech Recognition Usage Description". 
 
 ## Device Orientation
 
 CubiCapture view only works when the view is locked to portrait orientation (even though it looks like a landscape view) If our app supports both portrait and landscape orientation make sure disable orientation change when you are displaying CubiCapture view.
+
+## CubiCapture Features
+
+### Scene Reconstruction
+
+On LiDAR-equiped devices, the reconstructed scene mesh is shown on-screen during the scan, to give the user an idea of which parts of the space have been scanned already. Scene reconstruction can be disabled by omitting it from the `.options` of `CCCapture`. The color of the mesh is configurable you can define `cc_mesh` in your application bundle to overwrite the default value.
+
+### Adaptive Lighting
+
+CubiCapture SDK features the Adaptive Lighting technique. During the scan if the lighting is too dark `CCCapture` automatically lights up the torch/flashlight of the phone to illuminate the surroundings. The brightness level of the torch depends on the surrounding lightgning conditions. Less light, more torch and the other way around.
+
+### Azimuth
+
+CubiCapture SDK captures the heading relative to the "true north" and adds this information to the scan. This information can be used to add the information to your scanners floor plan. In order to the azimuth data to be collected the the user must have agreed to use the location data. No position data is gathered by the SDK.
+
+### Speech Recognition for Room Labels
+
+CubiCapture SDK utilizes speech recognition. During a scan your users can use the speech recognition to add room labels. If you don't want to use speech recognition you can omit `.speech_recognition` from the scanning options.
+
+## Permissions
+
+CubiCasa SDK uses the device camera to capture the surroundings so you need to add the "Privacy - Camera Usage Description" to your projects `Info.plist` if you already haven't done so. The camera permission is required for the CubiCasa SDK, it cannot function without it. Also if you want to use speech recognition (optional) add "Privacy - Microphone Usage Description" and the "Privacy - Speech Recognition Usage Description". The azimuth data gathering requires "Privacy - Location When In Use Usage Description" to be set.
 
 ## Scan lifecycle
 
@@ -160,7 +137,7 @@ CubiCapture view only works when the view is locked to portrait orientation (eve
 
 You can specify where the scan will be placed in the app document directory with CCCapture `fileName` field.
 
-### Starting the scan
+### Starting the Scan
 
 The recommended way to use `CCCapture` is as a `UIViewController`:
 
@@ -205,8 +182,22 @@ Option name          | Description | Default
 `.speechRecognition` | Use speech recognition for making room labels | enabled
 `.meshVisualisation` | Reconstruct the scene as a 3D mesh and visualise it (only on LiDAR-equiped devices) | enabled
 
+### Adding the Address
 
-### During the scan
+You can add addres information to your scan. `CCCapture` has the following fields for address:
+
+* `number`
+* `postCode`
+* `city`
+* `state`
+* `country`
+* `suite`
+
+All fields are `String`s.
+
+These will be added to your order configuration.
+
+### During the Scan
 
 A lot of things can happen during a scan and we use the `messenger(_ controller: CCCapture, errorCode: Int, message: String)` method to recive events to get information on what is the status of the scan. See the list of event codes more details.
 
@@ -214,7 +205,7 @@ The user gets visual guides to ensure good scan quality. For example if the envi
 
 Please read [our scanning tips](https://www.cubi.casa/support/scanning/best-scanning-technique/) on how the scan should be made.
 
-### Ending the scan
+### Ending the Scan
 
 The scan is ended when the user presses the record button again. After the scan is complete the `processReadyDelegationFunc(_ controller: CCCapture)` and `zippedDataLocation(_ controller: CCCapture, location: URL)`.
 
@@ -239,21 +230,6 @@ You can easily inspect the data but do not touch the zip file. Please note that 
 ### Errors
 
 If the SDK encounters unrecovable errors during scanning the scan will be interrupted and CubiCasa SDK will remove all files it has created.
-
-## Adding the Address
-
-You can add addres information to your scan. `CCCapture` has the following fields for address:
-
-* `number`
-* `postCode`
-* `city`
-* `state`
-* `country`
-* `suite`
-
-All fields are `String`s.
-
-These will be added to your order configuration.
 
 ### The event codes 
 
@@ -295,35 +271,69 @@ In the SDK the following codes can be received
 | `57` | Failed to start write depth data to file |
 | `58` | Could not find filepath. |
 | `59` | Depth map or AVasset writer could not take frames in. Received when there was an error in writing the data to disk. |
+| `70` |	Thermal state nominal
+| `71` |	Thermal state fair
+| `72` |	Thermal state serious
+| `73` |	Thermal state critical
+| `74` |	Low power mode activated
+| `75` |	Low power mode deactivated
+| `76` |	Active processor count is X of Y
+| `77` |	Received memory warning
+| `80` |	Scanning pause due to drift/user error
+| `81` |	Resume scanning
+| `82` |	No snapshot for relocation. Cannot relocate.
+| `83` |	Scanning aborted due to App going to the background
+| `90` |	Failed to start writing scan log
 
-## Customization Options
+## Customization and Localization
 
-### Visual 
+### Localization
 
-#### Warning and Guide Images
+The CubiCasa SDK is localizable to any language. At the moment we support only English translations but if your app has support for multiple languages you can easily also translate all texts in the SDK as well. If you want to use a different tone in the texts or something you can always define your own.
 
-You can change the used images and change texts by changing the in the `CCCapture`. The following items can be changed:
+The following is an excerpt from the SDK’s Localizable.strings just define your own texts with the following. See the `Localizable.strings` file in this project. By overriding the keys you can change the text so your pleasing.
 
- Object | Type | Description 
---------|------|-------------
-`warningTextMovement` | `String` | Displayed when exessive motion on the device is detected. Default value is `"You are moving too fast"`
-`warningTextDark` | `String` | Displayed when the lighting condions are poor. Default value is `"Please move back few steps, there is too dark"`
-`warningTextLost` | `String`| Displayed when tracking is lost. Default value is `"We are sorry but your tracking was lost"``
-`sidewaysWalkImageRight` | `UIImage` | Displayed when user is walking sideways to the right 
-`sidewaysWalkImageLeft` | `UIImage` | Displayed when user is walking sideways to the left 
-`greendBorderImage`| `UIImage` | Displayed during the scan when the scan is proceeding normally. The default image is a green frame for the scanning view.
-`orangeBorderImage`| `UIImage` | Displayed if something is affecting the quality of the scan (e.g. poor lighting). The default image is an orage frame for the scanning view
-`ceilingWarningImage` | `UIImage` | Displayed when the device is pointing too much upwards.
-`floorWarningImage` | `UIImage` | Displayed when the device is pointing too much downwars.
-`rotatePhoneWarningImage` | `UIImage` | Displayed when the devices is rotated too much or the device is in wrong orientation.
+### Colors
 
-Example:
+Variable name | Description
+--------------|------------
+`cc_speech_button_indicator`| The color of the animated circle behind speech recognition record button
+`cc_speech_result_text` | The color of text in displayed result cells
+`cc_speech_result_background`| The background color for speechrecognition result cells
+`cc_speech_cancel_text` | The color of text for the cancel button in speech recognition result list
+`cc_speech_cancel_background` | Background color for the cancel button in speech recognition result list
+`cc_speech_label_text` | Text color for the label next to speech recognition record button. Displays the "Say room name" and "No results" texts.
+`cc_speech_label_background` | Background color for the label next to speech recognition record button.
+`cc_hint_label_text` | Text color for the arrowy labels next to buttons in initial view
+`cc_hint_label_border` | The color of the border for the arrow view
+`cc_hint_label_background` | Background color for the arrow labels
+`cc_mesh` | The color used for mesh visualization.
+`cc_scan_border_ok`| Color of the border view during scan when everything is ok
+`cc_scan_border_warning` | Color of the border when the scanning environment is not optimal
+`cc_guide_background` | Backgroundcolor of the view that guides the user to turn the phone to landscape orientation when the scanning view is opened
+`cc_guide_info_text` |  Text color of the view that guides the user to turn the phone to landscape orientation when the scanning view is opened
+`cc_timer_label_text` | Color of the timer label
+`cc_warning_info_text` | Color of the info text in the warning view
+`cc_warning_title_text` | Color of the title in the warning view
+`cc_warning_view_background` | Background color of the warning view
 
-~~~swift
-cubiCapture.greenBorderImage = UIImage(named: "customized-status-ok.png")
-~~~
+### Images
 
-#### UI Elements
+You can change the used images used in `CCCapture`. You can change the images by defining images with following keys in your apps main bundle:
+
+ Image | Description 
+-------|------------
+`cc_microphone_disabled` | Used in the speech recognition button when it is in disabled state
+`cc_microphone_ready` | Used in the speech recognition button when it is enabled
+`cc_microphone_recording` | Used in the speech recognition when the speech recognition is recorning
+`cc_not_recording` | Used in the record button when not scanning
+`cc_recording` | Used in the record button while scanning
+`cc_turn_device` | Used in the guide view that guides the user to turn the device to landscape orientation
+`cc_warning_arrow` | An arrow that is used when warning the user not to scan too high
+`cc_warning_rotate` | Used in the warning view when the scanning device us upside down
+`cc_warning_tilt_down` | Used to guide the user tilt the phone down and not scan horizontally so much
+
+### UI Elements
 
 You can change the appearance of some of the UI elements through the `overlayView` object of `CCCapture`. You can change the font of and label and images for a button etc. The following elements are accessible in `overlayView`:
 
@@ -338,23 +348,5 @@ You can change the appearance of some of the UI elements through the `overlayVie
 Example:
 
 ~~~swift
-cubiCapture.overlayView.recordButton.setImage(UIImage.init(named: "customized-record-button.png"), for: UIControl.State.normal)
+cubiCapture.overlayView.timerLablel.font = UIFont.systemFont(ofSize: 20)
 ~~~
-
-
-### Strings
-
-`CCCapture` displays informative lables to the user before and during a scan. The contents of these labels are customizable for localization or to change the "tone of voice" for the texts. Currently the following texts are used
-
-
-Name | Description | Default value
------|-------------|--------------
-`warningTextMovement`| Displayed in when the the scanning device is moved to fast | *You are moving too fast*
-`warningTextDark` | Displayed when there aren't enough features in the scanned area. | *Please move back few steps, there is too dark*
-`warningTextLost`| Displayed if the scan is interrupted unrecoverably. All data is lost | *We are sorry but your tracking was lost*
-`warningTextInitializing`| Displayed in the very beginning of the scan. Guides the user to be the device around for `CCCapture` to get bearings on the surrounding space | *Move your device to start tracking*
-`recordHintText`| Displayed on the arrowy button next to record button before the scan is started | *1. Start scanning*
-`speechHintInitialText` | Displayed on the arrowy button next to speech recording button before the scan is started | *2. Say the room name*
-`speechHintText` | Displayed on the label next to speech recognition record button when the button is tapped |  *Say the room name*
-`speechNoResults` | Displayed in the label next speech recording button if no results are found | *No results*
-`scanEnded`| Displayed after the user has stopped the scans. Informs the user not to close the application while the scan is being processed | *Finalizing scan. Please do not exit the application.*

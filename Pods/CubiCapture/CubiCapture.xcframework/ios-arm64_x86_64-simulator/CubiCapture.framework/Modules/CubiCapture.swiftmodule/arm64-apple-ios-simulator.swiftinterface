@@ -4,6 +4,7 @@
 import ARKit
 import AVFoundation
 import CoreGraphics
+import CoreLocation
 import CoreMotion
 @_exported import CubiCapture
 import Foundation
@@ -11,42 +12,9 @@ import SceneKit
 import Speech
 import Swift
 import UIKit
+import VideoToolbox
+import ZIPFoundation
 import Zip
-extension UIDevice {
-  public static let modelName: Swift.String
-}
-extension UIDevice {
-  public static var isLowEndDevice: Swift.Bool {
-    get
-  }
-}
-@objc @_hasMissingDesignatedInitializers public class OverlayView : UIKit.UIView {
-  public var trackingLabel: UIKit.UILabel
-  public var progressSpinner: UIKit.UIActivityIndicatorView
-  public var recordButton: UIKit.UIButton
-  public var timerLabel: UIKit.UILabel
-  public var speechButtonIndicatorColor: UIKit.UIColor
-  public var speechResultTextColor: UIKit.UIColor
-  public var speechResultBackgroundColor: UIKit.UIColor
-  public var speechCancelTextColor: UIKit.UIColor
-  public var speechCancelBackgroundColor: UIKit.UIColor
-  public var speechLabelTextColor: UIKit.UIColor
-  public var speechLabelBackgroundColor: UIKit.UIColor
-  public var hintTextColor: UIKit.UIColor
-  public var hintBorderColor: UIKit.UIColor
-  public var hintBackgroundColor: UIKit.UIColor
-  public var guideImage: UIKit.UIImageView
-  @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-}
-extension OverlayView : UIKit.UITableViewDelegate {
-  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
-  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, willDisplay cell: UIKit.UITableViewCell, forRowAt indexPath: Foundation.IndexPath)
-}
-extension OverlayView : UIKit.UITableViewDataSource {
-  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
-  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
-}
 extension CCCapture : ARKit.ARSCNViewDelegate {
   @objc dynamic public func renderer(_ renderer: SceneKit.SCNSceneRenderer, nodeFor anchor: ARKit.ARAnchor) -> SceneKit.SCNNode?
   @objc dynamic public func renderer(_ renderer: SceneKit.SCNSceneRenderer, didUpdate node: SceneKit.SCNNode, for anchor: ARKit.ARAnchor)
@@ -57,6 +25,13 @@ extension CaptureOptions : Swift.Encodable {
 extension CCCapture : ARKit.ARSessionDelegate {
   @objc dynamic public func session(_ session: ARKit.ARSession, didUpdate frame: ARKit.ARFrame)
   @objc dynamic public func session(_ session: ARKit.ARSession, cameraDidChangeTrackingState camera: ARKit.ARCamera)
+}
+extension UIDevice {
+  public static let modelName: Swift.String
+  public static var isLowEndDevice: Swift.Bool {
+    get
+  }
+  public static let cornerRadius: CoreGraphics.CGFloat
 }
 public protocol CCCaptureDelegate : AnyObject {
   func processReadyDelegationFunc(_ controller: CubiCapture.CCCapture)
@@ -70,6 +45,7 @@ public struct CaptureOptions : Swift.OptionSet, Swift.CaseIterable {
   public let rawValue: Swift.Int
   public static let speechRecognition: CubiCapture.CaptureOptions
   public static let meshVisualisation: CubiCapture.CaptureOptions
+  public static let backgroundResume: CubiCapture.CaptureOptions
   public static let allCases: [CubiCapture.CaptureOptions]
   public typealias Element = CubiCapture.CaptureOptions
   public typealias ArrayLiteralElement = CubiCapture.CaptureOptions
@@ -86,24 +62,6 @@ public struct CaptureOptions : Swift.OptionSet, Swift.CaseIterable {
   public var state: Swift.String
   public var country: Swift.String
   public var suite: Swift.String
-  public var warningTextMovement: Swift.String
-  public var warningTextDark: Swift.String
-  public var warningTextLost: Swift.String
-  public var warningTextInitializing: Swift.String
-  public var recordHintText: Swift.String
-  public var speechHintInitialText: Swift.String
-  public var speechHintText: Swift.String
-  public var speechNoResults: Swift.String
-  public var scanEnded: Swift.String
-  public var sidewaysWalkImageRight: UIKit.UIImage
-  public var sidewaysWalkImageLeft: UIKit.UIImage
-  public var greenBorderImage: UIKit.UIImage
-  public var orangeBorderImage: UIKit.UIImage
-  public var ceilingWarningImage: UIKit.UIImage
-  public var floorWarningImage: UIKit.UIImage
-  public var rotatePhoneWarningImage: UIKit.UIImage
-  public var meshColor: UIKit.UIColor
-  final public let overlayView: CubiCapture.OverlayView
   @available(*, deprecated, message: "CCCapture is an UIViewController instead of calling setView you should present CCCapture in your view controller.")
   public func setView(sceneToController: UIKit.UIViewController)
   @objc dynamic public init()
@@ -111,7 +69,8 @@ public struct CaptureOptions : Swift.OptionSet, Swift.CaseIterable {
     @objc get
   }
   @objc override dynamic public func viewDidLoad()
-  public func startCapture()
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
   public func endCaptureSession()
   public func removeScan()
   @objc deinit
