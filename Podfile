@@ -8,5 +8,5 @@ target 'CubiCaptureDemo' do
   use_frameworks!
 
   # Pods for CubiCaptureDemo
-  pod 'CubiCapture', '~> 2.2'
+  pod 'CubiCapture', '~> 2.3'
 end

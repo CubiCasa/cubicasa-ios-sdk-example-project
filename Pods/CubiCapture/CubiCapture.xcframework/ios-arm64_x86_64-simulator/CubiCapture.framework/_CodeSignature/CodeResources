@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		YJ1apa4vlFKo44g2EnXFKXy6XOQ=
+		gBREp6JX1/Ah8+7H44QuBeo8o9M=
 		</data>
 		<key>Assets.scnassets/CameraSetup.scn</key>
 		<data>
-		kBq+pxNr2JElDCFxDMmGkoteyZ4=
+		LA6T2EntisYJv4T4WKRX6KkaIww=
 		</data>
 		<key>Assets.scnassets/wireframe_shader.metal</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/CubiCapture-Swift.h</key>
 		<data>
-		CuoGOmgNrcDloZJu+MBZ0D4+oPg=
+		oLvaWy/Zr6gAQ7bqL4aRAdENLA4=
 		</data>
 		<key>Headers/CubiCapture.h</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		x4s2365Tc2jD2PEPVP1o+dPpVLM=
+		WnkOFDwNa4YokURwoymf7fJOYKU=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		u2nnyfcwXLvo6LyAfLZY9GkVOow=
+		IdfS6FQTcq6hjGI3pTR3xznFTD4=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		fFblo2TfAjvbe1GQ20p/NjQBb3k=
+		4salE/6Mdtj+KTDQ/0Bm2riccEg=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		u2nnyfcwXLvo6LyAfLZY9GkVOow=
+		IdfS6FQTcq6hjGI3pTR3xznFTD4=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		fFblo2TfAjvbe1GQ20p/NjQBb3k=
+		4salE/6Mdtj+KTDQ/0Bm2riccEg=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		FXeq2S8a9LdyVoDBzHZMCXYReq8=
+		r4hmi64EDvrDMfeehZCxvsWHUww=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		9b120J7qj1d0VyPhqlMj4REzRhU=
+		g4GBIE1TbuygUnKoKdcJBi40qc4=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -70,72 +70,41 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		FXeq2S8a9LdyVoDBzHZMCXYReq8=
+		r4hmi64EDvrDMfeehZCxvsWHUww=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		9b120J7qj1d0VyPhqlMj4REzRhU=
+		g4GBIE1TbuygUnKoKdcJBi40qc4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		14zJrVfn5G6fBbQz0srHrtlYVOs=
 		</data>
-		<key>ceiling-warning.png</key>
+		<key>Montserrat-Bold.ttf</key>
 		<data>
-		81n6+xokCVhzGD8NFfYWUgV1u7A=
+		OlRAeism/0cYcIpHJrEMsHDRZTQ=
 		</data>
-		<key>left-warning.png</key>
+		<key>Montserrat-Italic.ttf</key>
 		<data>
-		6eNB71PX0c+uu3VT50NBq+kipzQ=
+		eYxwFFD2vAghf3PBrFaRAM3cKUc=
 		</data>
-		<key>lift-phone-warning.png</key>
+		<key>Montserrat-Regular.ttf</key>
 		<data>
-		fZ2JLZdsnf8X+QUHywMeaaOgcQA=
+		0ls1JC3rHG/4iLgWLKKqzDVtOJk=
 		</data>
-		<key>microphone-disabled.png</key>
+		<key>Montserrat-SemiBold.ttf</key>
 		<data>
-		4FV6pVaeUYRut8AO90SySAt0khc=
+		+CneTBdvssz14zNgkg9I3meUQ04=
 		</data>
-		<key>microphone-ready.png</key>
-		<data>
-		aVhOcqhLcihJ26ICx5Bpn2JNXLg=
-		</data>
-		<key>microphone-recording.png</key>
-		<data>
-		V7nbNWmLZMz/ACQMCGXbRIl+elU=
-		</data>
-		<key>not_recording.png</key>
-		<data>
-		fNYGWx1XAPn7MNgaMR3LXuyYn6U=
-		</data>
-		<key>recording.png</key>
-		<data>
-		QKlxxO8CIPinA6Wa1PyGn2UhMpY=
-		</data>
-		<key>right-warning.png</key>
-		<data>
-		agZB5XwDvLggGLJdn3jAcUNO34Y=
-		</data>
-		<key>rotate-warning.png</key>
-		<data>
-		PG4jX0LTL+Aded7Qk4MvHiqRS8s=
-		</data>
-		<key>status-ok.png</key>
-		<data>
-		u3Lmv8nwUk9JtczR2YyrNJOrNck=
-		</data>
-		<key>status-unsure.png</key>
-		<data>
-		CBg1nXk8DonbVaUhvSuCm6ZV/K0=
-		</data>
-		<key>turn-screen.png</key>
-		<data>
-		lvXWiV5qDMe164Y2AANXiYJYSb0=
-		</data>
-		<key>yellow-warning.wav</key>
-		<data>
-		7RXnGLYDZ7gtgPVxhK+ln8u0IaE=
-		</data>
+		<key>en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Z/xhIC0u30LgD0MVtwfMi8Bqq/Q=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -143,14 +112,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ssWi+f/DVOPHqtrmQXF/1a7hYz9PAwkKnix5CplVQnQ=
+			V7f2+o+t/SWvt8wkcGc3bu+Vgu7UTxBXp/x6zS8HSns=
 			</data>
 		</dict>
 		<key>Assets.scnassets/CameraSetup.scn</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Iw7nm3JMvP5enysztSjiUq6qDBTt8qCYPTE3QSIfUJY=
+			j8muXdgeYD5iipzngQRYxIr52XDI74yURxPxfTRqlpc=
 			</data>
 		</dict>
 		<key>Assets.scnassets/wireframe_shader.metal</key>
@@ -164,7 +133,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NUOiMoc4qOcmratbqf51y6NmpPz0Vd39hGgQbJaVb3U=
+			fQT3O0/MLweMPFxCWsTVpHrOLcFh0l3CZGkZ0P/Ly9E=
 			</data>
 		</dict>
 		<key>Headers/CubiCapture.h</key>
@@ -185,14 +154,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5FkNEYuZXltYeSuA6N44XORBPypYHkaj+GPD8fYiwwA=
+			li8xzYrraR9kfoAzXem34mtcIsXfns0ZhlKMnd5Zbxo=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			b7F+kDSnpr2Z9iXDCSHzCNpFmxGWDXizshz++kgeHeA=
+			M0N3joQj45eWcoMfejH3toJslT6+q+Cxjb0waniQ7/Q=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftdoc</key>
@@ -206,14 +175,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5FkNEYuZXltYeSuA6N44XORBPypYHkaj+GPD8fYiwwA=
+			li8xzYrraR9kfoAzXem34mtcIsXfns0ZhlKMnd5Zbxo=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			b7F+kDSnpr2Z9iXDCSHzCNpFmxGWDXizshz++kgeHeA=
+			M0N3joQj45eWcoMfejH3toJslT6+q+Cxjb0waniQ7/Q=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -227,14 +196,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KpyhJvFAlFTsOD3e0SL0aWo/JAA09bdveW4tfegiSw8=
+			cN2A6Iqv/GQTeA3HxE+E2wPkeIbMhW8+aMAuAX+Lb+8=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JMFqroiYZTe4O28NZKBcdE0xyMAJ97OHqVcL3GqiTu0=
+			AE2Adb5ZxlCKM8Qcicusq/3mz88Hq4mIQnH8NRIX4yE=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftdoc</key>
@@ -248,14 +217,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KpyhJvFAlFTsOD3e0SL0aWo/JAA09bdveW4tfegiSw8=
+			cN2A6Iqv/GQTeA3HxE+E2wPkeIbMhW8+aMAuAX+Lb+8=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JMFqroiYZTe4O28NZKBcdE0xyMAJ97OHqVcL3GqiTu0=
+			AE2Adb5ZxlCKM8Qcicusq/3mz88Hq4mIQnH8NRIX4yE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -265,103 +234,42 @@
 			oaCOUY3b8LUuDqK7PgwEOTnCDo2thuPOHKCaV0cUGLQ=
 			</data>
 		</dict>
-		<key>ceiling-warning.png</key>
+		<key>Montserrat-Bold.ttf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+FrrX5oWFPYtqlkAGQAVrwogoZh/wh8hJO2YfWmiLWg=
+			yCiahw0jiqBCvf0JNk/m3qUkvNHqSFNBh42MdaMqtEQ=
 			</data>
 		</dict>
-		<key>left-warning.png</key>
+		<key>Montserrat-Italic.ttf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fRQ5XfAP3n7gUnusI0bhaayf8t7WfS4EZblXFabX+Do=
+			FixRj8JDlx8vdEAMAQtThcOHKrqvnQOYoi3RlsM8AC0=
 			</data>
 		</dict>
-		<key>lift-phone-warning.png</key>
+		<key>Montserrat-Regular.ttf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5tbUWjgkGSgCZHw1oFbKOLz/sZouCD+G1hdIxGvxo0A=
+			B3zasVFhIyqbpxJNLd16lCUUV1B4jpqWbBVsxmJ09SU=
 			</data>
 		</dict>
-		<key>microphone-disabled.png</key>
+		<key>Montserrat-SemiBold.ttf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ii0LLsk0y1PYf7tzpQCyLBm/hnnMykXEaFhOlFpd8T4=
+			8ieQHvSKxNH+TMbtDbzpnms4lpur5eBdot+zNSGwKUQ=
 			</data>
 		</dict>
-		<key>microphone-ready.png</key>
+		<key>en.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mV2S66o2o/tDBPERjXJaGqZvY1wwlBfO9XfWhQ7ErL0=
+			EQpe4rY3iFz6UXkzwqBeS20CD4hELS5E/ykHSXDcOzk=
 			</data>
-		</dict>
-		<key>microphone-recording.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			EqhoDDo19Dzv+5PO4ndYMTeXXe+zeUNCwmwx/rSAllg=
-			</data>
-		</dict>
-		<key>not_recording.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			qfrUvxLuocIJzlG/dFc4SN+QSS7GaNzyKOqwuHJvKLM=
-			</data>
-		</dict>
-		<key>recording.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Ngi/Pfggdt2gRVie5aEJ5UxWap7vuIadUr4gTL/BzWU=
-			</data>
-		</dict>
-		<key>right-warning.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			1dipYHODv4SQwdOWUWWCOW2beQJi3QbBLWFkGM/LCn4=
-			</data>
-		</dict>
-		<key>rotate-warning.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			6/3l520FOPmV/GUccclUgsmXCeZIftl6xuCuuTdJ6HE=
-			</data>
-		</dict>
-		<key>status-ok.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			9enrRPJNSPDra+0xEYC2fRidZ2XyNbRuoFh3JUNFwoI=
-			</data>
-		</dict>
-		<key>status-unsure.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			n7Rvhi8ILoC8tkd0ubfOIrLyFVqXOO7ZNiMhvahp2zw=
-			</data>
-		</dict>
-		<key>turn-screen.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ial+9mXeapMQVgbfOyIcLS6X+2udf5kevjqwqWaGhP4=
-			</data>
-		</dict>
-		<key>yellow-warning.wav</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			tXuev6lmYv8FCzKCbAGLQzBK+5p8C45q4EEbC57iCjY=
-			</data>
+			<key>optional</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>rules</key>
