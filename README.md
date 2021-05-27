@@ -269,7 +269,9 @@ In the SDK the following codes can be received
 | `27` | Not walking sideways anymore |
 | `28` | Scanning state back to normal |	
 | `29` | Walking sideways. Displaying left warning |	
-| `30` | Walking sideways. Displaying rigth warning	|
+| `30` | Walking sideways. Displaying right warning |
+| `31` | Horizontal scanning |
+| `32` | Not scanning horizontally anymore |
 | `40` | Started listening for speech.		|
 | `41` | Listening finished, displaying recognition results. |	
 | `42` | Recognition result '<spaceLabel>' was chosen.		|
@@ -281,6 +283,7 @@ In the SDK the following codes can be received
 | `48` | User granted RECORD_AUDIO permission.		|
 | `49` | User denied RECORD_AUDIO permission.		|
 | `51`| Zipping the scan failed. The scan files **will be deleted** and CubiCapture will be finished. |
+| `53`| Invalid zip archive, attempting rezipping |
 | `54` | Failed to write arkitdata to file. The scan files **will be deleted** and CubiCapture will be finished. | 
 | `56` | Failed to write config to file |
 | `57` | Failed to start write depth data to file |
