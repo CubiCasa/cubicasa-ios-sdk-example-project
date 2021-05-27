@@ -5,12 +5,13 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
-         * [2.3.1](#231)
+         * [2.4.1](#241)
       * [Glossary](#glossary)
       * [Installation](#installation)
          * [Cocoapods](#cocoapods)
       * [Device Orientation](#device-orientation)
       * [CubiCapture Features](#cubicapture-features)
+         * [Relocating After Loss of Tracking](#relocating-after-loss-of-tracking)
          * [Scene Reconstruction](#scene-reconstruction)
          * [Adaptive Lighting](#adaptive-lighting)
          * [Azimuth](#azimuth)
@@ -49,8 +50,18 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 
 ## Release Notes
 
-### 2.3.1
+### 2.4.1
+- SDK tries to relocate if tracking is lost during a scan, instead of terminating
+- SDK tries to relocate and resume the scan when it is brought back to the foreground, instead of terminating
+- New error codes for relocation
+- Horizontal scanning messages fixed
+- "Not walking sideways" bug fixed
+- More informative error messages
+- SDK can now be debugged in llvm (`couldn't IRGen expression` issue)
+- SDK always calls delegate with first measured system monitor values
+- SDK calls delegate when tracking is back to normal
 
+### 2.3.1
 - Recording true north/azimuth
 - Zip file check (and re-zip)
 - Localisation support (see [Localization](#localization))
@@ -110,6 +121,10 @@ Replace `YourTarget` with the name of your build target. Run `pod install`.
 CubiCapture view only works when the view is locked to portrait orientation (even though it looks like a landscape view) If our app supports both portrait and landscape orientation make sure disable orientation change when you are displaying CubiCapture view.
 
 ## CubiCapture Features
+
+### Relocating After Loss of Tracking
+
+In cases where the scan is interrupted due to loss of tracking or the app going to the background, the SDK will now attempt to relocate and continue the scan. This is achieved by prompting the user to return to a previously scanned area, so that the SDK can reestablish tracking.
 
 ### Scene Reconstruction
 
