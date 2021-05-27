@@ -69,6 +69,26 @@
 /* Message of the alert view when the scan has drifted */
 "cc_drift_message" = "There was an error in your scan and tracking was lost. Please return to a previously scanned room to resume scanning.";
 
-/* OK for alert message */
-"cc_alert_ok" = "OK";
+/* OK for warning view button */
+"cc_warning_button_ok" = "OK";
 
+/* Displayed in the scan label if no camera permissions are given */
+"cc_no_camera_permission" = "Cannot capture without access to the camera. Please check permissions.";
+
+/* Displayed on the warning view when tracking is lost */
+"cc_warning_tracking_lost" = "We lost tracking of your position";
+
+/* title in the button in tracking lost/paused case */
+"cc_button_relocate" = "Relocate";
+
+/* Displayed on the warning view when tracking is paused */
+"cc_warning_tracking_paused" = "The scan was paused. We need to relocate\nbefore you can continue scanning.";
+
+/* Displayed on the warning view when scan is relocating */
+"cc_warning_relocating" = "Relocating...";
+
+/* Displayed on the warning view when scan is relocated */
+"cc_warning_relocated" = "Relocated!\nYou can now continue with your scan normally.";
+
+/* Displayed on the warning view when guiding the user to go back to visit previously scanned space */
+"cc_warning_visit_previous" = "Go back and rescan the previous space";

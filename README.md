@@ -6,6 +6,7 @@
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
          * [2.4.1](#241)
+         * [2.3.1](#231)
       * [Glossary](#glossary)
       * [Installation](#installation)
          * [Cocoapods](#cocoapods)
@@ -53,7 +54,8 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 ### 2.4.1
 - SDK tries to relocate if tracking is lost during a scan, instead of terminating
 - SDK tries to relocate and resume the scan when it is brought back to the foreground, instead of terminating
-- New error codes for relocation
+- New customizable colors, texts, and images for relocation
+- New error codes for relocation (codes 80, 81, 82)
 - Horizontal scanning messages fixed
 - "Not walking sideways" bug fixed
 - More informative error messages
@@ -87,11 +89,13 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 Term | Description
 -----|------------
 Scan | The process of capturing the surroundings indoor space using the phone's camera
-ARKit | Apple Augementer Reality library that is used in CubiCasa SDK for scanning
+ARKit | Apple Augemented Reality library that is used in CubiCasa SDK for scanning
+Tracking | The process of aligning the device to it's surroundings properly. We use ARKit to track the device location in the scanned space.
+Tracking lost | Sometimes ARKit's tracking can get confused and the tracking is lost i.e. the device is confused about where it is. This can happen for example if a door is opened in front of the device while scanning.
+Relocation | If the scan is interrupted we can try to relocate the devices position by using previously scanned data.
 Sideways walk | An error which occurs during a scan when the user walks sideways. Walking sideways makes it hard to tract the position of the device and can affect the quality of the scan.
 Scene Reconstruction | The process of building a 3D model (mesh) from a video stream (scan)
 Mesh visualisation | Showing the reconstructed scene mesh on-screen, during scanning
-Drifting | An unrecovable event where the device loses tracking of its surroundings. Can happen if there is a conflict in the sensor data. The scan is lost if drifting occurs.
 
 ## Installation
 
@@ -125,7 +129,7 @@ CubiCapture view only works when the view is locked to portrait orientation (eve
 
 ### Relocating After Loss of Tracking
 
-In cases where the scan is interrupted due to loss of tracking or the app going to the background, the SDK will now attempt to relocate and continue the scan. This is achieved by prompting the user to return to a previously scanned area, so that the SDK can reestablish tracking.
+In cases where the scan is interrupted due to loss of tracking or the app going to the background, the SDK will now attempt to relocate and continue the scan. This is achieved by prompting the user to return to a previously scanned area, so that the SDK can reestablish tracking. If the relocation is not successful in 60 seconds the scan is aborted.
 
 ### Scene Reconstruction
 
@@ -339,6 +343,8 @@ Variable name | Description
 `cc_warning_info_text` | Color of the info text in the warning view
 `cc_warning_title_text` | Color of the title in the warning view
 `cc_warning_view_background` | Background color of the warning view
+`cc_warning_relocated_background` | Background color for the warning view when relocated
+`cc_warning_relocating_background` | Background color fot the warnign view while relocating
 
 ### Images
 
@@ -355,6 +361,9 @@ You can change the used images used in `CCCapture`. You can change the images by
 `cc_warning_arrow` | An arrow that is used when warning the user not to scan too high
 `cc_warning_rotate` | Used in the warning view when the scanning device us upside down
 `cc_warning_tilt_down` | Used to guide the user tilt the phone down and not scan horizontally so much
+`cc_broken_scan` | Used in warning view to indicate that tracking has been lost
+`cc_go_back` | Used in warning view to guide the user back to a previous location before starting the relocation process
+`cc_intact_scan` | Used in warning view to indicate that relocation is successful
 
 ### UI Elements
 
