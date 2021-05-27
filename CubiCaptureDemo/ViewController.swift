@@ -21,9 +21,8 @@ class ViewController: UIViewController {
         // Initiate CCCapture
         let ccCapture = CCCapture()
         ccCapture.delegateCapture = self
-        ccCapture.options = [.speechRecognition, .meshVisualisation]
+        ccCapture.options = [.speechRecognition, .meshVisualisation, .backgroundResume, .azimuth]
         present(ccCapture, animated: true, completion: nil)
-
     }
 
     private func endScan(_ controller: CCCapture) {
