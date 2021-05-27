@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 effective-4.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4 effective-4.2 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
 // swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name CubiCapture
 import ARKit
 import AVFoundation
@@ -46,11 +46,12 @@ public struct CaptureOptions : Swift.OptionSet, Swift.CaseIterable {
   public static let speechRecognition: CubiCapture.CaptureOptions
   public static let meshVisualisation: CubiCapture.CaptureOptions
   public static let backgroundResume: CubiCapture.CaptureOptions
+  public static let azimuth: CubiCapture.CaptureOptions
   public static let allCases: [CubiCapture.CaptureOptions]
-  public typealias Element = CubiCapture.CaptureOptions
-  public typealias ArrayLiteralElement = CubiCapture.CaptureOptions
-  public typealias RawValue = Swift.Int
   public typealias AllCases = [CubiCapture.CaptureOptions]
+  public typealias ArrayLiteralElement = CubiCapture.CaptureOptions
+  public typealias Element = CubiCapture.CaptureOptions
+  public typealias RawValue = Swift.Int
 }
 @objc @_hasMissingDesignatedInitializers public class CCCapture : UIKit.UIViewController {
   weak public var delegateCapture: CubiCapture.CCCaptureDelegate?
@@ -73,6 +74,6 @@ public struct CaptureOptions : Swift.OptionSet, Swift.CaseIterable {
   @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
   public func endCaptureSession()
   public func removeScan()
-  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc deinit
 }
