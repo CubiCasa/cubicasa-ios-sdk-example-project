@@ -60,6 +60,7 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 - SDK can now be debugged in llvm (`couldn't IRGen expression` issue)
 - SDK always calls delegate with first measured system monitor values
 - SDK calls delegate when tracking is back to normal
+- New status codes (code 31, 32)
 
 ### 2.3.1
 - Recording true north/azimuth
