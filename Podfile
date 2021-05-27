@@ -8,7 +8,7 @@ target 'CubiCaptureDemo' do
   use_frameworks!
 
   # Pods for CubiCaptureDemo
-  pod 'CubiCapture', '~> 2.3'
+  pod 'CubiCapture', '~> 2.4'
 end
 
 post_install do |installer|
