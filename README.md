@@ -362,7 +362,7 @@ You can change the used images used in `CCCapture`. You can change the images by
 `cc_warning_rotate` | Used in the warning view when the scanning device us upside down
 `cc_warning_tilt_down` | Used to guide the user tilt the phone down and not scan horizontally so much
 `cc_broken_scan` | Used in warning view to indicate that tracking has been lost
-`cc_go_back` | Used in warnign view to guide the user back to a previous location before starting the relocation process
+`cc_go_back` | Used in warning view to guide the user back to a previous location before starting the relocation process
 `cc_intact_scan` | Used in warning view to indicate that relocation is successful
 
 ### UI Elements
