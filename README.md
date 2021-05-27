@@ -62,7 +62,7 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 - SDK can now be debugged in llvm (`couldn't IRGen expression` issue)
 - SDK always calls delegate with first measured system monitor values
 - SDK calls delegate when tracking is back to normal
-- New status codes (code 31, 32)
+- New status codes (code 31, 32), updated status code (80, 81)
 
 ### 2.3.1
 - Recording true north/azimuth
@@ -191,7 +191,7 @@ Remember to add CCCaptures delegate to controlling viewcontrollor to get message
 CubiCasa capture session features can be configured by assigning an option set:
 
 ```swift
-cubiCapture.options = [.speechRecognition, .meshVisualisation]
+cubiCapture.options = [.speechRecognition, .meshVisualisation, .backgroundResume, .azimuth]
 present(cubiCapture, animated: true, completion: nil)
 ```
 
@@ -201,8 +201,10 @@ Option name          | Description | Default
 ---------------------|-------------|--------
 `.speechRecognition` | Use speech recognition for making room labels | enabled
 `.meshVisualisation` | Reconstruct the scene as a 3D mesh and visualise it (only on LiDAR-equiped devices) | enabled
-`.backgroundResume`  | Relocation after the app becomes active from background or when tracking is lost (instead of aborting the scan) 
-`.azimuth`           | Store azimuth data during the scan
+`.backgroundResume`	| The SDK will attempt to resume scanning if the app was backgrounded | enabled
+`.azimuth` | The SDK will write the camera orientation (azimuth) in the captured data | enabled
+
+If `CubiCapture.options` is not set, the default values will apply.
 
 ### Adding the Address
 
@@ -304,8 +306,8 @@ In the SDK the following codes can be received
 | `75` |	Low power mode deactivated
 | `76` |	Active processor count is X of Y
 | `77` |	Received memory warning
-| `80` |	Scanning pause due to drift/user error
-| `81` |	Resume scanning
+| `80` |	Relocation timed out.
+| `81` |	No configuration found!
 | `82` |	No snapshot for relocation. Cannot relocate.
 | `83` |	Scanning aborted due to App going to the background
 | `90` |	Failed to start writing scan log

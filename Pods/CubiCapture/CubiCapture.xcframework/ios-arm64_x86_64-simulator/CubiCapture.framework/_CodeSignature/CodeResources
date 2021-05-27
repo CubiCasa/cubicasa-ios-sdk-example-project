@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		gBREp6JX1/Ah8+7H44QuBeo8o9M=
+		RanW4KJzmhyavxW2oQwxQiuWLLo=
 		</data>
 		<key>Assets.scnassets/CameraSetup.scn</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/CubiCapture-Swift.h</key>
 		<data>
-		oLvaWy/Zr6gAQ7bqL4aRAdENLA4=
+		XorJ5YZ/+FkoAcGZsWO/Wgd20RM=
 		</data>
 		<key>Headers/CubiCapture.h</key>
 		<data>
@@ -26,55 +26,55 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		WnkOFDwNa4YokURwoymf7fJOYKU=
+		u8MgMOOj7W+NZwXZDyXgO18aP+M=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		8mWEwSP4xxir8M9sO2aiRgGwU5I=
+		tomsnUHN2zul3tZ1yKQvzOhbKMA=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		IdfS6FQTcq6hjGI3pTR3xznFTD4=
+		qLhCpDEFA79LPD8v5FnR7bDUMWo=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4salE/6Mdtj+KTDQ/0Bm2riccEg=
+		NdAfr/sT0SrkJRz5RDDKGp3V0yg=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		8mWEwSP4xxir8M9sO2aiRgGwU5I=
+		tomsnUHN2zul3tZ1yKQvzOhbKMA=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		IdfS6FQTcq6hjGI3pTR3xznFTD4=
+		qLhCpDEFA79LPD8v5FnR7bDUMWo=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		4salE/6Mdtj+KTDQ/0Bm2riccEg=
+		NdAfr/sT0SrkJRz5RDDKGp3V0yg=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		wy6YcM+TMvayFN8+xJXGzzZQBMw=
+		wYGyyMTF+GX33jutOUEriG5UeyI=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		r4hmi64EDvrDMfeehZCxvsWHUww=
+		ewriV/ZToM5Z95vB3umU5pDe/g0=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		g4GBIE1TbuygUnKoKdcJBi40qc4=
+		l/4jNXPGtXvpjTlKlRbFfom8ImM=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		wy6YcM+TMvayFN8+xJXGzzZQBMw=
+		wYGyyMTF+GX33jutOUEriG5UeyI=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		r4hmi64EDvrDMfeehZCxvsWHUww=
+		ewriV/ZToM5Z95vB3umU5pDe/g0=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		g4GBIE1TbuygUnKoKdcJBi40qc4=
+		l/4jNXPGtXvpjTlKlRbFfom8ImM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -100,7 +100,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Z/xhIC0u30LgD0MVtwfMi8Bqq/Q=
+			boGKdFcZ+hoWIHHYmJaRkFRQv/I=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -112,7 +112,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			V7f2+o+t/SWvt8wkcGc3bu+Vgu7UTxBXp/x6zS8HSns=
+			zVpBi0+afu5NWZkfjzT6isfeshMDdc2JG6W4BQYOeZQ=
 			</data>
 		</dict>
 		<key>Assets.scnassets/CameraSetup.scn</key>
@@ -133,7 +133,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fQT3O0/MLweMPFxCWsTVpHrOLcFh0l3CZGkZ0P/Ly9E=
+			CcTcpnTs0XF6njpWl7cIPBGBRaUL6mlb4BjtqweknBA=
 			</data>
 		</dict>
 		<key>Headers/CubiCapture.h</key>
@@ -147,84 +147,84 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qwnxeJypOqCmG1Jun1AW4CLrpLIajoPCKVSb5JUMSK4=
+			v2vNgrbegWcidD6UlgWRgSifwkl6cwSCUvvEyALPRxc=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			li8xzYrraR9kfoAzXem34mtcIsXfns0ZhlKMnd5Zbxo=
+			lsdYEa9Zh2ucrYabAJAUZTKVQWOcRbsM1hotFbXAg8U=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M0N3joQj45eWcoMfejH3toJslT6+q+Cxjb0waniQ7/Q=
+			WkoosYD8s7Z9Bh76cVTEQA60F7oYtaVpjv/ckgGuYLg=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qwnxeJypOqCmG1Jun1AW4CLrpLIajoPCKVSb5JUMSK4=
+			v2vNgrbegWcidD6UlgWRgSifwkl6cwSCUvvEyALPRxc=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			li8xzYrraR9kfoAzXem34mtcIsXfns0ZhlKMnd5Zbxo=
+			lsdYEa9Zh2ucrYabAJAUZTKVQWOcRbsM1hotFbXAg8U=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M0N3joQj45eWcoMfejH3toJslT6+q+Cxjb0waniQ7/Q=
+			WkoosYD8s7Z9Bh76cVTEQA60F7oYtaVpjv/ckgGuYLg=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1ZQQ5Slh27fD+vYwYV34KZDxZOm7mJS71xLwY9xRfQ8=
+			4MxnbrL4kOfQcOiBvMXYW0yEr0MGJWQXmsxndCqhpW0=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cN2A6Iqv/GQTeA3HxE+E2wPkeIbMhW8+aMAuAX+Lb+8=
+			rr5/+No+qS1cc/bScSDRHbx3qbaRm0Afq2+BLVYHfTg=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AE2Adb5ZxlCKM8Qcicusq/3mz88Hq4mIQnH8NRIX4yE=
+			01VV2ovUnAksZ5qyMec5TW9qzOpbD5HdbHN7sCuHCDw=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1ZQQ5Slh27fD+vYwYV34KZDxZOm7mJS71xLwY9xRfQ8=
+			4MxnbrL4kOfQcOiBvMXYW0yEr0MGJWQXmsxndCqhpW0=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cN2A6Iqv/GQTeA3HxE+E2wPkeIbMhW8+aMAuAX+Lb+8=
+			rr5/+No+qS1cc/bScSDRHbx3qbaRm0Afq2+BLVYHfTg=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AE2Adb5ZxlCKM8Qcicusq/3mz88Hq4mIQnH8NRIX4yE=
+			01VV2ovUnAksZ5qyMec5TW9qzOpbD5HdbHN7sCuHCDw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -266,7 +266,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EQpe4rY3iFz6UXkzwqBeS20CD4hELS5E/ykHSXDcOzk=
+			AU/AKs2GcEPiuvGy/SY5BodDrpZkdDVaz+ll/8DbVUs=
 			</data>
 			<key>optional</key>
 			<true/>
