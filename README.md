@@ -60,7 +60,7 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 - SDK can now be debugged in llvm (`couldn't IRGen expression` issue)
 - SDK always calls delegate with first measured system monitor values
 - SDK calls delegate when tracking is back to normal
-- New status codes (code 31, 32)
+- New status codes (code 31, 32), updated status code (80, 81)
 
 ### 2.3.1
 - Recording true north/azimuth
@@ -302,8 +302,8 @@ In the SDK the following codes can be received
 | `75` |	Low power mode deactivated
 | `76` |	Active processor count is X of Y
 | `77` |	Received memory warning
-| `80` |	Scanning pause due to drift/user error
-| `81` |	Resume scanning
+| `80` |	Relocation timed out.
+| `81` |	No configuration found!
 | `82` |	No snapshot for relocation. Cannot relocate.
 | `83` |	Scanning aborted due to App going to the background
 | `90` |	Failed to start writing scan log
