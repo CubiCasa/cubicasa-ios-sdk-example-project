@@ -26,7 +26,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		u8MgMOOj7W+NZwXZDyXgO18aP+M=
+		dpObomZaJXc2lATWzkJMgsBhv+E=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		NdAfr/sT0SrkJRz5RDDKGp3V0yg=
+		J/OoRu2jC7t5VNh6MIzB5KUOhr8=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		NdAfr/sT0SrkJRz5RDDKGp3V0yg=
+		J/OoRu2jC7t5VNh6MIzB5KUOhr8=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		l/4jNXPGtXvpjTlKlRbFfom8ImM=
+		mZoftq87TFzYQ3cLIW71maXhCi4=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		l/4jNXPGtXvpjTlKlRbFfom8ImM=
+		mZoftq87TFzYQ3cLIW71maXhCi4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -161,7 +161,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WkoosYD8s7Z9Bh76cVTEQA60F7oYtaVpjv/ckgGuYLg=
+			nyxnUmmNKN7Plc4WFig/HHhj3/Hubdj4Fo6vE8El7BI=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftdoc</key>
@@ -182,7 +182,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WkoosYD8s7Z9Bh76cVTEQA60F7oYtaVpjv/ckgGuYLg=
+			nyxnUmmNKN7Plc4WFig/HHhj3/Hubdj4Fo6vE8El7BI=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -203,7 +203,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			01VV2ovUnAksZ5qyMec5TW9qzOpbD5HdbHN7sCuHCDw=
+			ZsoISlxMQOSATOzKexQbhBGoQv82yMz4nbWoHNhU29w=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftdoc</key>
@@ -224,7 +224,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			01VV2ovUnAksZ5qyMec5TW9qzOpbD5HdbHN7sCuHCDw=
+			ZsoISlxMQOSATOzKexQbhBGoQv82yMz4nbWoHNhU29w=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

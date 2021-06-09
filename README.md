@@ -5,6 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
+         * [2.4.2](#242)
          * [2.4.1](#241)
          * [2.3.1](#231)
       * [Glossary](#glossary)
@@ -50,6 +51,9 @@ For your app the next step would be to upload the scan to your server and use [C
 Cubicasa SDK makes possible you to add scanning view to your app which then can use to scan a floor plan with an iOS device.
 
 ## Release Notes
+
+### 2.4.2
+- SDK keeps depth data collection enabled during relocating, to ensure continuous delivery of depth data
 
 ### 2.4.1
 - SDK tries to relocate if tracking is lost during a scan, instead of terminating
