@@ -52,6 +52,18 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 
 ## Release Notes
 
+### 2.5.0
+- New Warning: Proximity Warning. A warning which will trigger if the user is scanning too close or too far from objects.
+- New Warning: Fast Rotation Warning. A warning which will trigger if the user turns around too fast while scanning.
+- New Warning: Display an warning if the device is running out of storage space
+- Relocation will now trigger if the user mishandles the device.
+- Fixed a retention cycle in the code which caused memory leak.
+- SDK iOS minimum version requirement was lowered to 11.3. Please note that in order to scan you need to be have iOS version 13.0 or higher.
+- Improved scan stability after relocation.
+- New scanning options `storageWarnings` & `feedbackGathering`.
+- New status code: 78
+- New Image and text assests for new warnings and tracking lost condition.
+
 ### 2.4.2
 - SDK keeps depth data collection enabled during relocating, to ensure continuous delivery of depth data
 
@@ -151,6 +163,12 @@ CubiCapture SDK captures the heading relative to the "true north" and adds this 
 
 CubiCapture SDK utilizes speech recognition. During a scan your users can use the speech recognition to add room labels. If you don't want to use speech recognition you can omit `.speech_recognition` from the scanning options.
 
+### Storage Warning
+Cubicapture SDK notifies the user if the device is running out of storage space. This feature is toggled with the `.storageWarnings` scanning option.
+
+### Feedback Gathering
+Cubicapture SDK keeps a separate log on warnings during the scan. This will be used in the future for improving the scanning technique. This feature is toggled with the `.feedbackGathering` scanning option.
+
 ## Permissions
 
 CubiCasa SDK uses the device camera to capture the surroundings so you need to add the "Privacy - Camera Usage Description" to your projects `Info.plist` if you already haven't done so. The camera permission is required for the CubiCasa SDK, it cannot function without it. Also if you want to use speech recognition (optional) add "Privacy - Microphone Usage Description" and the "Privacy - Speech Recognition Usage Description". The azimuth data gathering requires "Privacy - Location When In Use Usage Description" to be set.
@@ -208,6 +226,7 @@ Option name          | Description | Default
 `.backgroundResume`	| The SDK will attempt to resume scanning if the app was backgrounded | enabled
 `.azimuth` | The SDK will write the camera orientation (azimuth) in the captured data | enabled
 
+
 If `CubiCapture.options` is not set, the default values will apply.
 
 ### Adding the Address
@@ -251,6 +270,7 @@ Please note that the scan may end if the SDK encounters an unrecovable error.
     │   ├── config.json
     │   ├── video.mp4
     │   ├── scan.log
+    │   ├── feedback.json
     │   └── allDepthFrames.bin
 ```
 You can easily inspect the data but do not touch the zip file. Please note that the `allDepthFrames.bin` will be present for LiDAR devices (only).
@@ -310,6 +330,7 @@ In the SDK the following codes can be received
 | `75` |	Low power mode deactivated
 | `76` |	Active processor count is X of Y
 | `77` |	Received memory warning
+| `78` | Storage: [minutes] minutes left
 | `80` |	Relocation timed out.
 | `81` |	No configuration found!
 | `82` |	No snapshot for relocation. Cannot relocate.
@@ -368,6 +389,9 @@ You can change the used images used in `CCCapture`. You can change the images by
 `cc_broken_scan` | Used in warning view to indicate that tracking has been lost
 `cc_go_back` | Used in warning view to guide the user back to a previous location before starting the relocation process
 `cc_intact_scan` | Used in warning view to indicate that relocation is successful
+`cc_warning_too_close` | Used in warning view when the scanner is too close to objects
+`cc_warning_too_far` | Used in warning view when the scanner is too far from objects
+`cc_warning_too_fast` | Used in warning view when scanner is turning around too fast
 
 ### UI Elements
 
