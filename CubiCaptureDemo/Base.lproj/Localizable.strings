@@ -69,7 +69,7 @@
 /* OK for warning view button */
 "cc_warning_button_ok" = "OK";
 
-/* Displayed in the scan label if no camere permissions are given */
+/* Displayed in the scan label if no camera permissions are given */
 "cc_no_camera_permission" = "Cannot capture without access to the camera. Please check permissions.";
 
 /* Displayed on the warning view when tracking is lost */
@@ -78,7 +78,7 @@
 /* Message of the alert view when the scan has drifted due to poor device handling */
 "cc_warning_tracking_lost_angular" = "The scan was interrupted due to mishandling the device. Keep the device in scanning position at all times.";
 
-/* title in the button in trakinc lost/paused case */
+/* title in the button in traking lost/paused case */
 "cc_button_relocate" = "Relocate";
 
 /* Displayed on the warning view when tracking is interrupted */
