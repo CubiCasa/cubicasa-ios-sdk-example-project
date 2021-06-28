@@ -78,7 +78,7 @@
 /* Message of the alert view when the scan has drifted due to poor device handling */
 "cc_warning_tracking_lost_angular" = "The scan was interrupted due to mishandling the device. Keep the device in scanning position at all times.";
 
-/* title in the button in traking lost/paused case */
+/* title in the button in tracking lost/paused case */
 "cc_button_relocate" = "Relocate";
 
 /* Displayed on the warning view when tracking is interrupted */
