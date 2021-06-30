@@ -5,6 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
+         * [2.5.0](#250)
          * [2.4.2](#242)
          * [2.4.1](#241)
          * [2.3.1](#231)
@@ -18,6 +19,8 @@
          * [Adaptive Lighting](#adaptive-lighting)
          * [Azimuth](#azimuth)
          * [Speech Recognition for Room Labels](#speech-recognition-for-room-labels)
+         * [Storage Warning](#storage-warning)
+         * [Feedback Gathering](#feedback-gathering)
       * [Permissions](#permissions)
       * [Scan lifecycle](#scan-lifecycle)
          * [Setting up](#setting-up)
@@ -51,6 +54,18 @@ For your app the next step would be to upload the scan to your server and use [C
 Cubicasa SDK makes possible you to add scanning view to your app which then can use to scan a floor plan with an iOS device.
 
 ## Release Notes
+
+### 2.5.0
+- New Warning: Proximity Warning. A warning which will trigger if the user is scanning too close or too far from objects.
+- New Warning: Fast Rotation Warning. A warning which will trigger if the user turns around too fast while scanning.
+- New Warning: Display an warning if the device is running out of storage space
+- Relocation will now trigger if the user mishandles the device.
+- Fixed a retention cycle in the code which caused memory leak.
+- SDK iOS minimum version requirement was lowered to 11.0. Please note that in order to scan you need to be have iOS version 13.0 or higher.
+- Improved scan stability after relocation.
+- New scanning options `storageWarnings` & `feedbackGathering`.
+- New status codes: 78, 85, 86
+- New Image and text assests for new warnings and tracking lost condition.
 
 ### 2.4.2
 - SDK keeps depth data collection enabled during relocating, to ensure continuous delivery of depth data
@@ -115,7 +130,7 @@ end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
-    target.deployment_target = '13.0'
+#    target.deployment_target = '13.0'
     target.build_configurations.each do |config|
         config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
     end
@@ -124,6 +139,7 @@ end
 ```
 Replace `YourTarget` with the name of your build target. Run `pod install`.
 
+Note: previous versions of the SDK required the line `target.deployment_target = '13.0'` to force the deployment target of the SDK's dependencies to iOS 13.0. Starting at version 2.5.0, the SDK supports deployment targets down to iOS 11.0 and this line should no longer be used in the Podfile.
 
 ## Device Orientation
 
@@ -150,6 +166,12 @@ CubiCapture SDK captures the heading relative to the "true north" and adds this 
 ### Speech Recognition for Room Labels
 
 CubiCapture SDK utilizes speech recognition. During a scan your users can use the speech recognition to add room labels. If you don't want to use speech recognition you can omit `.speech_recognition` from the scanning options.
+
+### Storage Warning
+Cubicapture SDK notifies the user if the device is running out of storage space. This feature is toggled with the `.storageWarnings` scanning option.
+
+### Feedback Gathering
+Cubicapture SDK keeps a separate log on warnings during the scan. This will be used in the future for improving the scanning technique. This feature is toggled with the `.feedbackGathering` scanning option.
 
 ## Permissions
 
@@ -195,7 +217,8 @@ Remember to add CCCaptures delegate to controlling viewcontrollor to get message
 CubiCasa capture session features can be configured by assigning an option set:
 
 ```swift
-cubiCapture.options = [.speechRecognition, .meshVisualisation, .backgroundResume, .azimuth]
+ccCapture.options = [.speechRecognition, .meshVisualisation, .backgroundResume,
+                     .azimuth, .storageWarnings, .feedbackGathering]
 present(cubiCapture, animated: true, completion: nil)
 ```
 
@@ -207,6 +230,9 @@ Option name          | Description | Default
 `.meshVisualisation` | Reconstruct the scene as a 3D mesh and visualise it (only on LiDAR-equiped devices) | enabled
 `.backgroundResume`	| The SDK will attempt to resume scanning if the app was backgrounded | enabled
 `.azimuth` | The SDK will write the camera orientation (azimuth) in the captured data | enabled
+`.storageWarnings` | The SDK will inform the app about remaining file system storage and warn the user when less than 10 minutes remain | enabled
+`.feedbackGathering` | The SDK will keep a separate log on warnings during the scan | enabled
+
 
 If `CubiCapture.options` is not set, the default values will apply.
 
@@ -251,9 +277,10 @@ Please note that the scan may end if the SDK encounters an unrecovable error.
     │   ├── config.json
     │   ├── video.mp4
     │   ├── scan.log
+    │   ├── feedback.json
     │   └── allDepthFrames.bin
 ```
-You can easily inspect the data but do not touch the zip file. Please note that the `allDepthFrames.bin` will be present for LiDAR devices (only).
+You can easily inspect the data but do not touch the zip file. Please note that the `allDepthFrames.bin` will be present for LiDAR devices (only). `feedback.json` will only be present if the `.feedbackGathering` option is enabled.
 
 ### Errors
 
@@ -310,10 +337,13 @@ In the SDK the following codes can be received
 | `75` |	Low power mode deactivated
 | `76` |	Active processor count is X of Y
 | `77` |	Received memory warning
+| `78` | Storage: [minutes] minutes left
 | `80` |	Relocation timed out.
 | `81` |	No configuration found!
 | `82` |	No snapshot for relocation. Cannot relocate.
 | `83` |	Scanning aborted due to App going to the background
+| `85` | Scanning too close
+| `86` | Scanning too far
 | `90` |	Failed to start writing scan log
 
 ## Customization and Localization
@@ -368,6 +398,9 @@ You can change the used images used in `CCCapture`. You can change the images by
 `cc_broken_scan` | Used in warning view to indicate that tracking has been lost
 `cc_go_back` | Used in warning view to guide the user back to a previous location before starting the relocation process
 `cc_intact_scan` | Used in warning view to indicate that relocation is successful
+`cc_warning_too_close` | Used in warning view when the scanner is too close to objects
+`cc_warning_too_far` | Used in warning view when the scanner is too far from objects
+`cc_warning_too_fast` | Used in warning view when scanner is turning around too fast
 
 ### UI Elements
 

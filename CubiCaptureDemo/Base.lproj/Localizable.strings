@@ -60,14 +60,11 @@
 /* Displayed on the guide screen before the device is turned to landscape */
 "cc_guide_turn_device_info" = "Turn your device to landscape orientation";
 
+/* Displayed on title in the warning view on too much horizontal scanning */
+"cc_warning_tilt_down_title" = "Tilt the device down";
+
 /* Displayed info text for too much horizontal scanning */
-"cc_warning_tilt_down" = "Focus on the floor about\n 8ft / 2.5m in front of you!";
-
-/* Title of the alert view when the scan has drifted */
-"cc_drift_title" = "Scan drifted";
-
-/* Message of the alert view when the scan has drifted */
-"cc_drift_message" = "There was an error in your scan and tracking was lost. Please return to a previously scanned room to resume scanning.";
+"cc_warning_tilt_down_info" = "Focus on the floor about\n 8ft / 2.5m in front of you!";
 
 /* OK for warning view button */
 "cc_warning_button_ok" = "OK";
@@ -76,13 +73,16 @@
 "cc_no_camera_permission" = "Cannot capture without access to the camera. Please check permissions.";
 
 /* Displayed on the warning view when tracking is lost */
-"cc_warning_tracking_lost" = "We lost tracking of your position";
+"cc_warning_tracking_lost_movement" = "We lost tracking of your position";
+
+/* Message of the alert view when the scan has drifted due to poor device handling */
+"cc_warning_tracking_lost_angular" = "The scan was interrupted due to mishandling the device. Keep the device in scanning position at all times.";
 
 /* title in the button in tracking lost/paused case */
 "cc_button_relocate" = "Relocate";
 
-/* Displayed on the warning view when tracking is paused */
-"cc_warning_tracking_paused" = "The scan was paused. We need to relocate\nbefore you can continue scanning.";
+/* Displayed on the warning view when tracking is interrupted */
+"cc_warning_tracking_paused" = "The scan was interrupted. We need to relocate\nbefore you can continue scanning.";
 
 /* Displayed on the warning view when scan is relocating */
 "cc_warning_relocating" = "Relocating...";
@@ -92,3 +92,28 @@
 
 /* Displayed on the warning view when guiding the user to go back to visit previously scanned space */
 "cc_warning_visit_previous" = "Go back and rescan the previous space";
+
+/* Displayed in the warning view title in fast rotation warning */
+"cc_warning_fast_rotation_title" = "You are moving too fast";
+
+/* Displayed in the warning view info text in fast rotation warning */
+"cc_warning_fast_rotation_info" = "Avoid fast rotations for best scanning results";
+
+/* Displayed on the warning view totle to alert the user that storage is running low */
+"cc_warning_low_storage_title" = "Low on storage";
+
+/* Displayed on the warning view info to alert the user that storage is running low */
+"cc_warning_low_storage_info" = "Only %d minutes scanning time left";
+
+/* Displayed on the warning view title when user is scanning too close to objects */
+"cc_warning_too_close_title" = "You are too close";
+
+/* Displayed on the warning view ingo text when user is scanning too close to objects */
+"cc_warning_too_close_info" = "Keep more distance to the objects you are scanning";
+
+/* Displayed on the warning view title when user is scanning too far from objects */
+"cc_warning_too_far_title" = "You are too far";
+
+/* Displayed on the warning view ingo text when user is scanning too far from objects */
+"cc_warning_too_far_info" = "Move closer to the objects you are scanning";
+
