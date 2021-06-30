@@ -64,7 +64,7 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 - SDK iOS minimum version requirement was lowered to 11.3. Please note that in order to scan you need to be have iOS version 13.0 or higher.
 - Improved scan stability after relocation.
 - New scanning options `storageWarnings` & `feedbackGathering`.
-- New status code: 78
+- New status codes: 78, 85, 86
 - New Image and text assests for new warnings and tracking lost condition.
 
 ### 2.4.2
@@ -338,6 +338,8 @@ In the SDK the following codes can be received
 | `81` |	No configuration found!
 | `82` |	No snapshot for relocation. Cannot relocate.
 | `83` |	Scanning aborted due to App going to the background
+| `85` | Scanning too close
+| `86` | Scanning too far
 | `90` |	Failed to start writing scan log
 
 ## Customization and Localization
