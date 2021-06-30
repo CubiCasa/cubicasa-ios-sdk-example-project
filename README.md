@@ -217,7 +217,8 @@ Remember to add CCCaptures delegate to controlling viewcontrollor to get message
 CubiCasa capture session features can be configured by assigning an option set:
 
 ```swift
-cubiCapture.options = [.speechRecognition, .meshVisualisation, .backgroundResume, .azimuth]
+ccCapture.options = [.speechRecognition, .meshVisualisation, .backgroundResume,
+                     .azimuth, .storageWarnings, .feedbackGathering]
 present(cubiCapture, animated: true, completion: nil)
 ```
 
@@ -229,6 +230,8 @@ Option name          | Description | Default
 `.meshVisualisation` | Reconstruct the scene as a 3D mesh and visualise it (only on LiDAR-equiped devices) | enabled
 `.backgroundResume`	| The SDK will attempt to resume scanning if the app was backgrounded | enabled
 `.azimuth` | The SDK will write the camera orientation (azimuth) in the captured data | enabled
+`.storageWarnings` | The SDK will inform the app about remaining file system storage and warn the user when less than 10 minutes remain | enabled
+`.feedbackGathering` | The SDK will keep a separate log on warnings during the scan | enabled
 
 
 If `CubiCapture.options` is not set, the default values will apply.
