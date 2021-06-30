@@ -280,7 +280,7 @@ Please note that the scan may end if the SDK encounters an unrecovable error.
     │   ├── feedback.json
     │   └── allDepthFrames.bin
 ```
-You can easily inspect the data but do not touch the zip file. Please note that the `allDepthFrames.bin` will be present for LiDAR devices (only).
+You can easily inspect the data but do not touch the zip file. Please note that the `allDepthFrames.bin` will be present for LiDAR devices (only). `feedback.json` will only be present if the `.feedbackGathering` option is enabled.
 
 ### Errors
 
