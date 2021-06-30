@@ -61,7 +61,7 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 - New Warning: Display an warning if the device is running out of storage space
 - Relocation will now trigger if the user mishandles the device.
 - Fixed a retention cycle in the code which caused memory leak.
-- SDK iOS minimum version requirement was lowered to 11.3. Please note that in order to scan you need to be have iOS version 13.0 or higher.
+- SDK iOS minimum version requirement was lowered to 11.0. Please note that in order to scan you need to be have iOS version 13.0 or higher.
 - Improved scan stability after relocation.
 - New scanning options `storageWarnings` & `feedbackGathering`.
 - New status codes: 78, 85, 86
@@ -130,7 +130,7 @@ end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
-    target.deployment_target = '13.0'
+#    target.deployment_target = '13.0'
     target.build_configurations.each do |config|
         config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
     end
@@ -139,6 +139,7 @@ end
 ```
 Replace `YourTarget` with the name of your build target. Run `pod install`.
 
+Note: previous versions of the SDK required the line `target.deployment_target = '13.0'` to force the deployment target of the SDK's dependencies to iOS 13.0. Starting at version 2.5.0, the SDK supports deployment targets down to iOS 11.0 and this line should no longer be used in the Podfile.
 
 ## Device Orientation
 
