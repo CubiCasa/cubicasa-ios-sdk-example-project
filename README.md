@@ -55,6 +55,9 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 
 ## Release Notes
 
+### 2.5.1
+- Deprecated `feedbackGathering` scanning option.
+
 ### 2.5.0
 - New Warning: Proximity Warning. A warning which will trigger if the user is scanning too close or too far from objects.
 - New Warning: Fast Rotation Warning. A warning which will trigger if the user turns around too fast while scanning.
@@ -171,7 +174,7 @@ CubiCapture SDK utilizes speech recognition. During a scan your users can use th
 Cubicapture SDK notifies the user if the device is running out of storage space. This feature is toggled with the `.storageWarnings` scanning option.
 
 ### Feedback Gathering
-Cubicapture SDK keeps a separate log on warnings during the scan. This will be used in the future for improving the scanning technique. This feature is toggled with the `.feedbackGathering` scanning option.
+Cubicapture SDK keeps a separate log on warnings during the scan. This will be used in the future for improving the scanning technique.
 
 ## Permissions
 
