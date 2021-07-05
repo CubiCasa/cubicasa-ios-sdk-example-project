@@ -5,6 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
+         * [2.5.1](#251)
          * [2.5.0](#250)
          * [2.4.2](#242)
          * [2.4.1](#241)
@@ -57,6 +58,8 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 
 ### 2.5.1
 - Deprecated `feedbackGathering` scanning option.
+- Bugfix: video length mismatch was detected incorrectly.
+- New status code 88, sent when proximity is back to normal.
 
 ### 2.5.0
 - New Warning: Proximity Warning. A warning which will trigger if the user is scanning too close or too far from objects.
@@ -221,7 +224,7 @@ CubiCasa capture session features can be configured by assigning an option set:
 
 ```swift
 ccCapture.options = [.speechRecognition, .meshVisualisation, .backgroundResume,
-                     .azimuth, .storageWarnings, .feedbackGathering]
+                     .azimuth, .storageWarnings]
 present(cubiCapture, animated: true, completion: nil)
 ```
 
@@ -234,8 +237,6 @@ Option name          | Description | Default
 `.backgroundResume`	| The SDK will attempt to resume scanning if the app was backgrounded | enabled
 `.azimuth` | The SDK will write the camera orientation (azimuth) in the captured data | enabled
 `.storageWarnings` | The SDK will inform the app about remaining file system storage and warn the user when less than 10 minutes remain | enabled
-`.feedbackGathering` | The SDK will keep a separate log on warnings during the scan | enabled
-
 
 If `CubiCapture.options` is not set, the default values will apply.
 
@@ -283,7 +284,7 @@ Please note that the scan may end if the SDK encounters an unrecovable error.
     │   ├── feedback.json
     │   └── allDepthFrames.bin
 ```
-You can easily inspect the data but do not touch the zip file. Please note that the `allDepthFrames.bin` will be present for LiDAR devices (only). `feedback.json` will only be present if the `.feedbackGathering` option is enabled.
+You can easily inspect the data but do not touch the zip file. Please note that the `allDepthFrames.bin` will be present for LiDAR devices (only).
 
 ### Errors
 
@@ -347,6 +348,7 @@ In the SDK the following codes can be received
 | `83` |	Scanning aborted due to App going to the background
 | `85` | Scanning too close
 | `86` | Scanning too far
+| `88` | Scanning distance back in acceptable range (proximity warning not shown anymore)
 | `90` |	Failed to start writing scan log
 
 ## Customization and Localization
