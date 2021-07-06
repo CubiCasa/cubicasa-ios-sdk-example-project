@@ -75,7 +75,6 @@ public struct CaptureOptions : Swift.OptionSet, Swift.CaseIterable {
   public static let backgroundResume: CubiCapture.CaptureOptions
   public static let azimuth: CubiCapture.CaptureOptions
   public static let storageWarnings: CubiCapture.CaptureOptions
-  public static let feedbackGathering: CubiCapture.CaptureOptions
   public static let allCases: [CubiCapture.CaptureOptions]
   public typealias AllCases = [CubiCapture.CaptureOptions]
   public typealias ArrayLiteralElement = CubiCapture.CaptureOptions

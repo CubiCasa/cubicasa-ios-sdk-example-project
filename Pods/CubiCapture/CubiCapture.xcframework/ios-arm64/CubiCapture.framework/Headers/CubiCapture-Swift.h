@@ -230,6 +230,7 @@ SWIFT_CLASS("_TtC11CubiCapture9CCCapture") SWIFT_AVAILABILITY(ios,introduced=13.
 
 
 
+
 @class ARSession;
 @class ARFrame;
 @class ARCamera;

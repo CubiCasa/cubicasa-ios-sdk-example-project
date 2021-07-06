@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/CubiCapture-Swift.h</key>
 		<data>
-		iGEHjLRSDm37V9omSKZ4vN8ZypE=
+		nNBAggvYi51Jwt+I6hc5bM5rS0c=
 		</data>
 		<key>Headers/CubiCapture.h</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		SFMXdAi1e2KGISpXpZQ4HKs3t1s=
+		YHsNjFJ4FvhMi7xSm++ON2eATuE=
 		</data>
 		<key>Localizable.strings</key>
 		<data>
@@ -38,11 +38,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		HhieAFjXuMfjcVk23birtwh2J9g=
+		IHpApsXX9nGHBRyp1fR35d3np1Y=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		vEU3Mj7oSrOfAY91pBIPXR1BCtQ=
+		RtdGDPO+UEdmOphQGMkoz6SNkGg=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		HhieAFjXuMfjcVk23birtwh2J9g=
+		IHpApsXX9nGHBRyp1fR35d3np1Y=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		vEU3Mj7oSrOfAY91pBIPXR1BCtQ=
+		RtdGDPO+UEdmOphQGMkoz6SNkGg=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -62,11 +62,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		kXL2KntExxXW86SxYxc/EgFFcvg=
+		dob3o50Fawv8pZuTuYB7gPZ6yAU=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		DRmvXDvxbOVhxthb+o40/TZAyHs=
+		PBaMnEEdK2D5nEg7u3hTwbJDnp4=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -74,11 +74,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		kXL2KntExxXW86SxYxc/EgFFcvg=
+		dob3o50Fawv8pZuTuYB7gPZ6yAU=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		DRmvXDvxbOVhxthb+o40/TZAyHs=
+		PBaMnEEdK2D5nEg7u3hTwbJDnp4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -112,7 +112,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			x7n7ChfkWcyynIURkWtpxb+yHFAWzHCbZ2iUAVht1XU=
+			ODX4z1pk78noEtzpuKg0Iv2FdEDBT3ppupe+KQ46o2k=
 			</data>
 		</dict>
 		<key>Headers/CubiCapture.h</key>
@@ -140,14 +140,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WN6/OQB8fIkzkUEDomBFRevAoiwS4EliiF4r31Fq5bg=
+			hrlx2mCVnau/yTN9vSz/9T/ZfYMr08hGEnNoZaPkeH4=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			25PD9sq8tQrDZeHhyh8UNRWsxsx6uYAkp+cHZLWTdTI=
+			WXjuvhaHF6YOy3V2SnbHhhxjWyuZi6+90SPI4gnz9MQ=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftdoc</key>
@@ -161,14 +161,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WN6/OQB8fIkzkUEDomBFRevAoiwS4EliiF4r31Fq5bg=
+			hrlx2mCVnau/yTN9vSz/9T/ZfYMr08hGEnNoZaPkeH4=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			25PD9sq8tQrDZeHhyh8UNRWsxsx6uYAkp+cHZLWTdTI=
+			WXjuvhaHF6YOy3V2SnbHhhxjWyuZi6+90SPI4gnz9MQ=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -182,14 +182,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JJ0OuBmbn7MAbkAJI0LSOpSJMz7q+wLHt4l3oppE250=
+			BCp6yPb+ZgHF+O7UmD+LnUV1O/0MEwjnx3o5zp//NkE=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6+1qNlUofVE2JyoLnRp3DzGSXb80cGlnbpKPelmq8Nc=
+			JSMH+btgoR2iNkP+vyOS7RYeyauVAe4QKVIjSXJ2MGk=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftdoc</key>
@@ -203,14 +203,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JJ0OuBmbn7MAbkAJI0LSOpSJMz7q+wLHt4l3oppE250=
+			BCp6yPb+ZgHF+O7UmD+LnUV1O/0MEwjnx3o5zp//NkE=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6+1qNlUofVE2JyoLnRp3DzGSXb80cGlnbpKPelmq8Nc=
+			JSMH+btgoR2iNkP+vyOS7RYeyauVAe4QKVIjSXJ2MGk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

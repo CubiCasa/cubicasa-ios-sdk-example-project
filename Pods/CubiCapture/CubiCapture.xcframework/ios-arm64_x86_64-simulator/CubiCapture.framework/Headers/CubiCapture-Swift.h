@@ -232,6 +232,7 @@ SWIFT_CLASS("_TtC11CubiCapture9CCCapture") SWIFT_AVAILABILITY(ios,introduced=13.
 
 
 
+
 @class ARSession;
 @class ARFrame;
 @class ARCamera;
@@ -494,6 +495,7 @@ SWIFT_CLASS("_TtC11CubiCapture9CCCapture") SWIFT_AVAILABILITY(ios,introduced=13.
 - (void)viewWillDisappear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
+
 
 
 

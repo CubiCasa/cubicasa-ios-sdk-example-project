@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         let ccCapture = CCCapture()
         ccCapture.delegateCapture = self
         ccCapture.options = [.speechRecognition, .meshVisualisation, .backgroundResume,
-                             .azimuth, .storageWarnings, .feedbackGathering]
+                             .azimuth, .storageWarnings]
         present(ccCapture, animated: true, completion: nil)
     }
 
