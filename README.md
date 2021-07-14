@@ -5,6 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
+         * [2.5.2](#252)
          * [2.5.1](#251)
          * [2.5.0](#250)
          * [2.4.2](#242)
@@ -56,6 +57,9 @@ Cubicasa SDK makes possible you to add scanning view to your app which then can 
 
 ## Release Notes
 
+### 2.5.2
+- Bugfix: handling of CCCapture `fileName` when it contains a path instead of a single name.
+ 
 ### 2.5.1
 - Deprecated `feedbackGathering` scanning option.
 - Bugfix: video length mismatch was detected incorrectly.
