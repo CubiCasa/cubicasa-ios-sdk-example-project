@@ -1,5 +1,5 @@
 PODS:
-  - CubiCapture (2.5.1):
+  - CubiCapture (2.5.2):
     - Zip (~> 2.1)
     - ZIPFoundation (~> 0.9)
   - Zip (2.1.1)
@@ -16,7 +16,7 @@ SPEC REPOS:
     - ZIPFoundation
 
 SPEC CHECKSUMS:
-  CubiCapture: 3730756e920f4c55af02e3f4d06207a10f828265
+  CubiCapture: 2e21e55f98f8da041252f79cffeee03690188596
   Zip: 414f59909701fda9a84ab774ebe0f5449b1082cc
   ZIPFoundation: e27423c004a5a1410c15933407747374e7c6cb6e
 
