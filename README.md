@@ -5,7 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
-         * [2.6.0](#260)
+         * [2.6.2](#260)
          * [2.5.2](#252)
          * [2.5.1](#251)
          * [2.5.0](#250)
@@ -18,6 +18,7 @@
       * [Device Orientation](#device-orientation)
       * [CubiCapture Features](#cubicapture-features)
          * [Relocating After Loss of Tracking](#relocating-after-loss-of-tracking)
+         * [Scan Playback](#scan-playback)
          * [Scene Reconstruction](#scene-reconstruction)
          * [Adaptive Lighting](#adaptive-lighting)
          * [Azimuth](#azimuth)
@@ -32,9 +33,9 @@
          * [Adding the Address](#adding-the-address)
          * [During the Scan](#during-the-scan)
          * [Ending the Scan](#ending-the-scan)
-            * [After scan the data is stored to the passed filename](#after-scan-the-data-is-stored-to-the-passed-filename)
          * [Errors](#errors)
          * [The event codes](#the-event-codes)
+         * [Scan Playback](#scan-playback)
       * [Customization and Localization](#customization-and-localization)
          * [Localization](#localization)
          * [Colors](#colors)
@@ -53,11 +54,11 @@ For your app the next step would be to upload the scan to your server and use [C
 
 # Cubicasa SDK
 
-The Cubicasa SDK lets you add scanning to your app so you can start creating a floor plan with an iOS device.
+The Cubicasa SDK lets you add scanning to your app so you can start creating a floor plan with an iOS device. It saves the scan files into a zip file, which your app can upload to the CubiCasa back-end for processing.
 
 ## Release Notes
 
-### 2.6.0
+### 2.6.2
 - Zipping is done in the background, with a progress percentage on screen
 - Proximity warnings for non-LiDAR devices
 - Proper use of landscape mode for scanning (app needs to support landscape-right!)
@@ -164,7 +165,7 @@ Note: previous versions of the SDK required the line `target.deployment_target =
 
 ## Device Orientation
 
-Starting from version 2.6.0, the CubiCasa SDK uses the landscape-right orientation (instead of locking the orientation to portrait). This means that your app needs to support (at least) landscape-right orientation.
+Starting from version 2.6, the CubiCasa SDK uses the landscape-right orientation (instead of locking the orientation to portrait). This means that your app needs to support (at least) landscape-right orientation.
 
 <s>CubiCapture view only works when the view is locked to portrait orientation (even though it looks like a landscape view) If our app supports both portrait and landscape orientation make sure disable orientation change when you are displaying CubiCapture view.</s>
 
@@ -322,13 +323,16 @@ In the SDK the following codes can be received
 | `1` | Received when the record button is pressed for the first time and scan is started. |
 | `2`| Received when the record button is pressed for the second time and scan has enough data. The saving of the scan files begins after this. |
 | `3` | Finished recording - Not enough data. |
+| `5` | Finished recording - CubiCapture is finished. You can now finish your scanning controller. |
 | `7` | Received when the zipping of the scan files is finished. The description will contain a path to the zip file. You also get the path from `zippedDataLocation(_ controller: CCCapture, location: URL)` delegate method. |
 | `8` | ARKit tracking failure Insuffient light. Received when ARKit motion tracking is lost due to poor lighting conditions. |
 | `9` | ARKit tracking failure excessive motion. Reveived when the device is moving excessively |
 | `13` | Scan drifted! Position changed by over 10 meters during 2 second interval. The scan files **will be deleted** and CubiCapture will be finished. |
 | `15` | Error, removing scan. Received when the scan is not successful. The scan files are deleted and CubiCapture will be finished. |
 | `17` | Received when the device is in reverse-landscape orientation and if the device has been in landscape orientation at least once. |
-| `21` | Received when the pitch of the camera has been too low for a certain amount of time. |
+| `18` | Playing error sound. |
+| `21` | Received when the pitch of the camera has been too low for a certain amount of time (Scanning floor). |
+| `22` | Scanning ceiling. |
 | `23` | Not scanning ceiling or floor. Received when the pitch of the camera is valid again. |
 | `24` | Not wrong orientation anymore.	|
 | `26` | Not scanning ceiling.		|
@@ -355,24 +359,24 @@ In the SDK the following codes can be received
 | `57` | Failed to start write depth data to file |
 | `58` | Could not find filepath. |
 | `59` | Depth map or AVasset writer could not take frames in. Received when there was an error in writing the data to disk. |
-| `70` |	Thermal state nominal
-| `71` |	Thermal state fair
-| `72` |	Thermal state serious
-| `73` |	Thermal state critical
-| `74` |	Low power mode activated
-| `75` |	Low power mode deactivated
-| `76` |	Active processor count is X of Y
-| `77` |	Received memory warning
+| `70` | Thermal state nominal
+| `71` | Thermal state fair
+| `72` | Thermal state serious
+| `73` | Thermal state critical
+| `74` | Low power mode activated
+| `75` | Low power mode deactivated
+| `76` | Active processor count is X of Y
+| `77` | Received memory warning
 | `78` | Storage: [minutes] minutes left
-| `80` |	Relocation timed out.
-| `81` |	No configuration found!
-| `82` |	No snapshot for relocation. Cannot relocate.
-| `83` |	Scanning aborted due to App going to the background
+| `80` | Relocation timed out.
+| `81` | No configuration found!
+| `82` | No snapshot for relocation. Cannot relocate.
+| `83` | Scanning aborted due to App going to the background
 | `85` | Scanning too close
 | `86` | Scanning too far
 | `87` | Too fast rotations. Showing fast movement warning.
 | `88` | Scanning distance back in acceptable range (proximity warning not shown anymore)
-| `90` |	Failed to start writing scan log
+| `90` | Failed to start writing scan log
 
 ### Scan Playback
 
@@ -389,6 +393,16 @@ let playbackVC = try CCScanPlaybackViewController(projectLocation: location)
 // Now present playbackVC or push it onto a navigation controller
 // See sample code for details
 ```
+
+The scan playback view has five buttons controlling playback:
+
+ - Jump to previous warning
+ - Step back one frame
+ - Play/pause
+ - Step forward one frame
+ - Jump to next warning
+
+The timeline scrubber can also be used to seek through the scan.
 
 ## Customization and Localization
 
