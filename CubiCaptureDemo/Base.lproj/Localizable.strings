@@ -9,111 +9,150 @@
 /* Displayed next to a label to scan button before the scan is started */
 "cc_record_hint_text" = "1. Start scanning";
 
-/* Displayed when the user is moving to fast while scanning */
+/* Displayed when the user is done scanning */
 "cc_scan_ended" = "Finalizing scan. Please do not exit the application.";
+
+/* Displayed while the app is processing (zipping) the scan */
+"cc_scan_processing" = "Processing scan: %d%%. Please do not exit the application.";
 
 /* Displayed next to the speech button label before the scan is started */
 "cc_speech_hint_initial_text" = "2. Say the room name";
 
-/* Displayed ne the user is moving to fast while scanning */
+/* Displayed when speech recognition is active */
 "cc_speech_hint_text" = "Say the room name";
 
-/* Displayed when the user is moving to fast while scanning */
+/* Displayed when there are no speech recognition results */
 "cc_speech_no_results" = "No results";
 
-/* Displayed if the scanned environment is too dark or lacking features */
-"cc_warning_text_dark" = "Please move back few steps, there is too dark";
+/* Displayed if the scanned environment does not contain enough features to track properly.
+   This could be because of darkness but since we started using the torch that is rare. */
+"cc_warning_insufficient_features" = "We have trouble tracking your position\nbecause there are not enough visual features here";
 
 /* Displayed when the ARKit is initializing. Guides user to move the device */
-"cc_warning_text_initializing" = "Move your device to start tracking";
+"cc_warning_text_initializing" = "Move your device so we can\nbegin tracking your position";
 
-/* Displayed if the scan is lost due to an unrecovable error */
-"cc_warning_text_lost" = "We are sorry but your tracking was lost";
+/* Displayed if the scan is aborted due to an unrecoverable loss of tracking */
+"cc_warning_text_lost" = "We have lost track of your position,\nscanning cannot continue";
 
 /* Displayed if the user is moving to fast while scanning */
-"cc_warning_text_movement" = "You are moving too fast";
+"cc_warning_text_movement" = "Slow down, you are moving too fast";
 
-/* Dispalyed title for the sideways warning */
+/* Displayed title for the sideways warning */
 "cc_warning_sideways_title" = "Do not walk sideways";
-
 /* Displayed info text for sideways left warning */
-"cc_warning_sideways_left_info" = "Turn left and point the camera forward.\nWalk parallel to the wall.";
-
+"cc_warning_sideways_left_info" = "Turn left and point the camera in your walking direction\nWalk along the wall";
 /* Displayed info text for sideways right warning */
-"cc_warning_sideways_right_info" = "Turn right and point the camera forward.\nWalk parallel to the wall.";
+"cc_warning_sideways_right_info" = "Turn right and point the camera in your walking direction\nWalk along the wall";
 
 /* Displayed info text for the rotate warning*/
-"cc_warning_rotate_info" = "Turn your device 180° to the left.\nMake sure the record button is on the right.";
+"cc_warning_rotate_info" = "Rotate your device 180°\nMake sure the record button is on the right";
 
 /* Displayed title for ceiling scanning warnign */
 "cc_warning_ceiling_title" = "Do not scan ceilings";
-
 /* Displayed info text for ceiling scanning warning */
-"cc_warning_ceiling_info" = "The app can lose tracking if ceilings are scanned.";
+"cc_warning_ceiling_info" = "We can lose track of your position\nif ceilings are scanned";
 
 /* Displayed title for floor scanning warning */
-"cc_warning_floor_title" = "Lift your phone up a bit";
-
+"cc_warning_floor_title" = "Tilt the device back a bit";
 /* Displayed info text for floor scaning warning */
-"cc_warning_floor_info" = "Point the camera approximately 8ft / 2.5m in front of you.\nKeep at least 3ft / 1m distance from all objects";
+"cc_warning_floor_info" = "Point the camera approximately 8ft / 2.5m in front of you\nKeep at least 3ft / 1m distance from all objects";
 
 /* Displayed on the guide screen before the device is turned to landscape */
-"cc_guide_turn_device_info" = "Turn your device to landscape orientation";
+"cc_guide_turn_device_info" = "Turn your device left to landscape orientation";
 
 /* Displayed on title in the warning view on too much horizontal scanning */
-"cc_warning_tilt_down_title" = "Tilt the device down";
-
+"cc_warning_tilt_down_title" = "Tilt the device forward a bit";
 /* Displayed info text for too much horizontal scanning */
-"cc_warning_tilt_down_info" = "Focus on the floor about\n 8ft / 2.5m in front of you!";
+"cc_warning_tilt_down_info" = "Focus on the floor about 8ft / 2.5m in front of you";
 
 /* OK for warning view button */
 "cc_warning_button_ok" = "OK";
 
 /* Displayed in the scan label if no camera permissions are given */
-"cc_no_camera_permission" = "Cannot capture without access to the camera. Please check permissions.";
+"cc_no_camera_permission" = "Cannot scan without access to the camera\nPlease check permissions";
 
 /* Displayed on the warning view when tracking is lost */
-"cc_warning_tracking_lost_movement" = "We lost tracking of your position";
+"cc_warning_tracking_lost_movement" = "We lost track of your position";
 
 /* Message of the alert view when the scan has drifted due to poor device handling */
-"cc_warning_tracking_lost_angular" = "The scan was interrupted due to mishandling the device. Keep the device in scanning position at all times.";
+"cc_warning_tracking_lost_angular" = "The scan was interrupted due to mishandling the device\nKeep the device in scanning position at all times";
 
-/* title in the button in tracking lost/paused case */
+/* Title of the button in tracking lost/paused case. Pressing it starts relocating. */
 "cc_button_relocate" = "Relocate";
 
 /* Displayed on the warning view when tracking is interrupted */
-"cc_warning_tracking_paused" = "The scan was interrupted. We need to relocate\nbefore you can continue scanning.";
+"cc_warning_tracking_paused" = "The scan was interrupted\nWe need to relocate before you can continue scanning";
 
 /* Displayed on the warning view when scan is relocating */
-"cc_warning_relocating" = "Relocating...";
+"cc_warning_relocating" = "Relocating...\nPlease scan a previously scanned area";
 
 /* Displayed on the warning view when scan is relocated */
-"cc_warning_relocated" = "Relocated!\nYou can now continue with your scan normally.";
+"cc_warning_relocated" = "We have relocated!\nPlease continue your scan";
 
 /* Displayed on the warning view when guiding the user to go back to visit previously scanned space */
 "cc_warning_visit_previous" = "Go back and rescan the previous space";
 
 /* Displayed in the warning view title in fast rotation warning */
-"cc_warning_fast_rotation_title" = "You are moving too fast";
-
+"cc_warning_fast_rotation_title" = "You are turning too fast";
 /* Displayed in the warning view info text in fast rotation warning */
-"cc_warning_fast_rotation_info" = "Avoid fast rotations for best scanning results";
+"cc_warning_fast_rotation_info" = "Avoid fast turns for best scanning results";
 
 /* Displayed on the warning view totle to alert the user that storage is running low */
 "cc_warning_low_storage_title" = "Low on storage";
-
 /* Displayed on the warning view info to alert the user that storage is running low */
 "cc_warning_low_storage_info" = "Only %d minutes scanning time left";
 
 /* Displayed on the warning view title when user is scanning too close to objects */
 "cc_warning_too_close_title" = "You are too close";
-
-/* Displayed on the warning view ingo text when user is scanning too close to objects */
-"cc_warning_too_close_info" = "Keep more distance to the objects you are scanning";
+/* Displayed on the warning view info text when user is scanning too close to objects */
+"cc_warning_too_close_info" = "Keep more distance from the objects you are scanning";
 
 /* Displayed on the warning view title when user is scanning too far from objects */
-"cc_warning_too_far_title" = "You are too far";
-
-/* Displayed on the warning view ingo text when user is scanning too far from objects */
+"cc_warning_too_far_title" = "You are too far away";
+/* Displayed on the warning view info text when user is scanning too far from objects */
 "cc_warning_too_far_info" = "Move closer to the objects you are scanning";
 
+/* Feedback summaries displayed in the playback view */
+"cc_feedback_trackinglost_movement_summary" = "Tracking lost, moving too fast";
+
+"cc_feedback_trackinglost_rotation_summary" = "Tracking lost, turning too fast";
+
+"cc_feedback_fast_movement_summary" = "Moving too fast";
+
+"cc_feedback_insufficient_features_summary" = "Not enough features for tracking";
+
+"cc_feedback_sideways_movement_summary" = "Walking sideways";
+
+"cc_feedback_insufficient_light_summary" = "Torch on";
+
+"cc_feedback_scanning_floor_summary" = "Scanning floor";
+
+"cc_feedback_scanning_ceiling_summary" = "Scanning ceiling";
+
+"cc_feedback_wrong_rotation_summary" = "Wrong device orientation";
+
+"cc_feedback_horizontal_scanning_summary" = "Scanning horizontally";
+
+"cc_feedback_fast_rotation_summary" = "Turning too fast";
+
+"cc_feedback_proximity_tooclose_summary" = "Too close";
+
+"cc_feedback_proximity_toofar_summary" = "Too far";
+
+/* Format string for the frame info. Arguments are frame number, total frame count and timestamp */
+"cc_playback_frame_info_format" = "frame: %d/%d time: %.2fs";
+
+/* End scan confirmation dialog */
+"cc_endscan_title" = "End scan?";
+"cc_endscan_message" = "Are you sure you want to end this scan?";
+"cc_yes" = "Yes";
+"cc_no" = "No";
+
+/* Alert shown when used on an unsupported device */
+"cc_unsupported_title" = "Not supported";
+"cc_unsupported_message" = "This device does not support scanning";
+"cc_unsupported_ok" = "Ok";
+
+/* Shown on the warning view when the device experiences thermal throttling */
+"cc_warning_throttling_title" = "Your device is getting hot";
+"cc_warning_throttling_info" = "You can continue scanning but go slowly";
