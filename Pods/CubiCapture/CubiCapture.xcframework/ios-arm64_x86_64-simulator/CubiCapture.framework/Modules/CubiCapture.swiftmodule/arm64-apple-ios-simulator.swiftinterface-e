@@ -1,0 +1,137 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5 effective-4.2 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
+// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name CubiCapture
+import ARKit
+import AVFoundation
+import CoreGraphics
+import CoreLocation
+import CoreMotion
+@_exported import CubiCapture
+import Foundation
+import SceneKit
+import Speech
+import Swift
+import UIKit
+import VideoToolbox
+import ZIPFoundation
+import Zip
+import _Concurrency
+@available(iOS 13.4, *)
+extension CubiCapture.CCCapture : ARKit.ARSCNViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func renderer(_ renderer: SceneKit.SCNSceneRenderer, nodeFor anchor: ARKit.ARAnchor) -> SceneKit.SCNNode?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func renderer(_ renderer: SceneKit.SCNSceneRenderer, didUpdate node: SceneKit.SCNNode, for anchor: ARKit.ARAnchor)
+}
+extension Zip.ZipError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+@available(iOS 13.4, *)
+extension CubiCapture.CaptureOptions : Swift.Encodable {
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers @available(iOS 13.4, *)
+public class ZipUtilities {
+  public static func validateZip(_ zipUrl: Foundation.URL) -> Swift.Error?
+  public static func reZip(_ zipUrl: Foundation.URL, progressHandler: ((Swift.Double) -> Swift.Void)?, completionHandler: @escaping (Swift.Result<Foundation.URL, CubiCapture.ZippingError>) -> Swift.Void)
+  @objc deinit
+}
+@available(iOS 13.4, *)
+extension CubiCapture.CCCapture : ARKit.ARSessionDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func session(_ session: ARKit.ARSession, didUpdate frame: ARKit.ARFrame)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func session(_ session: ARKit.ARSession, cameraDidChangeTrackingState camera: ARKit.ARCamera)
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
+  @_Concurrency.MainActor(unsafe) public static var isLowEndDevice: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public static let cornerRadius: CoreGraphics.CGFloat
+}
+@available(iOS 13.4, *)
+public enum ZippingError : Swift.Error {
+  case archivingFailed(message: Swift.String)
+  case invalidEOCDR
+  case noFilesToZip
+  case fileNotOnDisk(fileName: Swift.String)
+  case sizeUnknown(fileName: Swift.String)
+  case wrongSize(fileName: Swift.String)
+  case numberOfFilesMismatched(inZip: Swift.Int, onDisk: Swift.Int)
+  case unknown
+}
+@available(iOS 13.4, *)
+extension CubiCapture.ZippingError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @available(iOS 13.4, *)
+@_Concurrency.MainActor(unsafe) public class CCScanPlaybackViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public init(projectLocation: Foundation.URL) throws
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @objc deinit
+}
+@available(iOS 13.4, *)
+public protocol CCCaptureDelegate : AnyObject {
+  func processReadyDelegationFunc(_ controller: CubiCapture.CCCapture)
+  func dataZippedDelegationFunc(_ controller: CubiCapture.CCCapture)
+  func zippedDataLocation(_ controller: CubiCapture.CCCapture, location: Foundation.URL)
+  func scanTrackingFailed(_ controller: CubiCapture.CCCapture)
+  func messenger(_ controller: CubiCapture.CCCapture, errorCode: Swift.Int, message: Swift.String)
+}
+@available(iOS 13.4, *)
+public struct CaptureOptions : Swift.OptionSet, Swift.CaseIterable {
+  public init(rawValue: Swift.Int)
+  public let rawValue: Swift.Int
+  public static let speechRecognition: CubiCapture.CaptureOptions
+  public static let meshVisualisation: CubiCapture.CaptureOptions
+  public static let backgroundResume: CubiCapture.CaptureOptions
+  public static let azimuth: CubiCapture.CaptureOptions
+  public static let storageWarnings: CubiCapture.CaptureOptions
+  public static let planeVisualisation: CubiCapture.CaptureOptions
+  public static let allCases: [CubiCapture.CaptureOptions]
+  public typealias AllCases = [CubiCapture.CaptureOptions]
+  public typealias ArrayLiteralElement = CubiCapture.CaptureOptions
+  public typealias Element = CubiCapture.CaptureOptions
+  public typealias RawValue = Swift.Int
+}
+@objc @_hasMissingDesignatedInitializers @available(iOS 13.4, *)
+@_Concurrency.MainActor(unsafe) public class CCCapture : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public static var isSupportedOnDevice: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) weak public var delegateCapture: CubiCapture.CCCaptureDelegate?
+  @_Concurrency.MainActor(unsafe) public var options: CubiCapture.CaptureOptions
+  @_Concurrency.MainActor(unsafe) public var fileName: Swift.String
+  @_Concurrency.MainActor(unsafe) public var number: Swift.String
+  @_Concurrency.MainActor(unsafe) public var postCode: Swift.String
+  @_Concurrency.MainActor(unsafe) public var city: Swift.String
+  @_Concurrency.MainActor(unsafe) public var state: Swift.String
+  @_Concurrency.MainActor(unsafe) public var country: Swift.String
+  @_Concurrency.MainActor(unsafe) public var suite: Swift.String
+  @available(swift, obsoleted: 1.0, message: "CCCapture is an UIViewController instead of calling setView you should present CCCapture in your view controller.")
+  @_Concurrency.MainActor(unsafe) public func setView(sceneToController: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) public func availableScanMinutes() -> Swift.Int?
+  @objc dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var preferredScreenEdgesDeferringSystemGestures: UIKit.UIRectEdge {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var shouldAutorotate: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @available(*, deprecated, message: "It is no longed necessary to call endCaptureSession")
+  @_Concurrency.MainActor(unsafe) public func endCaptureSession()
+  @_Concurrency.MainActor(unsafe) public func removeScan()
+  @objc deinit
+}
