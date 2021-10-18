@@ -5,7 +5,8 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
-         * [2.6.2](#260)
+         * [2.7.0](#270)
+         * [2.6.2](#262)
          * [2.5.2](#252)
          * [2.5.1](#251)
          * [2.5.0](#250)
@@ -57,6 +58,10 @@ For your app the next step would be to upload the scan to your server and use [C
 The Cubicasa SDK lets you add scanning to your app so you can start creating a floor plan with an iOS device. It saves the scan files into a zip file, which your app can upload to the CubiCasa back-end for processing.
 
 ## Release Notes
+
+### 2.7.0
+- Performance optimisations: moved video frame scaling and depth data processing to the GPU
+- New iOS device names added
 
 ### 2.6.2
 - Zipping is done in the background, with a progress percentage on screen
@@ -166,8 +171,6 @@ Note: previous versions of the SDK required the line `target.deployment_target =
 ## Device Orientation
 
 Starting from version 2.6, the CubiCasa SDK uses the landscape-right orientation (instead of locking the orientation to portrait). This means that your app needs to support (at least) landscape-right orientation.
-
-<s>CubiCapture view only works when the view is locked to portrait orientation (even though it looks like a landscape view) If our app supports both portrait and landscape orientation make sure disable orientation change when you are displaying CubiCapture view.</s>
 
 ## CubiCapture Features
 
