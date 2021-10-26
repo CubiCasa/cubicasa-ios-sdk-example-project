@@ -1,4 +1,4 @@
-platform :ios, '13.0'
+platform :ios, '13.4'
 
 source 'https://cdn.cocoapods.org/'
 source 'https://github.com/CubiCasa/podspecs.git'
@@ -8,7 +8,7 @@ target 'CubiCaptureDemo' do
   use_frameworks!
 
   # Pods for CubiCaptureDemo
-  pod 'CubiCapture', '~> 2.6'
+  pod 'CubiCapture', '~> 2.7'
 end
 
 post_install do |installer|

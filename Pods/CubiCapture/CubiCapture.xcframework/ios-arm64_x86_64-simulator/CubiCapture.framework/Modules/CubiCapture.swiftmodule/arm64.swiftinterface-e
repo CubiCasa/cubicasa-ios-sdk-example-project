@@ -3,11 +3,13 @@
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name CubiCapture
 import ARKit
 import AVFoundation
+import Accelerate
 import CoreGraphics
 import CoreLocation
 import CoreMotion
 @_exported import CubiCapture
 import Foundation
+import MetalPerformanceShaders
 import SceneKit
 import Speech
 import Swift
