@@ -34,7 +34,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		61uMFJsxlWiHZxab9sIMqtTY/30=
+		5BEleMge82IroEJijENzldxOU/U=
 		</data>
 		<key>Localizable.strings</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Y/aEQRct0mxS2Umz6sLnPyCvcvY=
+		rzAhwRfEduvIsBuUklUl3RgEK1o=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		UQghoxubYxvBeeiYZxCxkWWlk8I=
+		A9nuQZc7rZbdJd+IUYLLOQXVcWA=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		Y/aEQRct0mxS2Umz6sLnPyCvcvY=
+		rzAhwRfEduvIsBuUklUl3RgEK1o=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		UQghoxubYxvBeeiYZxCxkWWlk8I=
+		A9nuQZc7rZbdJd+IUYLLOQXVcWA=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -70,11 +70,11 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		fEGmqtPfZRjnv5NaOtIfbaGnAIc=
+		KXPaVfbmaU3VnrlwqRURYQEwwH4=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		sDekpDlqGu9o39Uw/eeE/r03E6Y=
+		ZzlUGVvw9WO/5cEzpdstjzRJZy0=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -82,15 +82,19 @@
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		fEGmqtPfZRjnv5NaOtIfbaGnAIc=
+		KXPaVfbmaU3VnrlwqRURYQEwwH4=
 		</data>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		sDekpDlqGu9o39Uw/eeE/r03E6Y=
+		ZzlUGVvw9WO/5cEzpdstjzRJZy0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		14zJrVfn5G6fBbQz0srHrtlYVOs=
+		</data>
+		<key>default.metallib</key>
+		<data>
+		8FGEFPG8J+nh1wMOz/lCldsD7jk=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -162,14 +166,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Xm1voE2vZnyxBW4pzwy19gL6qTCqSe63/Or/VDE5DdY=
+			49mwpYe0pmWEpJ6YxR3e9Dn9MhDqql1IyozqWAGlF8Q=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zwk/ejukT11FJa7ujQ2OjFvXN3A0tEwMYjiJeQ/flrM=
+			+yhxNVPic/i7714eKTRZ6aU+OU7sU4AX3dLddmVNXbE=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftdoc</key>
@@ -183,14 +187,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Xm1voE2vZnyxBW4pzwy19gL6qTCqSe63/Or/VDE5DdY=
+			49mwpYe0pmWEpJ6YxR3e9Dn9MhDqql1IyozqWAGlF8Q=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zwk/ejukT11FJa7ujQ2OjFvXN3A0tEwMYjiJeQ/flrM=
+			+yhxNVPic/i7714eKTRZ6aU+OU7sU4AX3dLddmVNXbE=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -204,14 +208,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OZv5xcvexLQxQFyaBQuH4cdUWcZGOiTiXIqxNv010Sk=
+			cxff0AP2YyCICfDMX93tSUUgHw9P7uEqoKvh19Jbn08=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OuHHXzMQVGxEZjKa30PU/PjgbLVsTymL/bfEc+qr13U=
+			OSQFMic1HPmZxvqbbN6ITTm3uZ5rvqaJDxpwmoZX0xM=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftdoc</key>
@@ -225,14 +229,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OZv5xcvexLQxQFyaBQuH4cdUWcZGOiTiXIqxNv010Sk=
+			cxff0AP2YyCICfDMX93tSUUgHw9P7uEqoKvh19Jbn08=
 			</data>
 		</dict>
 		<key>Modules/CubiCapture.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OuHHXzMQVGxEZjKa30PU/PjgbLVsTymL/bfEc+qr13U=
+			OSQFMic1HPmZxvqbbN6ITTm3uZ5rvqaJDxpwmoZX0xM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -240,6 +244,13 @@
 			<key>hash2</key>
 			<data>
 			oaCOUY3b8LUuDqK7PgwEOTnCDo2thuPOHKCaV0cUGLQ=
+			</data>
+		</dict>
+		<key>default.metallib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			37C/xnvG/WpSJt06PN7yrcIS4UAPib9I0Tsyak0oZU0=
 			</data>
 		</dict>
 	</dict>

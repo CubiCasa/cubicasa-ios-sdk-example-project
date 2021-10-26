@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6016A24926E2121E009197EE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6016A24826E2121E009197EE /* README.md */; };
 		C109B0FE258000BB00424A12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C109B0FD258000BB00424A12 /* AppDelegate.swift */; };
 		C109B100258000BB00424A12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C109B0FF258000BB00424A12 /* SceneDelegate.swift */; };
 		C109B102258000BB00424A12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C109B101258000BB00424A12 /* ViewController.swift */; };
@@ -158,7 +157,6 @@
 			files = (
 				C109B10A258000BD00424A12 /* LaunchScreen.storyboard in Resources */,
 				C14B36FD2625F1F400436E2B /* Localizable.strings in Resources */,
-				6016A24926E2121E009197EE /* README.md in Resources */,
 				C109B107258000BD00424A12 /* Assets.xcassets in Resources */,
 				C109B105258000BB00424A12 /* Main.storyboard in Resources */,
 			);
@@ -300,6 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -354,6 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -384,7 +384,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = casa.cubi.CubiCaptureDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -409,7 +409,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = casa.cubi.CubiCaptureDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
