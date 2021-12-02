@@ -5,6 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
+         * [2.7.1](#271)
          * [2.7.0](#270)
          * [2.6.2](#262)
          * [2.5.2](#252)
@@ -16,6 +17,7 @@
       * [Glossary](#glossary)
       * [Installation](#installation)
          * [Cocoapods](#cocoapods)
+         * [Distribution to App Store Connect](#appstoreconnect)
       * [Device Orientation](#device-orientation)
       * [CubiCapture Features](#cubicapture-features)
          * [Relocating After Loss of Tracking](#relocating-after-loss-of-tracking)
@@ -58,6 +60,13 @@ For your app the next step would be to upload the scan to your server and use [C
 The Cubicasa SDK lets you add scanning to your app so you can start creating a floor plan with an iOS device. It saves the scan files into a zip file, which your app can upload to the CubiCasa back-end for processing.
 
 ## Release Notes
+
+### 2.7.1
+- Scanning features, data version and platform added to ARKitData.json
+- Scan log and feedback items added to ARKitData.json
+- Fixed depth confidence encoding in conversion to depth16
+- UI fixes
+- When speech recognition fails with an error, show message and stop recognizing
 
 ### 2.7.0
 - Performance optimisations: moved video frame scaling and depth data processing to the GPU
@@ -167,6 +176,16 @@ end
 Replace `YourTarget` with the name of your build target. Run `pod install`.
 
 Note: previous versions of the SDK required the line `target.deployment_target = '13.0'` to force the deployment target of the SDK's dependencies to iOS 13.0. Starting at version 2.5.0, the SDK supports deployment targets down to iOS 11.0 and this line should no longer be used in the Podfile.
+
+### Distribution to App Store Connect
+Starting from Xcode 13, Apple has included an option to automatically "Manage Version and Build Number" when distributing your app to App Store Connect. 
+![](ManageVersionAndBuildNumber.png)
+We ask you to leave this option unselected, because it turns out this not only changes the version number of your app, but also of any bundled frameworks, including the CubiCasa SDK. In order to enable us to provide customer support, we need to preserve the version number of our SDK that you have integrated in your app.
+
+If you are using fastlane to distribute your app, you can disable this option using:
+```
+build_app( scheme: "your_app_scheme", export_options:{ manageAppVersionAndBuildNumber: false })
+```
 
 ## Device Orientation
 
