@@ -1,9 +1,9 @@
-/* 
+/*
   Localizable.strings
-  CubiCaptureDemo
+  CubiCapture
 
-  Created by CubiCasa on 13.4.2021.
-  
+  Created by Rauli Puuperä on 8.3.2021.
+  Copyright © 2021 CubiCasa Office. All rights reserved.
 */
 
 /* Displayed next to a label to scan button before the scan is started */
@@ -156,3 +156,5 @@
 /* Shown on the warning view when the device experiences thermal throttling */
 "cc_warning_throttling_title" = "Your device is getting hot";
 "cc_warning_throttling_info" = "You can continue scanning but go slowly";
+
+"cc_warning_too_close_pattern" = "TOO CLOSE";

@@ -5,7 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
-         * [2.7.1](#271)
+         * [2.8.0](#280)
          * [2.7.0](#270)
          * [2.6.2](#262)
          * [2.5.2](#252)
@@ -61,7 +61,8 @@ The Cubicasa SDK lets you add scanning to your app so you can start creating a f
 
 ## Release Notes
 
-### 2.7.1
+### 2.8.0
+- New proximity warning visualisation
 - Scanning features, data version and platform added to ARKitData.json
 - Scan log and feedback items added to ARKitData.json
 - Fixed depth confidence encoding in conversion to depth16
@@ -190,6 +191,9 @@ build_app( scheme: "your_app_scheme", export_options:{ manageAppVersionAndBuildN
 ## Device Orientation
 
 Starting from version 2.6, the CubiCasa SDK uses the landscape-right orientation (instead of locking the orientation to portrait). This means that your app needs to support (at least) landscape-right orientation.
+
+### Auto-rotation on iPad OS
+From iPad OS 15.2, iPhone apps running on iPad devices are auto-rotated to landscape mode if the app requires it, without the iPad device being physically in landscape mode. This can lead to problems when starting/ending a scan using the CubiCasa SDK. Auto-rotation cannot not be disabled. The best way to deal with this, [as suggested by Apple](https://discussions.apple.com/thread/253164656), is to make your app support iPad (not just iPhone) because iPad OS 15.2 will respect the required orientation of iPad apps. See the example project for details.
 
 ## CubiCapture Features
 
@@ -432,7 +436,7 @@ The timeline scrubber can also be used to seek through the scan.
 
 The CubiCasa SDK is localizable to any language. At the moment we support only English translations but if your app has support for multiple languages you can easily also translate all texts in the SDK as well. If you want to use a different tone in the texts or something you can always define your own.
 
-The following is an excerpt from the SDK’s Localizable.strings just define your own texts with the following. See the `Localizable.strings` file in this project. By overriding the keys you can change the text so your pleasing.
+The following is an excerpt from the SDK’s Localizable.strings; just define your own texts with the following. See the `Localizable.strings` file in this project. By overriding the keys you can change the text as you please.
 
 ### Colors
 
@@ -458,7 +462,10 @@ Variable name | Description
 `cc_warning_title_text` | Color of the title in the warning view
 `cc_warning_view_background` | Background color of the warning view
 `cc_warning_relocated_background` | Background color for the warning view when relocated
-`cc_warning_relocating_background` | Background color fot the warnign view while relocating
+`cc_warning_relocating_background` | Background color for the warning view while relocating
+`cc_warning_too_close_foreground` | Foreground color for the too-close warning
+`cc_warning_too_close_background` | Background color for the too-close warning
+`cc_warning_too_close_border` | Border color for the too-close warning
 
 ### Images
 
@@ -478,8 +485,6 @@ You can change the used images used in `CCCapture`. You can change the images by
 `cc_broken_scan` | Used in warning view to indicate that tracking has been lost
 `cc_go_back` | Used in warning view to guide the user back to a previous location before starting the relocation process
 `cc_intact_scan` | Used in warning view to indicate that relocation is successful
-`cc_warning_too_close` | Used in warning view when the scanner is too close to objects
-`cc_warning_too_far` | Used in warning view when the scanner is too far from objects
 `cc_warning_too_fast` | Used in warning view when scanner is turning around too fast
 
 ### UI Elements
