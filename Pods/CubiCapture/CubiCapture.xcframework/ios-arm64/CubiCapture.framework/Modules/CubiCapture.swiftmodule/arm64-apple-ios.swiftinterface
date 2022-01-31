@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5 effective-4.2 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
-// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name CubiCapture
+// swift-compiler-version: Apple Swift version 5.5.2 effective-4.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name CubiCapture
 import ARKit
 import AVFoundation
 import Accelerate
@@ -9,6 +9,7 @@ import CoreLocation
 import CoreMotion
 @_exported import CubiCapture
 import Foundation
+import MetalKit
 import MetalPerformanceShaders
 import SceneKit
 import Speech
@@ -30,6 +31,10 @@ extension ZipError : Foundation.LocalizedError {
 }
 @available(iOS 13.4, *)
 extension CubiCapture.CaptureOptions : Swift.Encodable {
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@available(iOS 13.4, *)
+extension CubiCapture.ScanningFeatures : Swift.Encodable {
   public func encode(to encoder: Swift.Encoder) throws
 }
 @_hasMissingDesignatedInitializers @available(iOS 13.4, *)
@@ -98,6 +103,17 @@ public struct CaptureOptions : Swift.OptionSet, Swift.CaseIterable {
   public typealias Element = CubiCapture.CaptureOptions
   public typealias RawValue = Swift.Int
 }
+@available(iOS 13.4, *)
+public struct ScanningFeatures : Swift.OptionSet, Swift.CaseIterable {
+  public init(rawValue: Swift.Int)
+  public let rawValue: Swift.Int
+  public static let lidar: CubiCapture.ScanningFeatures
+  public static let allCases: [CubiCapture.ScanningFeatures]
+  public typealias AllCases = [CubiCapture.ScanningFeatures]
+  public typealias ArrayLiteralElement = CubiCapture.ScanningFeatures
+  public typealias Element = CubiCapture.ScanningFeatures
+  public typealias RawValue = Swift.Int
+}
 @objc @_hasMissingDesignatedInitializers @available(iOS 13.4, *)
 @_Concurrency.MainActor(unsafe) public class CCCapture : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) public static var isSupportedOnDevice: Swift.Bool {
@@ -105,6 +121,7 @@ public struct CaptureOptions : Swift.OptionSet, Swift.CaseIterable {
   }
   @_Concurrency.MainActor(unsafe) weak public var delegateCapture: CubiCapture.CCCaptureDelegate?
   @_Concurrency.MainActor(unsafe) public var options: CubiCapture.CaptureOptions
+  @_Concurrency.MainActor(unsafe) public var features: CubiCapture.ScanningFeatures
   @_Concurrency.MainActor(unsafe) public var fileName: Swift.String
   @_Concurrency.MainActor(unsafe) public var number: Swift.String
   @_Concurrency.MainActor(unsafe) public var postCode: Swift.String
