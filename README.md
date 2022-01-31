@@ -68,6 +68,7 @@ The Cubicasa SDK lets you add scanning to your app so you can start creating a f
 - Fixed depth confidence encoding in conversion to depth16
 - UI fixes
 - When speech recognition fails with an error, show message and stop recognizing
+- SDK iOS minimum version requirement was raised to 12.0
 
 ### 2.7.0
 - Performance optimisations: moved video frame scaling and depth data processing to the GPU
@@ -167,7 +168,6 @@ end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
-#    target.deployment_target = '13.0'
     target.build_configurations.each do |config|
         config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
     end
@@ -175,8 +175,6 @@ post_install do |installer|
 end
 ```
 Replace `YourTarget` with the name of your build target. Run `pod install`.
-
-Note: previous versions of the SDK required the line `target.deployment_target = '13.0'` to force the deployment target of the SDK's dependencies to iOS 13.0. Starting at version 2.5.0, the SDK supports deployment targets down to iOS 11.0 and this line should no longer be used in the Podfile.
 
 ### Distribution to App Store Connect
 Starting from Xcode 13, Apple has included an option to automatically "Manage Version and Build Number" when distributing your app to App Store Connect. 
@@ -193,7 +191,7 @@ build_app( scheme: "your_app_scheme", export_options:{ manageAppVersionAndBuildN
 Starting from version 2.6, the CubiCasa SDK uses the landscape-right orientation (instead of locking the orientation to portrait). This means that your app needs to support (at least) landscape-right orientation.
 
 ### Auto-rotation on iPad OS
-From iPad OS 15.2, iPhone apps running on iPad devices are auto-rotated to landscape mode if the app requires it, without the iPad device being physically in landscape mode. This can lead to problems when starting/ending a scan using the CubiCasa SDK. Auto-rotation cannot not be disabled. The best way to deal with this, [as suggested by Apple](https://discussions.apple.com/thread/253164656), is to make your app support iPad (not just iPhone) because iPad OS 15.2 will respect the required orientation of iPad apps. See the example project for details.
+From iPad OS 15.2, iPhone apps running on iPad devices are auto-rotated to landscape mode if the app requires it, without the iPad device being physically in landscape mode. This can lead to problems when starting/ending a scan using the CubiCasa SDK. Auto-rotation cannot not be disabled. The best way to deal with this, [as suggested by Apple](https://discussions.apple.com/thread/253164656), is to make your app support iPad (not just iPhone) because iPad OS 15.2 will respect the required orientation of iPad apps. See the example project's `CubiCaptureDemo` target for details.
 
 ## CubiCapture Features
 
