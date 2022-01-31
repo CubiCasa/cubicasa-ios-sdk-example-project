@@ -1,12 +1,12 @@
 PODS:
-  - CubiCapture (2.7.0):
+  - CubiCapture (2.8.0):
     - Zip (~> 2.1)
     - ZIPFoundation (~> 0.9)
   - Zip (2.1.1)
-  - ZIPFoundation (0.9.12)
+  - ZIPFoundation (0.9.13)
 
 DEPENDENCIES:
-  - CubiCapture (~> 2.7)
+  - CubiCapture (~> 2.8)
 
 SPEC REPOS:
   https://github.com/CubiCasa/podspecs.git:
@@ -16,10 +16,10 @@ SPEC REPOS:
     - ZIPFoundation
 
 SPEC CHECKSUMS:
-  CubiCapture: 1bde4d75ab2e8b5906e76e9d630a47cecafbad4b
+  CubiCapture: 55b7caf5cac1556a2830f41542a361954bbf104f
   Zip: 414f59909701fda9a84ab774ebe0f5449b1082cc
-  ZIPFoundation: e27423c004a5a1410c15933407747374e7c6cb6e
+  ZIPFoundation: ae5b4b813d216d3bf0a148773267fff14bd51d37
 
-PODFILE CHECKSUM: 33430f693705b2ab8a16ae9df8e3e321a208dc36
+PODFILE CHECKSUM: 541d1edd60bbd5b76b7e3510e7010f2168bfc3b9
 
 COCOAPODS: 1.11.2
