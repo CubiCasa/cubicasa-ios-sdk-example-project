@@ -189,7 +189,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import ARKit;
-@import SceneKit;
 @import UIKit;
 #endif
 
@@ -209,25 +208,29 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
-@class NSNumber;
 @class NSCoder;
+@class NSNumber;
 @class NSString;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC11CubiCapture9CCCapture") SWIFT_AVAILABILITY(ios,introduced=13.4)
 @interface CCCapture : UIViewController
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@property (nonatomic, readonly) UIRectEdge preferredScreenEdgesDeferringSystemGestures;
-@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)viewDidLoad;
-- (void)viewDidAppear:(BOOL)animated;
-@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
-@property (nonatomic, readonly) BOOL shouldAutorotate;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
+@property (nonatomic, readonly) UIRectEdge preferredScreenEdgesDeferringSystemGestures;
+@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
+@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
+@property (nonatomic, readonly) BOOL shouldAutorotate;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
+
+
+
+
 
 
 
@@ -244,22 +247,6 @@ SWIFT_AVAILABILITY(ios,introduced=13.4)
 - (void)session:(ARSession * _Nonnull)session didUpdateFrame:(ARFrame * _Nonnull)frame;
 - (void)session:(ARSession * _Nonnull)session cameraDidChangeTrackingState:(ARCamera * _Nonnull)camera;
 @end
-
-@protocol SCNSceneRenderer;
-@class ARAnchor;
-@class SCNNode;
-
-SWIFT_AVAILABILITY(ios,introduced=13.4)
-@interface CCCapture (SWIFT_EXTENSION(CubiCapture)) <ARSCNViewDelegate>
-///
-- (SCNNode * _Nullable)renderer:(id <SCNSceneRenderer> _Nonnull)renderer nodeForAnchor:(ARAnchor * _Nonnull)anchor SWIFT_WARN_UNUSED_RESULT;
-///
-- (void)renderer:(id <SCNSceneRenderer> _Nonnull)renderer didUpdateNode:(SCNNode * _Nonnull)node forAnchor:(ARAnchor * _Nonnull)anchor;
-@end
-
-
-
-
 
 
 SWIFT_CLASS("_TtC11CubiCapture28CCScanPlaybackViewController") SWIFT_AVAILABILITY(ios,introduced=13.4)

@@ -5,6 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
+         * [2.8.1](#281)
          * [2.8.0](#280)
          * [2.7.0](#270)
          * [2.6.2](#262)
@@ -61,6 +62,10 @@ The Cubicasa SDK lets you add scanning to your app so you can start creating a f
 
 ## Release Notes
 
+### 2.8.1
+- Abort scan if ARKit camera transform freezes (rare ARKit bug, but it ruins the scan)
+- Tracking flag in ARKitData.json only keeps track of SDK-initiated relocation (coming back from background, or drift detected), not ARKit-internal relocation
+ 
 ### 2.8.0
 - New proximity warning visualisation
 - Scanning features, data version and platform added to ARKitData.json

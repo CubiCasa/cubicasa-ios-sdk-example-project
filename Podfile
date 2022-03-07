@@ -1,6 +1,7 @@
 platform :ios, '13.4'
 
-source 'https://cdn.cocoapods.org/'
+#source 'https://cdn.cocoapods.org/'
+source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/CubiCasa/podspecs.git'
  
 target 'CubiCaptureDemo' do

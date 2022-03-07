@@ -15,27 +15,28 @@ import SceneKit
 import Speech
 import Swift
 import UIKit
-import VideoToolbox
 import ZIPFoundation
 import Zip
 import _Concurrency
 @available(iOS 13.4, *)
-extension CubiCapture.CCCapture : ARKit.ARSCNViewDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func renderer(_ renderer: SceneKit.SCNSceneRenderer, nodeFor anchor: ARKit.ARAnchor) -> SceneKit.SCNNode?
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func renderer(_ renderer: SceneKit.SCNSceneRenderer, didUpdate node: SceneKit.SCNNode, for anchor: ARKit.ARAnchor)
+public struct ScanningFeatures : Swift.OptionSet, Swift.CaseIterable {
+  public init(rawValue: Swift.Int)
+  public let rawValue: Swift.Int
+  public static let lidar: CubiCapture.ScanningFeatures
+  public static let allCases: [CubiCapture.ScanningFeatures]
+  public typealias AllCases = [CubiCapture.ScanningFeatures]
+  public typealias ArrayLiteralElement = CubiCapture.ScanningFeatures
+  public typealias Element = CubiCapture.ScanningFeatures
+  public typealias RawValue = Swift.Int
+}
+@available(iOS 13.4, *)
+extension CubiCapture.ScanningFeatures : Swift.Encodable {
+  public func encode(to encoder: Swift.Encoder) throws
 }
 extension ZipError : Foundation.LocalizedError {
   public var errorDescription: Swift.String? {
     get
   }
-}
-@available(iOS 13.4, *)
-extension CubiCapture.CaptureOptions : Swift.Encodable {
-  public func encode(to encoder: Swift.Encoder) throws
-}
-@available(iOS 13.4, *)
-extension CubiCapture.ScanningFeatures : Swift.Encodable {
-  public func encode(to encoder: Swift.Encoder) throws
 }
 @_hasMissingDesignatedInitializers @available(iOS 13.4, *)
 public class ZipUtilities {
@@ -72,21 +73,6 @@ extension CubiCapture.ZippingError : Foundation.LocalizedError {
     get
   }
 }
-@objc @_hasMissingDesignatedInitializers @available(iOS 13.4, *)
-@_Concurrency.MainActor(unsafe) public class CCScanPlaybackViewController : UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) public init(projectLocation: Foundation.URL) throws
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @objc deinit
-}
-@available(iOS 13.4, *)
-public protocol CCCaptureDelegate : AnyObject {
-  func processReadyDelegationFunc(_ controller: CubiCapture.CCCapture)
-  func dataZippedDelegationFunc(_ controller: CubiCapture.CCCapture)
-  func zippedDataLocation(_ controller: CubiCapture.CCCapture, location: Foundation.URL)
-  func scanTrackingFailed(_ controller: CubiCapture.CCCapture)
-  func messenger(_ controller: CubiCapture.CCCapture, errorCode: Swift.Int, message: Swift.String)
-}
 @available(iOS 13.4, *)
 public struct CaptureOptions : Swift.OptionSet, Swift.CaseIterable {
   public init(rawValue: Swift.Int)
@@ -104,15 +90,23 @@ public struct CaptureOptions : Swift.OptionSet, Swift.CaseIterable {
   public typealias RawValue = Swift.Int
 }
 @available(iOS 13.4, *)
-public struct ScanningFeatures : Swift.OptionSet, Swift.CaseIterable {
-  public init(rawValue: Swift.Int)
-  public let rawValue: Swift.Int
-  public static let lidar: CubiCapture.ScanningFeatures
-  public static let allCases: [CubiCapture.ScanningFeatures]
-  public typealias AllCases = [CubiCapture.ScanningFeatures]
-  public typealias ArrayLiteralElement = CubiCapture.ScanningFeatures
-  public typealias Element = CubiCapture.ScanningFeatures
-  public typealias RawValue = Swift.Int
+extension CubiCapture.CaptureOptions : Swift.Encodable {
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @available(iOS 13.4, *)
+@_Concurrency.MainActor(unsafe) public class CCScanPlaybackViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public init(projectLocation: Foundation.URL) throws
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @objc deinit
+}
+@available(iOS 13.4, *)
+public protocol CCCaptureDelegate : AnyObject {
+  func processReadyDelegationFunc(_ controller: CubiCapture.CCCapture)
+  func dataZippedDelegationFunc(_ controller: CubiCapture.CCCapture)
+  func zippedDataLocation(_ controller: CubiCapture.CCCapture, location: Foundation.URL)
+  func scanTrackingFailed(_ controller: CubiCapture.CCCapture)
+  func messenger(_ controller: CubiCapture.CCCapture, errorCode: Swift.Int, message: Swift.String)
 }
 @objc @_hasMissingDesignatedInitializers @available(iOS 13.4, *)
 @_Concurrency.MainActor(unsafe) public class CCCapture : UIKit.UIViewController {
@@ -129,28 +123,28 @@ public struct ScanningFeatures : Swift.OptionSet, Swift.CaseIterable {
   @_Concurrency.MainActor(unsafe) public var state: Swift.String
   @_Concurrency.MainActor(unsafe) public var country: Swift.String
   @_Concurrency.MainActor(unsafe) public var suite: Swift.String
-  @available(swift, obsoleted: 1.0, message: "CCCapture is an UIViewController instead of calling setView you should present CCCapture in your view controller.")
-  @_Concurrency.MainActor(unsafe) public func setView(sceneToController: UIKit.UIViewController)
-  @_Concurrency.MainActor(unsafe) public func availableScanMinutes() -> Swift.Int?
   @objc dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var preferredScreenEdgesDeferringSystemGestures: UIKit.UIRectEdge {
     @_Concurrency.MainActor(unsafe) @objc get
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
     @_Concurrency.MainActor(unsafe) @objc get
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
     @_Concurrency.MainActor(unsafe) @objc get
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var shouldAutorotate: Swift.Bool {
     @_Concurrency.MainActor(unsafe) @objc get
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func removeScan()
+  @_Concurrency.MainActor(unsafe) public func availableScanMinutes() -> Swift.Int?
+  @available(swift, obsoleted: 1.0, message: "CCCapture is an UIViewController instead of calling setView you should present CCCapture in your view controller.")
+  @_Concurrency.MainActor(unsafe) public func setView(sceneToController: UIKit.UIViewController)
   @available(*, deprecated, message: "It is no longed necessary to call endCaptureSession")
   @_Concurrency.MainActor(unsafe) public func endCaptureSession()
-  @_Concurrency.MainActor(unsafe) public func removeScan()
   @objc deinit
 }
