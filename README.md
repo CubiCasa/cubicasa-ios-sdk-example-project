@@ -355,7 +355,7 @@ In the SDK the following codes can be received
 | `5` | Finished recording - CubiCapture is finished. You can now finish your scanning controller. |
 | `7` | Received when the zipping of the scan files is finished. The description will contain a path to the zip file. You also get the path from `zippedDataLocation(_ controller: CCCapture, location: URL)` delegate method. |
 | `8` | ARKit tracking failure Insuffient light. Received when ARKit motion tracking is lost due to poor lighting conditions. |
-| `9` | ARKit tracking failure excessive motion. Reveived when the device is moving excessively |
+| `9` | ARKit tracking failure excessive motion. Received when the device is moving excessively |
 | `13` | Scan drifted! Position changed by over 10 meters during 2 second interval. The scan files **will be deleted** and CubiCapture will be finished. |
 | `15` | Error, removing scan. Received when the scan is not successful. The scan files are deleted and CubiCapture will be finished. |
 | `17` | Received when the device is in reverse-landscape orientation and if the device has been in landscape orientation at least once. |
