@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 effective-4.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
-// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name CubiCapture
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CubiCapture
 import ARKit
 import AVFoundation
 import Accelerate
@@ -18,6 +18,27 @@ import UIKit
 import ZIPFoundation
 import Zip
 import _Concurrency
+@available(iOS 13.0.0, *)
+extension UIKit.UIView {
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) open class func animate(withDuration duration: Foundation.TimeInterval, delay: Foundation.TimeInterval, options: UIKit.UIView.AnimationOptions = [], animations: @escaping () -> Swift.Void) async -> Swift.Bool
+  #endif
+
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) open class func animate(withDuration duration: Foundation.TimeInterval, animations: @escaping () -> Swift.Void) async -> Swift.Bool
+  #endif
+
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) open class func animate(withDuration duration: Foundation.TimeInterval, delay: Foundation.TimeInterval, usingSpringWithDamping dampingRatio: CoreGraphics.CGFloat, initialSpringVelocity velocity: CoreGraphics.CGFloat, options: UIKit.UIView.AnimationOptions = [], animations: @escaping () -> Swift.Void) async -> Swift.Bool
+  #endif
+
+}
 @available(iOS 13.4, *)
 public struct ScanningFeatures : Swift.OptionSet, Swift.CaseIterable {
   public init(rawValue: Swift.Int)
@@ -41,6 +62,12 @@ extension Zip.ZipError : Foundation.LocalizedError {
 @_hasMissingDesignatedInitializers @available(iOS 13.4, *)
 public class ZipUtilities {
   public static func validateZip(_ zipUrl: Foundation.URL) -> Swift.Error?
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  public static func reZip(_ zipUrl: Foundation.URL, progressHandler: ((Swift.Double) -> Swift.Void)?) async -> Swift.Result<Foundation.URL, CubiCapture.ZippingError>
+  #endif
+
+  @available(*, deprecated, message: "Use reZip() async version instead")
   public static func reZip(_ zipUrl: Foundation.URL, progressHandler: ((Swift.Double) -> Swift.Void)?, completionHandler: @escaping (Swift.Result<Foundation.URL, CubiCapture.ZippingError>) -> Swift.Void)
   @objc deinit
 }
@@ -51,9 +78,7 @@ extension CubiCapture.CCCapture : ARKit.ARSessionDelegate {
 }
 extension UIKit.UIDevice {
   @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static var isLowEndDevice: Swift.Bool {
-    get
-  }
+  @_Concurrency.MainActor(unsafe) public static let isLowEndDevice: Swift.Bool
   @_Concurrency.MainActor(unsafe) public static let cornerRadius: CoreGraphics.CGFloat
 }
 @available(iOS 13.4, *)
@@ -96,9 +121,14 @@ extension CubiCapture.CaptureOptions : Swift.Encodable {
 @objc @_hasMissingDesignatedInitializers @available(iOS 13.4, *)
 @_Concurrency.MainActor(unsafe) public class CCScanPlaybackViewController : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) public init(projectLocation: Foundation.URL) throws
+  @objc deinit
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @objc deinit
+}
+extension ZIPFoundation.Archive.ArchiveError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 @available(iOS 13.4, *)
 public protocol CCCaptureDelegate : AnyObject {
@@ -123,6 +153,7 @@ public protocol CCCaptureDelegate : AnyObject {
   @_Concurrency.MainActor(unsafe) public var state: Swift.String
   @_Concurrency.MainActor(unsafe) public var country: Swift.String
   @_Concurrency.MainActor(unsafe) public var suite: Swift.String
+  @_Concurrency.MainActor(unsafe) public var propertyType: Swift.String?
   @objc dynamic public init()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
