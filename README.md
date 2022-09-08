@@ -19,7 +19,6 @@
       * [Glossary](#glossary)
       * [Installation](#installation)
          * [Cocoapods](#cocoapods)
-         * [Distribution to App Store Connect](#appstoreconnect)
       * [Device Orientation](#device-orientation)
       * [CubiCapture Features](#cubicapture-features)
          * [Relocating After Loss of Tracking](#relocating-after-loss-of-tracking)
