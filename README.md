@@ -5,6 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
+         * [2.9.6](#296)
          * [2.9.3](#293)
          * [2.8.1](#281)
          * [2.8.0](#280)
@@ -61,6 +62,9 @@ For your app the next step would be to upload the scan to your server and use [C
 The Cubicasa SDK lets you add scanning to your app so you can start creating a floor plan with an iOS device. It saves the scan files into a zip file, which your app can upload to the CubiCasa back-end for processing.
 
 ## Release Notes
+
+### 2.9.6
+- Bug fixes
 
 ### 2.9.3
 - Added property type (string) to ARKitData.json, set as public var on CubiCapture view controller
