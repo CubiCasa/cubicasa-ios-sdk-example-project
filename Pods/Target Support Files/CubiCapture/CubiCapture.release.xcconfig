@@ -1,12 +1,9 @@
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
 CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/CubiCapture
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/ZIPFoundation" "${PODS_CONFIGURATION_BUILD_DIR}/Zip"
-FRAMEWORK_SEARCH_PATH[sdk=iphoneos*] = $(inherited) "$(PODS_ROOT)/CubiCapture"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/ZIPFoundation" "${PODS_CONFIGURATION_BUILD_DIR}/Zip" "${PODS_ROOT}/CubiCapture" "${PODS_XCFRAMEWORKS_BUILD_DIR}/CubiCapture"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LIBRARY_SEARCH_PATHS = $(inherited) "${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}" /usr/lib/swift
-OTHERCFLAGS[sdk=iphoneos*] = $(inherited) -iframework "$(PODS_ROOT)/CubiCapture"
 OTHER_LDFLAGS = $(inherited) -framework "ARKit" -framework "AVFoundation" -framework "CoreGraphics" -framework "Speech"
-OTHER_LDFLAGS[sdk=iphoneos*] = $(inherited) -framework CubiCapture
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
