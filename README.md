@@ -5,7 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
-         * [2.9.6](#296)
+         * [2.9.7](#297)
          * [2.9.3](#293)
          * [2.8.1](#281)
          * [2.8.0](#280)
@@ -63,7 +63,8 @@ The Cubicasa SDK lets you add scanning to your app so you can start creating a f
 
 ## Release Notes
 
-### 2.9.6
+### 2.9.7
+- Workaround for iOS 16 camera orientation problem after initial rotation of the view to landscape-right
 - Bug fixes
 
 ### 2.9.3
