@@ -6,6 +6,6 @@ framework module CubiCapture {
 }
 
 module CubiCapture.Swift {
-    header "CubiCapture-Swift.h"
-    requires objc
+  header "CubiCapture-Swift.h"
+  requires objc
 }

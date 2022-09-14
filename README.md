@@ -5,6 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
+         * [2.9.7](#297)
          * [2.9.3](#293)
          * [2.8.1](#281)
          * [2.8.0](#280)
@@ -61,6 +62,10 @@ For your app the next step would be to upload the scan to your server and use [C
 The Cubicasa SDK lets you add scanning to your app so you can start creating a floor plan with an iOS device. It saves the scan files into a zip file, which your app can upload to the CubiCasa back-end for processing.
 
 ## Release Notes
+
+### 2.9.7
+- Workaround for iOS 16 camera orientation problem after initial rotation of the view to landscape-right
+- Bug fixes
 
 ### 2.9.3
 - Added property type (string) to ARKitData.json, set as public var on CubiCapture view controller
@@ -199,6 +204,9 @@ Starting from version 2.6, the CubiCasa SDK uses the landscape-right orientation
 
 ### Auto-rotation on iPad OS
 From iPad OS 15.2, iPhone apps running on iPad devices are auto-rotated to landscape mode if the app requires it, without the iPad device being physically in landscape mode. This can lead to problems when starting/ending a scan using the CubiCasa SDK. Auto-rotation cannot not be disabled. The best way to deal with this, [as suggested by Apple](https://discussions.apple.com/thread/253164656), is to make your app support iPad (not just iPhone) because iPad OS 15.2 will respect the required orientation of iPad apps. See the example project's `CubiCaptureDemo` target for details.
+
+### iOS 16 camera orientation workaround
+In iOS 16, the camera orientation behaves unpredictably when rotating the device immediately after presenting the `CCCapture` view controller, resulting in the camera view being rotated 90º relative to the floor. As a workaround, a helper class called `ScanHostViewController` is now available in the CubiCasa SDK. It forces screen rotation first and then presents the proper `CCCapture` view controller. The sample code illustrates how to use this helper class. Note that code has been added to the `SceneDelegate` class to respond to the screen orientation change, you will need to add this to your own `SceneDelegate`.
 
 ## CubiCapture Features
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CubiCapture
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -47,6 +48,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    func windowScene(_ windowScene: UIWindowScene,
+                     didUpdate previousCoordinateSpace: UICoordinateSpace,
+                     interfaceOrientation previousInterfaceOrientation: UIInterfaceOrientation,
+                     traitCollection previousTraitCollection: UITraitCollection) {
+        if #available(iOS 16, *), windowScene.interfaceOrientation == ScanHostViewController.requiredOrientation {
+            ScanHostViewController.completion?()
+            ScanHostViewController.completion = nil
+        }
+    }
 }
 
