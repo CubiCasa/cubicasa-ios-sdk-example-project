@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to CubiCapture Demo App!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsS-ge-9aT">
-                                <rect key="frame" x="20" y="128" width="374" height="21"/>
+                                <rect key="frame" x="20" y="132" width="374" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="lkW-ur-4zP"/>
                                 </constraints>
@@ -26,18 +26,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u3q-YW-nMr" userLabel="buttonStack">
-                                <rect key="frame" x="142" y="732" width="130" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="u3q-YW-nMr" userLabel="buttonStack">
+                                <rect key="frame" x="123" y="634" width="168" height="158"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qp-47-u7t" userLabel="Select Property Type">
+                                        <rect key="frame" x="0.0" y="0.0" width="168" height="32"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Select Property Type">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="propertyTypePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AYK-mh-z0j"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnC-cm-AK9" userLabel="propertyTypeLabel">
+                                        <rect key="frame" x="0.0" y="48" width="168" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xV0-vp-50x">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
+                                        <rect key="frame" x="0.0" y="82" width="168" height="30"/>
                                         <state key="normal" title="Start Capture View"/>
                                         <connections>
                                             <action selector="startPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W7P-J9-Tuo"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97w-EH-BqH" userLabel="Playback">
-                                        <rect key="frame" x="0.0" y="30" width="130" height="30"/>
+                                        <rect key="frame" x="0.0" y="128" width="168" height="30"/>
                                         <state key="normal" title="Play back scan"/>
                                         <connections>
                                             <action selector="playbackPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XxM-Q4-Lv7"/>
@@ -58,6 +74,8 @@
                     </view>
                     <connections>
                         <outlet property="playbackButton" destination="97w-EH-BqH" id="TR8-3F-mO5"/>
+                        <outlet property="propertyTypeButton" destination="6Qp-47-u7t" id="JlI-oZ-jj5"/>
+                        <outlet property="propertyTypeLabel" destination="lnC-cm-AK9" id="hU9-gm-kHE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
