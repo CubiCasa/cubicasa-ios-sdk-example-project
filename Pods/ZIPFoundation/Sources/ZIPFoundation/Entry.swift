@@ -166,6 +166,10 @@ public struct Entry: Equatable {
         default: return isDirectory ? .directory : .file
         }
     }
+    /// Indicates whether or not the receiver is compressed.
+    public var isCompressed: Bool {
+        self.localFileHeader.compressionMethod != CompressionMethod.none.rawValue
+    }
     /// The size of the receiver's compressed data.
     public var compressedSize: UInt64 {
         if centralDirectoryStructure.isZIP64 {
@@ -186,8 +190,7 @@ public struct Entry: Equatable {
         var extraDataLength = Int(localFileHeader.fileNameLength)
         extraDataLength += Int(localFileHeader.extraFieldLength)
         var size = UInt64(LocalFileHeader.size + extraDataLength)
-        let isCompressed = localFileHeader.compressionMethod != CompressionMethod.none.rawValue
-        size += isCompressed ? self.compressedSize : self.uncompressedSize
+        size += self.isCompressed ? self.compressedSize : self.uncompressedSize
         if centralDirectoryStructure.isZIP64 {
             size += self.zip64DataDescriptor != nil ? UInt64(ZIP64DataDescriptor.size) : 0
         } else {
@@ -259,11 +262,13 @@ extension Entry.CentralDirectoryStructure {
     init(centralDirectoryStructure: Entry.CentralDirectoryStructure,
          zip64ExtendedInformation: Entry.ZIP64ExtendedInformation?, relativeOffset: UInt32) {
         if let existingInfo = zip64ExtendedInformation {
-            extraFieldData = existingInfo.data
-            versionNeededToExtract = max(centralDirectoryStructure.versionNeededToExtract, Archive.Version.v45.rawValue)
+            self.extraFieldData = existingInfo.data
+            self.versionNeededToExtract = max(centralDirectoryStructure.versionNeededToExtract,
+                                              Archive.Version.v45.rawValue)
         } else {
-            extraFieldData = Data()
-            versionNeededToExtract = centralDirectoryStructure.versionNeededToExtract < Archive.Version.v45.rawValue
+            self.extraFieldData = centralDirectoryStructure.extraFieldData
+            let existingVersion = centralDirectoryStructure.versionNeededToExtract
+            self.versionNeededToExtract = existingVersion < Archive.Version.v45.rawValue
                 ? centralDirectoryStructure.versionNeededToExtract
                 : Archive.Version.v20.rawValue
         }
@@ -294,19 +299,19 @@ extension Entry.CentralDirectoryStructure {
 extension Entry.CentralDirectoryStructure {
 
     var effectiveCompressedSize: UInt64 {
-        if self.isZIP64, let compressedSize = zip64ExtendedInformation?.compressedSize, compressedSize > 0 {
+        if self.isZIP64, let compressedSize = self.zip64ExtendedInformation?.compressedSize, compressedSize > 0 {
             return compressedSize
         }
         return UInt64(compressedSize)
     }
     var effectiveUncompressedSize: UInt64 {
-        if self.isZIP64, let uncompressedSize = zip64ExtendedInformation?.uncompressedSize, uncompressedSize > 0 {
+        if self.isZIP64, let uncompressedSize = self.zip64ExtendedInformation?.uncompressedSize, uncompressedSize > 0 {
             return uncompressedSize
         }
         return UInt64(uncompressedSize)
     }
     var effectiveRelativeOffsetOfLocalHeader: UInt64 {
-        if self.isZIP64, let offset = zip64ExtendedInformation?.relativeOffsetOfLocalHeader, offset > 0 {
+        if self.isZIP64, let offset = self.zip64ExtendedInformation?.relativeOffsetOfLocalHeader, offset > 0 {
             return offset
         }
         return UInt64(relativeOffsetOfLocalHeader)

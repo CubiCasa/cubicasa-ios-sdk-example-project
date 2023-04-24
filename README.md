@@ -5,6 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
+         * [2.10.0](#2100)
          * [2.9.7](#297)
          * [2.9.3](#293)
          * [2.8.1](#281)
@@ -62,6 +63,11 @@ For your app the next step would be to upload the scan to your server and use [C
 The Cubicasa SDK lets you add scanning to your app so you can start creating a floor plan with an iOS device. It saves the scan files into a zip file, which your app can upload to the CubiCasa back-end for processing.
 
 ## Release Notes
+
+### 2.10.0
+- Minimum supported iOS version set to 15.0
+- Setting property type required before scan
+- Bug fixes
 
 ### 2.9.7
 - Workaround for iOS 16 camera orientation problem after initial rotation of the view to landscape-right
@@ -260,25 +266,36 @@ The way to use `CCCapture` is to present it as a `UIViewController`:
 ```swift
 import CubiCapture
 ...
-let cubiCapture = CCCapture()
+let propertyType: CCPropertyType = <your selected property type> 
+let cubiCapture = CCCapture(with: propertyType))
 cubiCapture.delegateCapture = self
-present(cubiCapture, animated: true, completion: nil)
+if #available(iOS 16, *) {
+    let scanHost = ScanHostViewController()
+    self.present(scanHost, animated: false) {
+        scanHost.presentScanner(cubiCapture)
+    }
+} else /* iOS 15 */ {
+    self.present(cubiCapture, animated: true)
+}
 ```
-
-Note: the old method (using `cubiCapture(sceneToController: self)`) is no longer supported as of release 2.6.0.
 
 You can add the address of the place to be scanned by adding the address information to `CCCapture` view. See "Adding the Address".
 
-When the user has oriented the device to landscape and presses the record button the scan starts.
+When the user has oriented the device to landscape and presses the record button the scan starts. The SDK will ask for the required permissions if your app hasn't already done so. We recommend doing it in your app before starting the scan, for a better user experience.
 
-Remember to add CCCaptures delegate to controlling viewcontrollor to get messages about the scan progress. 
+Remember to add CCCaptures delegate to controlling viewcontrollor to get messages about the scan progress.
+
+See the example project's `CubiCaptureDemo` project for details.
 
 ### Configuration
 CubiCasa capture session features can be configured by assigning an option set:
 
 ```swift
-ccCapture.options = [.speechRecognition, .meshVisualisation, .backgroundResume,
-                     .azimuth, .storageWarnings]
+cubiCapture.options = [.speechRecognition,
+                       .meshVisualisation,
+                       .backgroundResume,
+                       .azimuth,
+                       .storageWarnings]
 present(cubiCapture, animated: true, completion: nil)
 ```
 
@@ -303,9 +320,9 @@ You can add addres information to your scan. `CCCapture` has the following field
 * `state`
 * `country`
 * `suite`
-* `propertyType`
+* `propertyType` (mandatory init parameter)
 
-All fields are `String`s.
+All fields except `propertyType` are `String`s. `propertyType` is an `enum`.
 
 These will be added to your order configuration.
 

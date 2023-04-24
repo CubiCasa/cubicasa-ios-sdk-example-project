@@ -13,22 +13,42 @@ import CubiCapture
 class ViewController: UIViewController {
 
     private var projectLocation: URL?
+    private var selectedPropertyType: CCPropertyType = .other
 
+    @IBOutlet weak var propertyTypeButton: UIButton!
+    @IBOutlet weak var propertyTypeLabel: UILabel!
     @IBOutlet weak var playbackButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        let items = CCPropertyType.allCases.map {
+            UIAction(title: $0.rawValue) { action in
+                let propertyType = CCPropertyType.from(action.title)
+                self.selectedPropertyType = propertyType
+                self.propertyTypeLabel.text = propertyType.rawValue
+            }
+        }
+
+        // setup the menu
+        propertyTypeButton.menu = UIMenu(children: items)
+        propertyTypeButton.showsMenuAsPrimaryAction = true
+
         playbackButton.isEnabled = false
+        propertyTypeLabel.text = selectedPropertyType.rawValue
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
 
+    @IBAction func propertyTypePressed(_ sender: Any) {
+
+    }
+
     @IBAction func startPressed(_ sender: UIButton) {
         // Initiate CCCapture
-        let ccCapture = CCCapture()
+        let ccCapture = CCCapture(with: self.selectedPropertyType)
         ccCapture.delegateCapture = self
         ccCapture.options = [.speechRecognition, .meshVisualisation, .backgroundResume,
                              .azimuth, .storageWarnings]

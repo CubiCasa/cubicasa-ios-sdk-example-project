@@ -1,4 +1,4 @@
-platform :ios, '13.4'
+platform :ios, '15.0'
 
 #source 'https://cdn.cocoapods.org/'
 source 'https://github.com/CocoaPods/Specs.git'
@@ -14,6 +14,7 @@ end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
+    target.deployment_target = '15.0'
     target.build_configurations.each do |config|
         config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
     end
