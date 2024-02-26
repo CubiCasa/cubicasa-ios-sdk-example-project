@@ -881,8 +881,10 @@
                 "moduleName": "CubiCapture",
                 "static": true,
                 "implicit": true,
+                "intro_iOS": "16.0",
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "Available"
                 ],
                 "accessorKind": "_modify"
               }
@@ -1184,6 +1186,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           },
           {
             "kind": "Conformance",
@@ -3696,6 +3705,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Sendable",
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
@@ -5761,6 +5777,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           }
         ]
       },
@@ -5825,6 +5848,34 @@
         "kind": "Import",
         "name": "ARKit",
         "printedName": "ARKit",
+        "declKind": "Import",
+        "moduleName": "CubiCapture"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CubiCapture"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "CubiCapture"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "CubiCapture"
+      },
+      {
+        "kind": "Import",
+        "name": "DeveloperToolsSupport",
+        "printedName": "DeveloperToolsSupport",
         "declKind": "Import",
         "moduleName": "CubiCapture"
       },
@@ -6085,6 +6136,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           },
           {
             "kind": "Conformance",
@@ -20975,6 +21033,314 @@
       "offset": 5288,
       "length": 13,
       "value": "\"windowColor\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 644,
+      "length": 21,
+      "value": "\"cc_guide_background\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 808,
+      "length": 20,
+      "value": "\"cc_guide_info_text\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 983,
+      "length": 26,
+      "value": "\"cc_hint_label_background\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1156,
+      "length": 22,
+      "value": "\"cc_hint_label_border\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1321,
+      "length": 20,
+      "value": "\"cc_hint_label_text\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1464,
+      "length": 9,
+      "value": "\"cc_mesh\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1614,
+      "length": 19,
+      "value": "\"cc_scan_border_ok\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1784,
+      "length": 24,
+      "value": "\"cc_scan_border_warning\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1967,
+      "length": 28,
+      "value": "\"cc_speech_button_indicator\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 2156,
+      "length": 29,
+      "value": "\"cc_speech_cancel_background\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 2334,
+      "length": 23,
+      "value": "\"cc_speech_cancel_text\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 2516,
+      "length": 28,
+      "value": "\"cc_speech_label_background\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 2691,
+      "length": 22,
+      "value": "\"cc_speech_label_text\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 2874,
+      "length": 29,
+      "value": "\"cc_speech_result_background\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 3052,
+      "length": 23,
+      "value": "\"cc_speech_result_text\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 3220,
+      "length": 21,
+      "value": "\"cc_timer_label_text\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 3388,
+      "length": 22,
+      "value": "\"cc_warning_info_text\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 3579,
+      "length": 33,
+      "value": "\"cc_warning_relocated_background\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 3783,
+      "length": 34,
+      "value": "\"cc_warning_relocating_background\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 3966,
+      "length": 23,
+      "value": "\"cc_warning_title_text\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 4157,
+      "length": 33,
+      "value": "\"cc_warning_too_close_background\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 4350,
+      "length": 29,
+      "value": "\"cc_warning_too_close_border\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 4547,
+      "length": 33,
+      "value": "\"cc_warning_too_close_foreground\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 4739,
+      "length": 28,
+      "value": "\"cc_warning_view_background\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 5014,
+      "length": 19,
+      "value": "\"backward.end.fill\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 5179,
+      "length": 21,
+      "value": "\"backward.frame.fill\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 5336,
+      "length": 16,
+      "value": "\"cc_broken_scan\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 5480,
+      "length": 12,
+      "value": "\"cc_go_back\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 5628,
+      "length": 16,
+      "value": "\"cc_intact_scan\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 5796,
+      "length": 24,
+      "value": "\"cc_microphone_disabled\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 5966,
+      "length": 21,
+      "value": "\"cc_microphone_ready\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 6141,
+      "length": 25,
+      "value": "\"cc_microphone_recording\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 6306,
+      "length": 18,
+      "value": "\"cc_not_recording\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 6468,
+      "length": 20,
+      "value": "\"cc_pause_recording\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 6621,
+      "length": 14,
+      "value": "\"cc_recording\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 6771,
+      "length": 16,
+      "value": "\"cc_turn_device\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 6927,
+      "length": 18,
+      "value": "\"cc_warning_arrow\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 7087,
+      "length": 19,
+      "value": "\"cc_warning_rotate\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 7253,
+      "length": 22,
+      "value": "\"cc_warning_tilt_down\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 7420,
+      "length": 21,
+      "value": "\"cc_warning_too_fast\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 7581,
+      "length": 18,
+      "value": "\"forward.end.fill\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 7743,
+      "length": 20,
+      "value": "\"forward.frame.fill\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 7892,
+      "length": 12,
+      "value": "\"pause.fill\""
+    },
+    {
+      "filePath": "\/Users\/marnix\/Library\/Developer\/Xcode\/DerivedData\/CubiCapture-eojkhhwgyyfwbpaqccbabcrlebud\/Build\/Intermediates.noindex\/ArchiveIntermediates\/CubiCapture\/IntermediateBuildFilesPath\/CubiCapture.build\/Release-iphoneos\/CubiCapture.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 8031,
+      "length": 11,
+      "value": "\"play.fill\""
     }
   ]
 }

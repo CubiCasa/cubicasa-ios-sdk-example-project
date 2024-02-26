@@ -1,7 +1,7 @@
 framework module CubiCapture {
   umbrella header "CubiCapture.h"
-
   export *
+
   module * { export * }
 }
 
