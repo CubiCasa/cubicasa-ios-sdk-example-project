@@ -38,10 +38,6 @@ class ViewController: UIViewController {
         propertyTypeLabel.text = selectedPropertyType.rawValue
     }
 
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
-    }
-
     @IBAction func propertyTypePressed(_ sender: Any) {
 
     }
@@ -50,16 +46,9 @@ class ViewController: UIViewController {
         // Initiate CCCapture
         let ccCapture = CCCapture(with: self.selectedPropertyType)
         ccCapture.delegateCapture = self
-        ccCapture.options = [.speechRecognition, .meshVisualisation, .backgroundResume,
-                             .azimuth, .storageWarnings]
-        if #available(iOS 16, *) {
-            let scanHost = ScanHostViewController()
-            present(scanHost, animated: false) {
-                scanHost.presentScanner(ccCapture)
-            }
-        } else {
-            present(ccCapture, animated: true)
-        }
+        ccCapture.options = [.meshVisualisation, .backgroundResume,
+                             .azimuth, .storageWarnings, .photoCapturing]
+        ccCapture.show(presenter: self)
     }
 
     @IBAction func playbackPressed(_ sender: Any) {
@@ -110,13 +99,13 @@ extension ViewController: CCCaptureDelegate {
         case 0, 1, 2, 5, 7, 23, 24, 26, 27, 28, 32:
             // Positive
             break
-        case 8, 9, 17, 21, 22, 29, 30, 31, 53, 72, 73, 74, 77, 78, 85, 86:
+        case 8, 9, 10, 17, 21, 22, 29, 30, 31, 53, 72, 73, 74, 77, 78, 79, 85, 86:
             // Worrysome
             break
-        case 3, 13, 51, 54, 56, 57, 58, 59, 82, 83, 90:
+        case -1, 3, 4, 13, 51, 54, 56, 57, 58, 59, 66, 80, 81, 82, 83, 90, 106, 107, 113, 115:
             // Terminal, the SDK kill the scan with scanTrackingFailed
             break
-        case 15, 18, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 70, 71, 75, 76, 80, 81:
+        case 15, 18, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 70, 71, 75, 76:
             // Information
             break
         default:
