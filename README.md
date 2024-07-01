@@ -5,6 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
+         * [2.13.4](#2134)
          * [2.10.1](#2101)
          * [2.10.0](#2100)
          * [2.9.7](#297)
@@ -55,7 +56,7 @@ Is a simple project which has the CubiCasa SDK integrated.
 
 ## Description
 
-The app has only one view controller that has the greetings label and two buttons. If the user presses the first button, the CubiCapture view controller is presented and you can start scanning. After the scan is complete the capture view is dissmissed. The 'Play back scan' button will now be enabled, pressing it will show the `CCScanPlaybackViewController` which allows you to review the scan.
+The app has only one view controller that has the greetings label and three buttons. If the user presses the first button, a picker is shown where the type of the property to scan can be selected. The second button presents the CubiCapture view controller and you can start scanning. After the scan is complete the capture view is dissmissed. The 'Play back scan' button will now be enabled, pressing it will show the `CCScanPlaybackViewController` which allows you to review the scan.
 
 For your app the next step would be to upload the scan to your server and use [CubiCasa Conversion API](https://cubicasaconversionapi.docs.apiary.io/#).
 
@@ -64,6 +65,17 @@ For your app the next step would be to upload the scan to your server and use [C
 The Cubicasa SDK lets you add scanning to your app so you can start creating a floor plan with an iOS device. It saves the scan files into a zip file, which your app can upload to the CubiCasa back-end for processing.
 
 ## Release Notes
+
+### 2.13.4
+- Added photo capturing option
+- Added Swift Package Manager support
+- Added vertical tilt warning
+- Removed landscape scanning option (now only portrait is supported)
+- Removed speech recognition option
+- Improved battery warnings
+- Proximity warning for non-LiDAR devices
+- Several more optimizations and bug fixes
+- Minimum supported iOS version is 16.0
 
 ### 2.10.1
 - Rebuilt SDK with Xcode 15.2
@@ -188,8 +200,13 @@ Mesh visualisation | Showing the reconstructed scene mesh on-screen, during scan
 
 ## Installation
 
+### Swift Package Manager
+The recommended way to integrate the CubiCapture SDK is to use the Swift Package Manager (SPM). In Xcode, select your project and open the tab Project Dependencies. Hit the '+' button and paste the CubiCapture Github URL (`https://github.com/CubiCasa/ios-sdk-distribution/`) into the search box. 
+
+Make sure the Xcode build target is set to 'Embed & Sign' the `CubiCaptureSDK` library (in 'General -> Frameworks, Libraries and Embedded Content'). In the target's Build Settings, your Runpath Search Paths setting needs to contain `@executable_path/Frameworks`.
+
 ### Cocoapods
-The preferred (and easiest) way to install the CubiCapture SDK is with cocoapods. Add the following to your `Podfile`:
+Although SPM is the preferred way to install the SDK, Cocoapods is still supported. Add the following to your `Podfile`:
 
 ```
 source 'https://github.com/CubiCasa/podspecs.git'
@@ -210,13 +227,7 @@ Replace `YourTarget` with the name of your build target. Run `pod install`.
 
 ## Device Orientation
 
-Starting from version 2.6, the CubiCasa SDK uses the landscape-right orientation (instead of locking the orientation to portrait). This means that your app needs to support (at least) landscape-right orientation.
-
-### Auto-rotation on iPad OS
-From iPad OS 15.2, iPhone apps running on iPad devices are auto-rotated to landscape mode if the app requires it, without the iPad device being physically in landscape mode. This can lead to problems when starting/ending a scan using the CubiCasa SDK. Auto-rotation cannot not be disabled. The best way to deal with this, [as suggested by Apple](https://discussions.apple.com/thread/253164656), is to make your app support iPad (not just iPhone) because iPad OS 15.2 will respect the required orientation of iPad apps. See the example project's `CubiCaptureDemo` target for details.
-
-### iOS 16 camera orientation workaround
-In iOS 16, the camera orientation behaves unpredictably when rotating the device immediately after presenting the `CCCapture` view controller, resulting in the camera view being rotated 90º relative to the floor. As a workaround, a helper class called `ScanHostViewController` is now available in the CubiCasa SDK. It forces screen rotation first and then presents the proper `CCCapture` view controller. The sample code illustrates how to use this helper class. Note that code has been added to the `SceneDelegate` class to respond to the screen orientation change, you will need to add this to your own `SceneDelegate`.
+Starting from version 2.13.4, the only supported scanning orientation is portrait. The option to scan in landscape has been removed completely and any attempts to scan in landscape will result in the scan being terminated after a short time.
 
 ## CubiCapture Features
 
@@ -239,11 +250,6 @@ CubiCapture SDK features the Adaptive Lighting technique. During the scan if the
 ### Azimuth
 CubiCapture SDK captures the heading relative to the "true north" and adds this information to the scan. This information can be used to add the information to your scanners floor plan. In order to the azimuth data to be collected the the user must have agreed to use the location data. No position data is gathered by the SDK.
 
-### Speech Recognition for Room Labels
-CubiCapture SDK utilizes speech recognition. During a scan your users can use the speech recognition to add room labels. If you don't want to use speech recognition you can omit `.speech_recognition` from the scanning options. 
-
-The room labels can be reviewed during playback using the `CCScanPlaybackViewController`.
-
 ### Storage Warning
 Cubicapture SDK notifies the user if the device is running out of storage space. This feature is toggled with the `.storageWarnings` scanning option.
 
@@ -252,10 +258,11 @@ Cubicapture SDK keeps a separate log of warnings during the scan. This will be u
 
 The warnings can be reviewed during playback using the `CCScanPlaybackViewController`.
 
+### Photo Capturing
+Starting with release 2.13.4, the CubiCapture SDK now has the option to enable users to take photos while scanning. These photos are included in the Zip archive of the scan.
+
 ## Permissions
 CubiCasa SDK uses the device camera to capture the surroundings so you need to add the "Privacy - Camera Usage Description" to your projects `Info.plist` if you already haven't done so. The camera permission is required for the CubiCasa SDK, it cannot function without it. 
-
-If you want to use speech recognition (optional) add "Privacy - Microphone Usage Description" and the "Privacy - Speech Recognition Usage Description". 
 
 The azimuth data gathering requires "Privacy - Location When In Use Usage Description" to be set.
 
@@ -265,7 +272,7 @@ The azimuth data gathering requires "Privacy - Location When In Use Usage Descri
 You can specify where the scan will be placed in the app document directory with CCCapture `fileName` field.
 
 ### Starting the Scan
-The way to use `CCCapture` is to present it as a `UIViewController`:
+The way to use `CCCapture` is to present it as a `UIViewController`, using the built-in `show` function:
 
 ```swift
 import CubiCapture
@@ -273,14 +280,7 @@ import CubiCapture
 let propertyType: CCPropertyType = <your selected property type> 
 let cubiCapture = CCCapture(with: propertyType))
 cubiCapture.delegateCapture = self
-if #available(iOS 16, *) {
-    let scanHost = ScanHostViewController()
-    self.present(scanHost, animated: false) {
-        scanHost.presentScanner(cubiCapture)
-    }
-} else /* iOS 15 */ {
-    self.present(cubiCapture, animated: true)
-}
+cubiCapture.show(presenter: self)
 ```
 
 You can add the address of the place to be scanned by adding the address information to `CCCapture` view. See "Adding the Address".
@@ -292,26 +292,25 @@ Remember to add CCCaptures delegate to controlling viewcontrollor to get message
 See the example project's `CubiCaptureDemo` project for details.
 
 ### Configuration
-CubiCasa capture session features can be configured by assigning an option set:
+CubiCasa capture session features can be configured by assigning an option set, before calling the `show` function:
 
 ```swift
-cubiCapture.options = [.speechRecognition,
-                       .meshVisualisation,
+cubiCapture.options = [.meshVisualisation,
                        .backgroundResume,
                        .azimuth,
-                       .storageWarnings]
-present(cubiCapture, animated: true, completion: nil)
+                       .storageWarnings,
+                       .photoCapturing]
 ```
 
 The following options can be set (or omitted):
 
 Option name          | Description | Default
 ---------------------|-------------|--------
-`.speechRecognition` | Use speech recognition for making room labels | enabled
 `.meshVisualisation` | Reconstruct the scene as a 3D mesh and visualise it (only on LiDAR-equiped devices) | enabled
 `.backgroundResume`	| The SDK will attempt to resume scanning if the app was backgrounded | enabled
 `.azimuth` | The SDK will write the camera orientation (azimuth) in the captured data | enabled
 `.storageWarnings` | The SDK will inform the app about remaining file system storage and warn the user when less than 10 minutes remain | enabled
+`.photoCapturing` | Allows the user to take photos during scanning | disabled
 
 If `CubiCapture.options` is not set, the default values will apply.
 
@@ -365,39 +364,27 @@ In the SDK the following codes can be received
 
 | Code | Description |
 | -------------|---|
-| `0` | Received when the device is in landscape orientation. This is usually the first status code received when the device is turned to landscape orientation in order to start recording. The scanning cannot be started if the device is not in landscape orientation. |
 | `1` | Received when the record button is pressed for the first time and scan is started. |
 | `2`| Received when the record button is pressed for the second time and scan has enough data. The saving of the scan files begins after this. |
 | `3` | Finished recording - Not enough data. |
+| `4` | Too long in the wrong orientation. The device aws held in the wrong orientation for too long and the scan was aborted. |
 | `5` | Finished recording - CubiCapture is finished. You can now finish your scanning controller. |
 | `7` | Received when the zipping of the scan files is finished. The description will contain a path to the zip file. You also get the path from `zippedDataLocation(_ controller: CCCapture, location: URL)` delegate method. |
-| `8` | ARKit tracking failure Insuffient light. Received when ARKit motion tracking is lost due to poor lighting conditions. |
+| `8` | ARKit tracking failure Insuffient light. Received when ARKit motion tracking is losing accuracy due to poor lighting conditions. |
 | `9` | ARKit tracking failure excessive motion. Received when the device is moving excessively |
+| `10` | ARKit tracking failure insufficient features. Received when ARKit motion tracking is losing accuracy due to a lack of visually distinguishing features. |
 | `13` | Scan drifted! Position changed by over 10 meters during 2 second interval. The scan files **will be deleted** and CubiCapture will be finished. |
 | `15` | Error, removing scan. Received when the scan is not successful. The scan files are deleted and CubiCapture will be finished. |
-| `17` | Received when the device is in reverse-landscape orientation and if the device has been in landscape orientation at least once. |
+| `17` | Received when the device is in the wrong orientation. |
 | `18` | Playing error sound. |
 | `21` | Received when the pitch of the camera has been too low for a certain amount of time (Scanning floor). |
 | `22` | Scanning ceiling. |
 | `23` | Not scanning ceiling or floor. Received when the pitch of the camera is valid again. |
 | `24` | Not wrong orientation anymore.	|
-| `26` | Not scanning ceiling.		|
 | `27` | Not walking sideways anymore |
-| `28` | Scanning state back to normal |	
-| `29` | Walking sideways. Displaying left warning |	
+| `28` | Scanning state back to normal |
+| `29` | Walking sideways. Displaying left warning |
 | `30` | Walking sideways. Displaying right warning |
-| `31` | Horizontal scanning |
-| `32` | Not scanning horizontally anymore |
-| `40` | Started listening for speech.		|
-| `41` | Listening finished, displaying recognition results. |	
-| `42` | Recognition result '<spaceLabel>' was chosen.		|
-| `43` | Recognition results canceled.		|
-| `44` | Speech recognition aborted.		|
-| `45` | No speech recognition results.		|
-| `46` | All recognition results over the max length of 40 characters.	|	
-| `47` | Requesting RECORD_AUDIO permission.		|
-| `48` | User granted RECORD_AUDIO permission.		|
-| `49` | User denied RECORD_AUDIO permission.		|
 | `51`| Zipping the scan failed. The scan files **will be deleted** and CubiCapture will be finished. |
 | `53`| Invalid zip archive, attempting rezipping |
 | `54` | Failed to write arkitdata to file. The scan files **will be deleted** and CubiCapture will be finished. | 
@@ -415,15 +402,21 @@ In the SDK the following codes can be received
 | `76` | Active processor count is X of Y
 | `77` | Received memory warning
 | `78` | Storage: [minutes] minutes left
+| `78` | Battery: [charge] percent of charge
 | `80` | Relocation timed out.
-| `81` | No configuration found!
-| `82` | No snapshot for relocation. Cannot relocate.
+| `81` | No AR session configuration found
+| `82` | No world map snapshot available for relocation. Cannot relocate.
 | `83` | Scanning aborted due to App going to the background
 | `85` | Scanning too close
-| `86` | Scanning too far
 | `87` | Too fast rotations. Showing fast movement warning.
 | `88` | Scanning distance back in acceptable range (proximity warning not shown anymore)
 | `90` | Failed to start writing scan log
+| `106` | The device is incompatible with ARKit
+| `107` | The device temperature is too high to start scanning
+| `112` | Photo capture failed
+| `113` | Photo capture log could not be written
+| `114` | Photo capture initialization error
+| `115` | Scene mesh could not be written (LiDAR devices only)
 
 ### Scan Playback
 The CubiCasa SDK can play back previously made scans, allowing users to review their scans and feedback. On LiDAR devices, the reconstructed scene mesh is shown superimposed on the video (if the `.meshVisualisation` option was enabled for the scan and scene reconstruction was not shut down due to the thermal state reaching `critical`). Also on LiDAR devices only, the proximity warning pattern will be shown superimposed on the video.
