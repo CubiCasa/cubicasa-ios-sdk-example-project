@@ -396,8 +396,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CubiCasa/ios-sdk-distribution/";
 			requirement = {
-				branch = release/2.13.4;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.13.4;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
