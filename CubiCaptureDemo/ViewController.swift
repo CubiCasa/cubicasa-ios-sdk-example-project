@@ -50,16 +50,9 @@ class ViewController: UIViewController {
         // Initiate CCCapture
         let ccCapture = CCCapture(with: self.selectedPropertyType)
         ccCapture.delegateCapture = self
-        ccCapture.options = [.speechRecognition, .meshVisualisation, .backgroundResume,
+        ccCapture.options = [.meshVisualisation, .backgroundResume,
                              .azimuth, .storageWarnings]
-        if #available(iOS 16, *) {
-            let scanHost = ScanHostViewController()
-            present(scanHost, animated: false) {
-                scanHost.presentScanner(ccCapture)
-            }
-        } else {
-            present(ccCapture, animated: true)
-        }
+        ccCapture.show(presenter: self)
     }
 
     @IBAction func playbackPressed(_ sender: Any) {

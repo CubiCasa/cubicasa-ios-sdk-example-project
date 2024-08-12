@@ -1,13 +1,14 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
-// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CubiCapture
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target x86_64-apple-ios16.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CubiCapture
 import ARKit
 import AVFoundation
 import Accelerate
 import CoreGraphics
+import CoreImage
 import CoreLocation
 import CoreMotion
+import CoreVideo
 @_exported import CubiCapture
 import DeveloperToolsSupport
 import Foundation
@@ -18,8 +19,6 @@ import Speech
 import Swift
 import SwiftUI
 import UIKit
-import ZIPFoundation
-import Zip
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
@@ -50,8 +49,20 @@ public struct ScanningFeatures : Swift.OptionSet, Swift.CaseIterable {
 extension CubiCapture.ScanningFeatures : Swift.Encodable {
   public func encode(to encoder: any Swift.Encoder) throws
 }
-@objc @_inheritsConvenienceInitializers @available(iOS 16.0, *)
-@_Concurrency.MainActor(unsafe) public class ScanHostViewController : UIKit.UIViewController {
+public enum PhotoCapturerError : Swift.Error {
+  case notPrepared
+  case rotator
+  case imageCompress
+  case fileWrite
+  case fileMove
+  case generic
+  public static func == (a: CubiCapture.PhotoCapturerError, b: CubiCapture.PhotoCapturerError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ScanHostViewController : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) public static let requiredOrientation: UIKit.UIInterfaceOrientation
   @_Concurrency.MainActor(unsafe) public static var completion: (() -> Swift.Void)?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
@@ -62,11 +73,6 @@ extension CubiCapture.ScanningFeatures : Swift.Encodable {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
-}
-extension ZipError : Foundation.LocalizedError {
-  public var errorDescription: Swift.String? {
-    get
-  }
 }
 public enum CCPropertyType : Swift.String, Swift.Codable, Swift.CaseIterable {
   case singleUnitResidential, townhouse, apartment, other
@@ -94,10 +100,15 @@ public enum CCPropertyType : Swift.String, Swift.Codable, Swift.CaseIterable {
 extension CubiCapture.CCCapture : ARKit.ARSessionDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func session(_ session: ARKit.ARSession, didUpdate frame: ARKit.ARFrame)
   @_Concurrency.MainActor(unsafe) @objc dynamic public func session(_ session: ARKit.ARSession, cameraDidChangeTrackingState camera: ARKit.ARCamera)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func sessionShouldAttemptRelocalization(_ session: ARKit.ARSession) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func sessionWasInterrupted(_ session: ARKit.ARSession)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func sessionInterruptionEnded(_ session: ARKit.ARSession)
 }
 extension UIKit.UIDevice {
-  @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static let isLowEndDevice: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public static let isTablet: Swift.Bool
+  nonisolated public static let modelName: Swift.String
+  nonisolated public static let isLowEndDevice: Swift.Bool
+  nonisolated public static let canUseHEVC: Swift.Bool
   @_Concurrency.MainActor(unsafe) public static let cornerRadius: CoreFoundation.CGFloat
 }
 public enum ZippingError : Swift.Error {
@@ -115,15 +126,19 @@ extension CubiCapture.ZippingError : Foundation.LocalizedError {
     get
   }
 }
+extension UIKit.UIImage {
+  public func resize(to desiredSize: CoreFoundation.CGSize) -> UIKit.UIImage
+  public func resize(width: CoreFoundation.CGFloat, height: CoreFoundation.CGFloat) -> UIKit.UIImage
+}
 public struct CaptureOptions : Swift.OptionSet, Swift.CaseIterable {
   public init(rawValue: Swift.Int)
   public let rawValue: Swift.Int
-  public static let speechRecognition: CubiCapture.CaptureOptions
   public static let meshVisualisation: CubiCapture.CaptureOptions
   public static let backgroundResume: CubiCapture.CaptureOptions
   public static let azimuth: CubiCapture.CaptureOptions
   public static let storageWarnings: CubiCapture.CaptureOptions
   public static let planeVisualisation: CubiCapture.CaptureOptions
+  public static let photoCapturing: CubiCapture.CaptureOptions
   public static let allCases: [CubiCapture.CaptureOptions]
   public typealias AllCases = [CubiCapture.CaptureOptions]
   public typealias ArrayLiteralElement = CubiCapture.CaptureOptions
@@ -138,11 +153,6 @@ extension CubiCapture.CaptureOptions : Swift.Encodable {
   @objc deinit
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-}
-extension ZIPFoundation.Archive.ArchiveError : Foundation.LocalizedError {
-  public var errorDescription: Swift.String? {
-    get
-  }
 }
 public protocol CCCaptureDelegate : AnyObject {
   func processReadyDelegationFunc(_ controller: CubiCapture.CCCapture)
@@ -166,10 +176,9 @@ public protocol CCCaptureDelegate : AnyObject {
   @_Concurrency.MainActor(unsafe) public var country: Swift.String
   @_Concurrency.MainActor(unsafe) public var suite: Swift.String
   @_Concurrency.MainActor(unsafe) public var propertyType: CubiCapture.CCPropertyType
-  @_Concurrency.MainActor(unsafe) public init(with propType: CubiCapture.CCPropertyType)
+  @_Concurrency.MainActor(unsafe) public init(with propType: CubiCapture.CCPropertyType, usesRawDepth: Swift.Bool = false)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func show(presenter: UIKit.UIViewController?)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var preferredScreenEdgesDeferringSystemGestures: UIKit.UIRectEdge {
     @objc get
@@ -194,6 +203,8 @@ public protocol CCCaptureDelegate : AnyObject {
   @_Concurrency.MainActor(unsafe) public func endCaptureSession()
   @objc deinit
 }
+extension CubiCapture.PhotoCapturerError : Swift.Equatable {}
+extension CubiCapture.PhotoCapturerError : Swift.Hashable {}
 extension CubiCapture.CCPropertyType : Swift.Equatable {}
 extension CubiCapture.CCPropertyType : Swift.Hashable {}
 extension CubiCapture.CCPropertyType : Swift.RawRepresentable {}

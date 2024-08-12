@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		609266902C6A71B400EC4A40 /* CubiCaptureSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6092668E2C6A71AE00EC4A40 /* CubiCaptureSDK.framework */; };
+		609266912C6A71B400EC4A40 /* CubiCaptureSDK.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 6092668E2C6A71AE00EC4A40 /* CubiCaptureSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C109B0FE258000BB00424A12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C109B0FD258000BB00424A12 /* AppDelegate.swift */; };
 		C109B100258000BB00424A12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C109B0FF258000BB00424A12 /* SceneDelegate.swift */; };
 		C109B102258000BB00424A12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C109B101258000BB00424A12 /* ViewController.swift */; };
@@ -17,10 +19,25 @@
 		F744DB57001238EF4DD8D98E /* Pods_CubiCaptureDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96324A6B96FE0C2C439B6B19 /* Pods_CubiCaptureDemo.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6092668D2C6A711E00EC4A40 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				609266912C6A71B400EC4A40 /* CubiCaptureSDK.framework in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4120196A6192B484949DBD09 /* Pods-CubiCaptureDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CubiCaptureDemo.release.xcconfig"; path = "Target Support Files/Pods-CubiCaptureDemo/Pods-CubiCaptureDemo.release.xcconfig"; sourceTree = "<group>"; };
 		54C0BC2AF51D4606E6C9D928 /* Pods-CubiCaptureDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CubiCaptureDemo.debug.xcconfig"; path = "Target Support Files/Pods-CubiCaptureDemo/Pods-CubiCaptureDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6016A24826E2121E009197EE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6092668E2C6A71AE00EC4A40 /* CubiCaptureSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CubiCaptureSDK.framework; sourceTree = "<group>"; };
 		96324A6B96FE0C2C439B6B19 /* Pods_CubiCaptureDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CubiCaptureDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C109B0FA258000BB00424A12 /* CubiCaptureDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CubiCaptureDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C109B0FD258000BB00424A12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +56,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F744DB57001238EF4DD8D98E /* Pods_CubiCaptureDemo.framework in Frameworks */,
+				609266902C6A71B400EC4A40 /* CubiCaptureSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +75,7 @@
 		5FBC678C8CEE8EE7C036EDB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6092668E2C6A71AE00EC4A40 /* CubiCaptureSDK.framework */,
 				96324A6B96FE0C2C439B6B19 /* Pods_CubiCaptureDemo.framework */,
 			);
 			name = Frameworks;
@@ -108,6 +127,7 @@
 				C109B0F7258000BB00424A12 /* Frameworks */,
 				C109B0F8258000BB00424A12 /* Resources */,
 				C98F85B9BCCBC87FDB502BE6 /* [CP] Embed Pods Frameworks */,
+				6092668D2C6A711E00EC4A40 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -300,7 +320,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -355,7 +375,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -373,8 +393,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 946R3V6A7Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CubiCaptureDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = casa.cubi.CubiCaptureDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -390,8 +418,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 946R3V6A7Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CubiCaptureDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = casa.cubi.CubiCaptureDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
