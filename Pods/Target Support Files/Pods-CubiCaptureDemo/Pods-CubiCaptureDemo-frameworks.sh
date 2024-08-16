@@ -176,13 +176,11 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/ZIPFoundation/ZIPFoundation.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Zip/Zip.framework"
+  install_framework "${PODS_ROOT}/CubiCapture/CubiCaptureSDK.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/CubiCapture/CubiCapture.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/ZIPFoundation/ZIPFoundation.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Zip/Zip.framework"
+  install_framework "${PODS_ROOT}/CubiCapture/CubiCaptureSDK.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/CubiCapture/CubiCapture.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

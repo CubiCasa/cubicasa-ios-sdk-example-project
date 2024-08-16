@@ -1,4 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-CubiCaptureDemo/Pods-CubiCaptureDemo-frameworks.sh
-${BUILT_PRODUCTS_DIR}/ZIPFoundation/ZIPFoundation.framework
-${BUILT_PRODUCTS_DIR}/Zip/Zip.framework
+${PODS_ROOT}/CubiCapture/CubiCaptureSDK.framework
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/CubiCapture/CubiCapture.framework/CubiCapture
