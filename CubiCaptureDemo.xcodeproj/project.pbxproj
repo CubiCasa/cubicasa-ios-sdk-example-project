@@ -3,30 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		60E415632C32AAAE006359B4 /* CubiCaptureSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 60E415622C32AAAE006359B4 /* CubiCaptureSDK */; };
-		60E415642C32AABD006359B4 /* CubiCaptureSDK in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 60E415622C32AAAE006359B4 /* CubiCaptureSDK */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		60E415672C32AC6A006359B4 /* CubiCaptureSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 60E415662C32AC6A006359B4 /* CubiCaptureSDK */; };
-		60E415692C32AE8D006359B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E415682C32AE8D006359B4 /* SceneDelegate.swift */; };
-		C109B0FE258000BB00424A12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C109B0FD258000BB00424A12 /* AppDelegate.swift */; };
-		C109B102258000BB00424A12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C109B101258000BB00424A12 /* ViewController.swift */; };
-		C109B105258000BB00424A12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C109B103258000BB00424A12 /* Main.storyboard */; };
-		C109B107258000BD00424A12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C109B106258000BD00424A12 /* Assets.xcassets */; };
-		C109B10A258000BD00424A12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C109B108258000BD00424A12 /* LaunchScreen.storyboard */; };
-		C14B36FD2625F1F400436E2B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C14B36FB2625F1F400436E2B /* Localizable.strings */; };
+		6008865F2C997CDE00A9C176 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6008865D2C997CDE00A9C176 /* Localizable.strings */; };
+		60706B7F2CABF478002525F0 /* CubiCaptureSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 60706B7E2CABF478002525F0 /* CubiCaptureSDK */; };
+		607BF3802C986E8400715AB5 /* CubiCaptureDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BF37F2C986E8400715AB5 /* CubiCaptureDemoApp.swift */; };
+		607BF3822C986E8400715AB5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BF3812C986E8400715AB5 /* ContentView.swift */; };
+		607BF3842C986E8500715AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607BF3832C986E8500715AB5 /* Assets.xcassets */; };
+		607BF3952C986EE900715AB5 /* CubiCaptureSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 607BF3942C986EE900715AB5 /* CubiCaptureSDK */; };
+		607BF3972C986FAD00715AB5 /* ScanCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BF3962C986FAD00715AB5 /* ScanCoordinator.swift */; };
+		607BF3982C98726E00715AB5 /* CubiCaptureSDK in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 607BF3942C986EE900715AB5 /* CubiCaptureSDK */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		60AD83AE2C32A45400ED4A9B /* Embed Frameworks */ = {
+		607BF3992C98726E00715AB5 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				60E415642C32AABD006359B4 /* CubiCaptureSDK in Embed Frameworks */,
+				607BF3982C98726E00715AB5 /* CubiCaptureSDK in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -34,67 +32,51 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6016A24826E2121E009197EE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		60E415682C32AE8D006359B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C109B0FA258000BB00424A12 /* CubiCaptureDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CubiCaptureDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C109B0FD258000BB00424A12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C109B101258000BB00424A12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C109B106258000BD00424A12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C109B10B258000BD00424A12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C14B36F92625F17900436E2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C14B36FA2625F17900436E2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C14B36FC2625F1F400436E2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6008865E2C997CDE00A9C176 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		607BF37C2C986E8400715AB5 /* CubiCaptureDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CubiCaptureDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607BF37F2C986E8400715AB5 /* CubiCaptureDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubiCaptureDemoApp.swift; sourceTree = "<group>"; };
+		607BF3812C986E8400715AB5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		607BF3832C986E8500715AB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		607BF3962C986FAD00715AB5 /* ScanCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C109B0F7258000BB00424A12 /* Frameworks */ = {
+		607BF3792C986E8400715AB5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60E415632C32AAAE006359B4 /* CubiCaptureSDK in Frameworks */,
-				60E415672C32AC6A006359B4 /* CubiCaptureSDK in Frameworks */,
+				607BF3952C986EE900715AB5 /* CubiCaptureSDK in Frameworks */,
+				60706B7F2CABF478002525F0 /* CubiCaptureSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		60AD83AF2C32A49300ED4A9B /* Frameworks */ = {
+		607BF3732C986E8400715AB5 = {
 			isa = PBXGroup;
 			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C109B0F1258000BB00424A12 = {
-			isa = PBXGroup;
-			children = (
-				6016A24826E2121E009197EE /* README.md */,
-				C109B0FC258000BB00424A12 /* CubiCaptureDemo */,
-				C109B0FB258000BB00424A12 /* Products */,
-				60AD83AF2C32A49300ED4A9B /* Frameworks */,
+				607BF37E2C986E8400715AB5 /* CubiCaptureDemo */,
+				607BF37D2C986E8400715AB5 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C109B0FB258000BB00424A12 /* Products */ = {
+		607BF37D2C986E8400715AB5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C109B0FA258000BB00424A12 /* CubiCaptureDemo.app */,
+				607BF37C2C986E8400715AB5 /* CubiCaptureDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C109B0FC258000BB00424A12 /* CubiCaptureDemo */ = {
+		607BF37E2C986E8400715AB5 /* CubiCaptureDemo */ = {
 			isa = PBXGroup;
 			children = (
-				C109B0FD258000BB00424A12 /* AppDelegate.swift */,
-				60E415682C32AE8D006359B4 /* SceneDelegate.swift */,
-				C109B101258000BB00424A12 /* ViewController.swift */,
-				C109B103258000BB00424A12 /* Main.storyboard */,
-				C109B106258000BD00424A12 /* Assets.xcassets */,
-				C109B108258000BD00424A12 /* LaunchScreen.storyboard */,
-				C109B10B258000BD00424A12 /* Info.plist */,
-				C14B36FB2625F1F400436E2B /* Localizable.strings */,
+				607BF3812C986E8400715AB5 /* ContentView.swift */,
+				6008865D2C997CDE00A9C176 /* Localizable.strings */,
+				607BF37F2C986E8400715AB5 /* CubiCaptureDemoApp.swift */,
+				607BF3962C986FAD00715AB5 /* ScanCoordinator.swift */,
+				607BF3832C986E8500715AB5 /* Assets.xcassets */,
 			);
 			path = CubiCaptureDemo;
 			sourceTree = "<group>";
@@ -102,14 +84,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C109B0F9258000BB00424A12 /* CubiCaptureDemo */ = {
+		607BF37B2C986E8400715AB5 /* CubiCaptureDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C109B10E258000BD00424A12 /* Build configuration list for PBXNativeTarget "CubiCaptureDemo" */;
+			buildConfigurationList = 607BF38A2C986E8500715AB5 /* Build configuration list for PBXNativeTarget "CubiCaptureDemo" */;
 			buildPhases = (
-				C109B0F6258000BB00424A12 /* Sources */,
-				C109B0F7258000BB00424A12 /* Frameworks */,
-				C109B0F8258000BB00424A12 /* Resources */,
-				60AD83AE2C32A45400ED4A9B /* Embed Frameworks */,
+				607BF3782C986E8400715AB5 /* Sources */,
+				607BF3792C986E8400715AB5 /* Frameworks */,
+				607BF37A2C986E8400715AB5 /* Resources */,
+				607BF3992C98726E00715AB5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -117,98 +99,79 @@
 			);
 			name = CubiCaptureDemo;
 			packageProductDependencies = (
-				60E415622C32AAAE006359B4 /* CubiCaptureSDK */,
-				60E415662C32AC6A006359B4 /* CubiCaptureSDK */,
+				607BF3942C986EE900715AB5 /* CubiCaptureSDK */,
+				60706B7E2CABF478002525F0 /* CubiCaptureSDK */,
 			);
 			productName = CubiCaptureDemo;
-			productReference = C109B0FA258000BB00424A12 /* CubiCaptureDemo.app */;
+			productReference = 607BF37C2C986E8400715AB5 /* CubiCaptureDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C109B0F2258000BB00424A12 /* Project object */ = {
+		607BF3742C986E8400715AB5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1520;
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					C109B0F9258000BB00424A12 = {
-						CreatedOnToolsVersion = 12.2;
-						LastSwiftMigration = 1520;
+					607BF37B2C986E8400715AB5 = {
+						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
-			buildConfigurationList = C109B0F5258000BB00424A12 /* Build configuration list for PBXProject "CubiCaptureDemo" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = 607BF3772C986E8400715AB5 /* Build configuration list for PBXProject "CubiCaptureDemo" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = C109B0F1258000BB00424A12;
+			mainGroup = 607BF3732C986E8400715AB5;
 			packageReferences = (
-				60E415652C32AC6A006359B4 /* XCRemoteSwiftPackageReference "ios-sdk-distribution" */,
+				60706B7D2CABF478002525F0 /* XCRemoteSwiftPackageReference "ios-sdk-distribution" */,
 			);
-			productRefGroup = C109B0FB258000BB00424A12 /* Products */;
+			productRefGroup = 607BF37D2C986E8400715AB5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C109B0F9258000BB00424A12 /* CubiCaptureDemo */,
+				607BF37B2C986E8400715AB5 /* CubiCaptureDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C109B0F8258000BB00424A12 /* Resources */ = {
+		607BF37A2C986E8400715AB5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C109B10A258000BD00424A12 /* LaunchScreen.storyboard in Resources */,
-				C14B36FD2625F1F400436E2B /* Localizable.strings in Resources */,
-				C109B107258000BD00424A12 /* Assets.xcassets in Resources */,
-				C109B105258000BB00424A12 /* Main.storyboard in Resources */,
+				607BF3842C986E8500715AB5 /* Assets.xcassets in Resources */,
+				6008865F2C997CDE00A9C176 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C109B0F6258000BB00424A12 /* Sources */ = {
+		607BF3782C986E8400715AB5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C109B102258000BB00424A12 /* ViewController.swift in Sources */,
-				C109B0FE258000BB00424A12 /* AppDelegate.swift in Sources */,
-				60E415692C32AE8D006359B4 /* SceneDelegate.swift in Sources */,
+				607BF3822C986E8400715AB5 /* ContentView.swift in Sources */,
+				607BF3802C986E8400715AB5 /* CubiCaptureDemoApp.swift in Sources */,
+				607BF3972C986FAD00715AB5 /* ScanCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C109B103258000BB00424A12 /* Main.storyboard */ = {
+		6008865D2C997CDE00A9C176 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C14B36F92625F17900436E2B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C109B108258000BD00424A12 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C14B36FA2625F17900436E2B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		C14B36FB2625F1F400436E2B /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C14B36FC2625F1F400436E2B /* Base */,
+				6008865E2C997CDE00A9C176 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -216,13 +179,14 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		C109B10C258000BD00424A12 /* Debug */ = {
+		607BF3882C986E8500715AB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -252,7 +216,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -266,23 +231,25 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		C109B10D258000BD00424A12 /* Release */ = {
+		607BF3892C986E8500715AB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -312,7 +279,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -320,49 +288,67 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		C109B10F258000BD00424A12 /* Debug */ = {
+		607BF38B2C986E8500715AB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CubiCaptureDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 946R3V6A7Y;
-				INFOPLIST_FILE = CubiCaptureDemo/Info.plist;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = casa.cubi.CubiCaptureDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		C109B110258000BD00424A12 /* Release */ = {
+		607BF38C2C986E8500715AB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CubiCaptureDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 946R3V6A7Y;
-				INFOPLIST_FILE = CubiCaptureDemo/Info.plist;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = casa.cubi.CubiCaptureDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -371,20 +357,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C109B0F5258000BB00424A12 /* Build configuration list for PBXProject "CubiCaptureDemo" */ = {
+		607BF3772C986E8400715AB5 /* Build configuration list for PBXProject "CubiCaptureDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C109B10C258000BD00424A12 /* Debug */,
-				C109B10D258000BD00424A12 /* Release */,
+				607BF3882C986E8500715AB5 /* Debug */,
+				607BF3892C986E8500715AB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C109B10E258000BD00424A12 /* Build configuration list for PBXNativeTarget "CubiCaptureDemo" */ = {
+		607BF38A2C986E8500715AB5 /* Build configuration list for PBXNativeTarget "CubiCaptureDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C109B10F258000BD00424A12 /* Debug */,
-				C109B110258000BD00424A12 /* Release */,
+				607BF38B2C986E8500715AB5 /* Debug */,
+				607BF38C2C986E8500715AB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -392,27 +378,27 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		60E415652C32AC6A006359B4 /* XCRemoteSwiftPackageReference "ios-sdk-distribution" */ = {
+		60706B7D2CABF478002525F0 /* XCRemoteSwiftPackageReference "ios-sdk-distribution" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CubiCasa/ios-sdk-distribution/";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.13.4;
+				minimumVersion = 3.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		60E415622C32AAAE006359B4 /* CubiCaptureSDK */ = {
+		60706B7E2CABF478002525F0 /* CubiCaptureSDK */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 60706B7D2CABF478002525F0 /* XCRemoteSwiftPackageReference "ios-sdk-distribution" */;
 			productName = CubiCaptureSDK;
 		};
-		60E415662C32AC6A006359B4 /* CubiCaptureSDK */ = {
+		607BF3942C986EE900715AB5 /* CubiCaptureSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 60E415652C32AC6A006359B4 /* XCRemoteSwiftPackageReference "ios-sdk-distribution" */;
 			productName = CubiCaptureSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = C109B0F2258000BB00424A12 /* Project object */;
+	rootObject = 607BF3742C986E8400715AB5 /* Project object */;
 }
