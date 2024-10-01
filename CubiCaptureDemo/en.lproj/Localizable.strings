@@ -1,0 +1,158 @@
+/*
+ Localizable.strings
+ CubiCapture
+
+ Copyright © 2021 CubiCasa Office. All rights reserved.
+ */
+
+/* Displayed while the app is processing (zipping) the scan */
+"cc_scan_processing" = "Processing scan: %d%%\nPlease do not exit the application.";
+
+// MARK: ARKit tracking
+/* Displayed when the ARKit is initializing. Guides user to move the device */
+"cc_tracking_initializing_title" = "Start scanning";
+"cc_tracking_initializing_info" = "Move your device so we can begin tracking your position";
+
+/* Displayed if the scan is aborted due to an unrecoverable loss of tracking */
+"cc_tracking_not_available_title" = "Tracking lost";
+"cc_tracking_not_available_info" = "We have lost track of your position, scanning cannot continue";
+
+/* Displayed if the user is moving to fast while scanning */
+"cc_tracking_excessive_motion_title" = "Slow down";
+"cc_tracking_excessive_motion_info" = "You are moving too fast, try to walk slower";
+
+/* Displayed if the scanned environment does not contain enough features to track properly. */
+"cc_tracking_insufficient_features_title" = "Not enough visual features";
+"cc_tracking_insufficient_features_info" = "We have trouble tracking your position";
+
+/* Displayed if the scanned environment does not contain enough features to track properly.
+ If there is low ambient light, this is because of darkness. */
+"cc_tracking_too_dark_title" = "It is too dark here";
+"cc_tracking_too_dark_info" = "Please turn on the lights if possible";
+
+/* Displayed if no camera permissions are given */
+"cc_tracking_no_camera_title" = "No camera access";
+"cc_tracking_no_camera_info" = "Cannot scan without access to the camera. Please check permissions";
+
+// MARK: CubiCasa guide warnings
+/* Displayed title for the sideways warning */
+"cc_guide_sideways_title" = "Do not walk sideways";
+/* Displayed info text for sideways left warning */
+"cc_guide_sideways_left_info" = "Turn left and point the camera in your walking direction";
+/* Displayed info text for sideways right warning */
+"cc_guide_sideways_right_info" = "Turn right and point the camera in your walking direction";
+
+/* Displayed info text for the rotate warning*/
+"cc_guide_rotate_title" = "Rotate your device";
+"cc_guide_rotate_info" = "Keep your device in an upright (portrait) orientation";
+
+/* Displayed on the warning view when tracking is lost */
+"cc_guide_tracking_lost_movement_title" = "Tracking lost due to movement";
+"cc_guide_tracking_lost_movement_info" = "The scan was interrupted due to excessive movement";
+
+/* Message of the alert view when the scan has drifted due to poor device handling */
+"cc_guide_tracking_lost_angular_title" = "Tracking lost due to mishandling the device";
+"cc_guide_tracking_lost_angular_info" = "Keep the device in scanning position at all times";
+
+/* OK for warning view button */
+"cc_guide_button_ok" = "OK";
+
+/* Title of the button in tracking lost/paused case. Pressing it starts relocating. */
+"cc_guide_button_relocate" = "Relocate";
+
+/* Displayed on the warning view when scan is relocating */
+"cc_guide_relocating_title" = "Relocating...";
+"cc_guide_relocating_info" = "Please scan a previously scanned area";
+
+/* Displayed on the warning view when guiding the user to go back to visit previously scanned space */
+"cc_guide_visit_previous_title" = "Go back";
+"cc_guide_visit_previous_info" = "Go back and rescan the previous space";
+
+/* Displayed on the warning view when scan is relocated */
+"cc_guide_relocated_title" = "We have relocated!";
+"cc_guide_relocated_info" = "You can now continue your scan";
+
+/* Displayed in the warning view title in fast rotation warning */
+"cc_guide_fast_rotation_title" = "You are turning too fast";
+/* Displayed in the warning view info text in fast rotation warning */
+"cc_guide_fast_rotation_info" = "Avoid fast turns for best scanning results";
+
+/* Displayed on the warning view totle to alert the user that storage is running low */
+"cc_guide_low_storage_title" = "Low on storage";
+/* Displayed on the warning view info to alert the user that storage is running low */
+"cc_guide_low_storage_info" = "Only %d minutes of scanning time left";
+
+/* Shown on the warning view when the device experiences thermal throttling */
+"cc_guide_throttling_title" = "Your device is getting hot";
+"cc_guide_throttling_mesh_info" = "Scanning mesh disabled. You can continue scanning but go slowly";
+"cc_guide_throttling_nomesh_info" = "You can continue scanning but go slowly";
+
+/* Shown when the OS gives a memory warning and we disable scene reconstruction because of it */
+"cc_guide_memory_warning_title" = "Your device is low on memory";
+"cc_guide_memory_warning_mesh_info" = "Scanning mesh disabled. To prevent this, close other apps before scanning";
+"cc_guide_memory_warning_nomesh_info" = "To prevent this, close other apps before scanning";
+
+/* Shown when the battery level is low */
+"cc_guide_battery_low_title" = "Your device is low on battery";
+"cc_guide_battery_low_info" = "Fully charge your device before scanning";
+
+/* Shown when the battery level is critical */
+"cc_guide_battery_critical_title" = "You are almost out of battery";
+"cc_guide_battery_critical_info" = "You may not be able to finish your scan before your device powers off.";
+
+/* Shown when the device is tilted forward too much */
+"cc_guide_tilting_down_title" = "Raise the device";
+"cc_guide_tilting_down_info" = "You are pointing too much at the floor. Please raise the device a bit.";
+
+/* Shown when the device is tilted upward too much */
+"cc_guide_tilting_up_title" = "Lower the device";
+"cc_guide_tilting_up_info" = "You are pointing too much at the ceiling. Please lower the device a bit.";
+
+/* Show when a non-LiDAR scan is too close to walls */
+"cc_guide_too_close_title" = "You are too close";
+"cc_guide_too_close_info" = "Try to scan futher away from walls and objects.";
+
+// MARK: - Playback
+/* Feedback summaries displayed in the playback view */
+"cc_feedback_trackinglost_movement_summary" = "Tracking lost, moving too fast";
+
+"cc_feedback_trackinglost_rotation_summary" = "Tracking lost, turning too fast";
+
+"cc_feedback_fast_movement_summary" = "Moving too fast";
+
+"cc_feedback_insufficient_features_summary" = "Not enough features for tracking";
+
+"cc_feedback_sideways_movement_summary" = "Walking sideways";
+
+"cc_feedback_insufficient_light_summary" = "Too dark";
+
+"cc_feedback_scanning_floor_summary" = "Scanning floor";
+
+"cc_feedback_scanning_ceiling_summary" = "Scanning ceiling";
+
+"cc_feedback_wrong_rotation_summary" = "Wrong device orientation";
+
+"cc_feedback_horizontal_scanning_summary" = "Scanning horizontally";
+
+"cc_feedback_fast_rotation_summary" = "Turning too fast";
+
+"cc_feedback_proximity_warning_summary" = "Scanning too close";
+
+/* Format string for the frame info. Arguments are frame number, total frame count and timestamp */
+"cc_playback_frame_info_format" = "frame: %d/%d time: %.2fs";
+
+// MARK: - Other alerts and warnings
+/* Finish scan confirmation dialog */
+"cc_endscan_title" = "Finish scan?";
+"cc_endscan_message" = "Are you sure you want to finish this scan?";
+"cc_yes" = "Yes";
+"cc_no" = "No";
+
+"cc_playbackfailed_title" = "Playback failed";
+"cc_ok" = "OK";
+
+/* Finish scan confirmation dialog */
+"cc_cancelscan_title" = "Cancel scan?";
+"cc_cancelscan_message" = "Are you sure you want to cancel this scan?";
+
+"cc_warning_too_close_pattern" = "TOO CLOSE";
