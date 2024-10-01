@@ -309,6 +309,8 @@
 				DEVELOPMENT_TEAM = 946R3V6A7Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to use the camera to capture your surroundings";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to use location service to determine the compass direction of the property";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -337,6 +339,8 @@
 				DEVELOPMENT_TEAM = 946R3V6A7Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to use the camera to capture your surroundings";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to use location service to determine the compass direction of the property";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
