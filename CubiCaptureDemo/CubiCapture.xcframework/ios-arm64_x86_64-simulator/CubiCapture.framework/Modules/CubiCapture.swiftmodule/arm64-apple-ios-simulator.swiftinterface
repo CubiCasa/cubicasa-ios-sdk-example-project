@@ -1,0 +1,293 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
+// swift-module-flags: -target arm64-apple-ios17.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-upcoming-feature ConciseMagicFile -enable-upcoming-feature ForwardTrailingClosures -enable-upcoming-feature StrictConcurrency -enable-upcoming-feature DeprecateApplicationMain -enable-upcoming-feature ImportObjcForwardDeclarations -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature IsolatedDefaultValues -enable-upcoming-feature GlobalConcurrency -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature ImplicitOpenExistentials -enable-upcoming-feature RegionBasedIsolation -enable-bare-slash-regex -module-name CubiCapture
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import ARKit
+import AVFoundation
+import Accelerate
+import Combine
+import CoreImage
+import CoreLocation
+import CoreMotion
+import CoreVideo
+@_exported import CubiCapture
+import DeveloperToolsSupport
+import Foundation
+import MetalKit
+import MetalPerformanceShaders
+import RealityKit
+import SceneKit
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _SceneKit_SwiftUI
+import _StringProcessing
+import _SwiftConcurrencyShims
+
+final public class ColorSet : Combine.ObservableObject, Swift.Sendable {
+  public init(accent: SwiftUICore.Color, text: SwiftUICore.Color, buttonText: SwiftUICore.Color, background: SwiftUICore.Color, warning: SwiftUICore.Color, warningBorder: [SwiftUICore.Color], info: SwiftUICore.Color, infoBorder: [SwiftUICore.Color], record: SwiftUICore.Color)
+  public static let defaultColorSet: CubiCapture.ColorSet
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+extension UIKit.UIView {
+  @discardableResult
+  @_Concurrency.MainActor @preconcurrency public class func animate(withDuration duration: Foundation.TimeInterval, delay: Foundation.TimeInterval, options: UIKit.UIView.AnimationOptions = [], animations: @escaping () -> Swift.Void) async -> Swift.Bool
+  @discardableResult
+  @_Concurrency.MainActor @preconcurrency public class func animate(withDuration duration: Foundation.TimeInterval, animations: @escaping () -> Swift.Void) async -> Swift.Bool
+  @discardableResult
+  @_Concurrency.MainActor @preconcurrency public class func animate(withDuration duration: Foundation.TimeInterval, delay: Foundation.TimeInterval, usingSpringWithDamping dampingRatio: CoreFoundation.CGFloat, initialSpringVelocity velocity: CoreFoundation.CGFloat, options: UIKit.UIView.AnimationOptions = [], animations: @escaping () -> Swift.Void) async -> Swift.Bool
+}
+public protocol CubiCaptureDelegate : AnyObject {
+  func didAbortScan(withEvent event: CubiCapture.CubiCaptureEvent)
+  func didCompleteScan(location: Foundation.URL)
+  func receiveEvent(_ event: CubiCapture.CubiCaptureEvent)
+}
+
+public struct ScanningFeatures : Swift.OptionSet, Swift.CaseIterable, Swift.Sendable {
+  public init(rawValue: Swift.Int)
+  public let rawValue: Swift.Int
+  public static let lidar: CubiCapture.ScanningFeatures
+  public static let allCases: [CubiCapture.ScanningFeatures]
+  public typealias AllCases = [CubiCapture.ScanningFeatures]
+  public typealias ArrayLiteralElement = CubiCapture.ScanningFeatures
+  public typealias Element = CubiCapture.ScanningFeatures
+  public typealias RawValue = Swift.Int
+}
+extension CubiCapture.ScanningFeatures : Swift.Encodable {
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public enum PhotoCapturerError : Swift.Error {
+  case notPrepared
+  case imageCompress
+  case fileWrite
+  case fileMove
+  case generic
+  public static func == (a: CubiCapture.PhotoCapturerError, b: CubiCapture.PhotoCapturerError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension CubiCapture.PhotoCapturerError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+@_Concurrency.MainActor public struct CubiCaptureView : SwiftUICore.View {
+  @_Concurrency.MainActor public init(delegate: (any CubiCapture.CubiCaptureDelegate)?, fileName: Swift.String, address: CubiCapture.CubiCaptureAddress?, propertyType: CubiCapture.CubiCapturePropertyType, usesRawDepth: Swift.Bool = false, options: CubiCapture.CaptureOptions = .defaultOptions, colorSet: CubiCapture.ColorSet = .defaultColorSet)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s11CubiCapture0aB4ViewV4bodyQrvp", 0) __
+}
+
+extension CoreMotion.CMGyroData : @unchecked Swift.Sendable {
+}
+extension CoreMotion.CMAccelerometerData : @unchecked Swift.Sendable {
+}
+extension CoreMotion.CMDeviceMotion : @unchecked Swift.Sendable {
+}
+
+public enum CubiCapturePropertyType : Swift.String, Swift.Codable, Swift.CaseIterable, Swift.Sendable {
+  case singleUnitResidential, townhouse, apartment, other
+  public init(from decoder: any Swift.Decoder) throws
+  public static func from(_ value: Swift.String) -> CubiCapture.CubiCapturePropertyType
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [CubiCapture.CubiCapturePropertyType]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [CubiCapture.CubiCapturePropertyType] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+
+extension CoreVideo.CVBuffer : @unchecked Swift.Sendable {
+}
+
+public struct CubiCaptureEvent : Swift.Sendable {
+  public let type: CubiCapture.CubiCaptureEventType
+  public let message: Swift.String
+  public let severity: CubiCapture.CubiCaptureEventSeverity
+}
+public enum CubiCaptureEventSeverity : Swift.Sendable {
+  case info, warning, error
+  public static func == (a: CubiCapture.CubiCaptureEventSeverity, b: CubiCapture.CubiCaptureEventSeverity) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum CubiCaptureEventType : Swift.Int, Swift.Sendable {
+  case startedCapture
+  case finishedCapture
+  case notEnoughData
+  case tooLongInWrongOrientation
+  case zippingDone
+  case insufficientLight
+  case excessiveMotion
+  case insufficientFeatures
+  case invalidOrientation
+  case tiltTooFarDown
+  case tiltTooFarUp
+  case tiltOptimal
+  case validOrientation
+  case notWalkingSideways
+  case scanningStateNormal
+  case walkingSidewaysLeft
+  case walkingSidewaysRight
+  case failedToZip
+  case invalidZipArchive
+  case writeArkitDataFailed
+  case writeFeedbackFailed
+  case writeConfigFailed
+  case filePathNotFound
+  case notReceivingArFrames
+  case tooManyFramesSkipped
+  case fileSizeCheckFailed
+  case thermalStateNominal
+  case thermalStateFair
+  case thermalStateSerious
+  case thermalStateCritical
+  case activeProcessors
+  case lowMemory
+  case storage
+  case battery
+  case relocationTimeout
+  case noArSessionConfig
+  case noRelocationSnapshot
+  case tooClose
+  case fastTurning
+  case rangeNormal
+  case scanLogWriteFailed
+  case incompatibleDevice
+  case deviceTooHot
+  case userAborted
+  case photoCaptureFailed
+  case photoLogWriteFailed
+  case sceneMeshWriteFailed
+  case noCameraPermission
+  case cameraTranslationFrozen
+  case cameraOrientationFrozen
+  case cameraTranslationAndOrientationFrozen
+  case angularDriftDetected
+  case positionDriftDetected
+  case startedForcedRelocation
+  case startedAutomaticRelocation
+  case relocationSuccessful
+  case arSessionInterrupted
+  case arSessionInterruptionEnded
+  case pauseFailedOnDrift
+  case pauseFailedOnBackground
+  case pauseFailedOnRelocate
+  case videoWriterSetupFailed
+  case videoWriterPauseFailed
+  case videoWriterUnpauseFailed
+  case videoWriterWriteFrameFailed
+  case videoWriterEndFailed
+  case depthWriterSetupFailed
+  case depthWriterWriteFrameFailed
+  case depthWriterEndFailed
+  case scanLogSetupFailed
+  case scanLogEndFailed
+  case rezipFailed
+  case rezipValidationFailed
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension CubiCapture.CubiCaptureEventType {
+  public var name: Swift.String {
+    get
+  }
+}
+public struct CubiCaptureAddress : Swift.Sendable {
+  public let number: Swift.String?
+  public let street: Swift.String
+  public let postCode: Swift.String?
+  public let city: Swift.String
+  public let state: Swift.String?
+  public let country: Swift.String
+  public let suite: Swift.String?
+  public init(number: Swift.String? = nil, street: Swift.String, postCode: Swift.String? = nil, city: Swift.String, state: Swift.String? = nil, country: Swift.String, suite: Swift.String? = nil)
+}
+@_Concurrency.MainActor public struct CubiPlaybackView : SwiftUICore.View {
+  @_Concurrency.MainActor public init(projectLocation: Foundation.URL, colorSet: CubiCapture.ColorSet = .defaultColorSet)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s11CubiCapture0A12PlaybackViewV4bodyQrvp", 0) __
+}
+
+@_hasMissingDesignatedInitializers public class ZipUtilities {
+  public static func validateZip(_ zipUrl: Foundation.URL) async -> (any Swift.Error)?
+  public static func reZip(_ zipUrl: Foundation.URL, progressHandler: (@Sendable (Swift.Double) -> Swift.Void)?) async -> Swift.Result<Foundation.URL, CubiCapture.ZippingError>
+  public static func capturedPhotos(at folderUrl: Foundation.URL?) -> [Foundation.URL]
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class DeviceInfo : Swift.Sendable {
+  @objc deinit
+}
+public enum ZippingError : Swift.Error {
+  case archivingFailed(message: Swift.String)
+  case invalidEOCDR
+  case noFilesToZip
+  case fileNotOnDisk(fileName: Swift.String)
+  case sizeUnknown(fileName: Swift.String)
+  case wrongSize(fileName: Swift.String)
+  case numberOfFilesMismatched(inZip: Swift.Int, onDisk: Swift.Int)
+  case unknown
+}
+extension CubiCapture.ZippingError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+
+public struct CaptureOptions : Swift.OptionSet, Swift.CaseIterable, Swift.Sendable {
+  public init(rawValue: Swift.Int)
+  public let rawValue: Swift.Int
+  public static let meshVisualisation: CubiCapture.CaptureOptions
+  public static let azimuth: CubiCapture.CaptureOptions
+  public static let storageWarnings: CubiCapture.CaptureOptions
+  public static let planeVisualisation: CubiCapture.CaptureOptions
+  public static let photoCapturing: CubiCapture.CaptureOptions
+  public static let allCases: [CubiCapture.CaptureOptions]
+  public static let defaultOptions: CubiCapture.CaptureOptions
+  public typealias AllCases = [CubiCapture.CaptureOptions]
+  public typealias ArrayLiteralElement = CubiCapture.CaptureOptions
+  public typealias Element = CubiCapture.CaptureOptions
+  public typealias RawValue = Swift.Int
+}
+extension CubiCapture.CaptureOptions : Swift.Encodable {
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers public class CubiCaptureInfo {
+  public static var isSupportedOnDevice: Swift.Bool {
+    get
+  }
+  public static var sdkVersion: Swift.String {
+    get
+  }
+  public static var sdkBuild: Swift.String {
+    get
+  }
+  @objc deinit
+}
+extension CubiCapture.CubiCaptureEventType : Swift.Equatable {}
+extension CubiCapture.CubiCaptureEventType : Swift.Hashable {}
+extension CubiCapture.CubiCaptureEventType : Swift.RawRepresentable {}
+extension CubiCapture.PhotoCapturerError : Swift.Equatable {}
+extension CubiCapture.PhotoCapturerError : Swift.Hashable {}
+extension CubiCapture.CubiCaptureView : Swift.Sendable {}
+extension CubiCapture.CubiCapturePropertyType : Swift.Equatable {}
+extension CubiCapture.CubiCapturePropertyType : Swift.Hashable {}
+extension CubiCapture.CubiCapturePropertyType : Swift.RawRepresentable {}
+extension CubiCapture.CubiCaptureEventSeverity : Swift.Equatable {}
+extension CubiCapture.CubiCaptureEventSeverity : Swift.Hashable {}
+extension CubiCapture.CubiPlaybackView : Swift.Sendable {}
