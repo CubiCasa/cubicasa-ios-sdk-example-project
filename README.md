@@ -5,6 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
+         * [3.0.5](#305)
          * [3.0.3](#303)
          * [2.13.4](#2134)
          * [2.10.1](#2101)
@@ -64,6 +65,9 @@ For your app the next step would be to upload the scan to your server and use [C
 The Cubicasa SDK lets you add scanning to your app so you can start creating a floor plan with an iOS device. It saves the scan files into a zip file, which your app can upload to the CubiCasa back-end for processing.
 
 ## Release Notes
+
+### 3.0.5
+- Bug fixes and performance improvements
 
 ### 3.0.3
  - New UI written in SwiftUI
