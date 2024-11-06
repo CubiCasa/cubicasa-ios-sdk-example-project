@@ -75,11 +75,6 @@ struct ContentView: View {
 
                 if let url = url {
                     Button("Show") {
-                        guard
-                            !fileName.isEmpty,
-                            let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-                            return
-                        }
                         shouldPlayback = true
                     }
 
