@@ -5,6 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
+         * [3.0.6](#306)
          * [3.0.5](#305)
          * [3.0.3](#303)
          * [2.13.4](#2134)
@@ -65,6 +66,9 @@ For your app the next step would be to upload the scan to your server and use [C
 The Cubicasa SDK lets you add scanning to your app so you can start creating a floor plan with an iOS device. It saves the scan files into a zip file, which your app can upload to the CubiCasa back-end for processing.
 
 ## Release Notes
+
+### 3.0.6
+- Restructured SPM package description, added back Cocoapods support
 
 ### 3.0.5
 - Bug fixes and performance improvements
@@ -217,7 +221,7 @@ The recommended way to integrate the CubiCapture SDK is to use the Swift Package
 Make sure the Xcode build target is set to 'Embed & Sign' the `CubiCaptureSDK` library (in 'General -> Frameworks, Libraries and Embedded Content'). In the target's Build Settings, your Runpath Search Paths setting needs to contain `@executable_path/Frameworks`.
 
 ### Cocoapods
-Cocoapods is no longer supported.
+Cocoapods support is available as well. The folder `CubiCaptureDemo_CocoaPods` contains the Cocoapods version of the demo project.
 
 ## Device Orientation
 

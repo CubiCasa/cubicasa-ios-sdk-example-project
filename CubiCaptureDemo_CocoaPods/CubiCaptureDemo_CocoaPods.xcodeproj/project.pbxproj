@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		374CE50388CBF3F1AA1A03EA /* Pods_CubiCaptureDemo_CocoaPods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7911FC1236A601E4D7C0EBF /* Pods_CubiCaptureDemo_CocoaPods.framework */; };
+		607D36C42CE4FE34005987C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607D36BD2CE4FE34005987C6 /* Assets.xcassets */; };
+		607D36C52CE4FE34005987C6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 607D36C12CE4FE34005987C6 /* Localizable.strings */; };
+		607D36C62CE4FE34005987C6 /* ScanCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607D36C22CE4FE34005987C6 /* ScanCoordinator.swift */; };
+		607D36C72CE4FE34005987C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607D36BE2CE4FE34005987C6 /* ContentView.swift */; };
+		607D36C82CE4FE34005987C6 /* CubiCaptureDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607D36BF2CE4FE34005987C6 /* CubiCaptureDemoApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		607D36AB2CE4FD25005987C6 /* CubiCaptureDemo_CocoaPods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CubiCaptureDemo_CocoaPods.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607D36BD2CE4FE34005987C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		607D36BE2CE4FE34005987C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		607D36BF2CE4FE34005987C6 /* CubiCaptureDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubiCaptureDemoApp.swift; sourceTree = "<group>"; };
+		607D36C02CE4FE34005987C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		607D36C22CE4FE34005987C6 /* ScanCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCoordinator.swift; sourceTree = "<group>"; };
+		B214F93A604250948BD880C1 /* Pods-CubiCaptureDemo_CocoaPods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CubiCaptureDemo_CocoaPods.debug.xcconfig"; path = "Target Support Files/Pods-CubiCaptureDemo_CocoaPods/Pods-CubiCaptureDemo_CocoaPods.debug.xcconfig"; sourceTree = "<group>"; };
+		D7911FC1236A601E4D7C0EBF /* Pods_CubiCaptureDemo_CocoaPods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CubiCaptureDemo_CocoaPods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E432A0D55D1DFD5B4B5CABA7 /* Pods-CubiCaptureDemo_CocoaPods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CubiCaptureDemo_CocoaPods.release.xcconfig"; path = "Target Support Files/Pods-CubiCaptureDemo_CocoaPods/Pods-CubiCaptureDemo_CocoaPods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		607D36A82CE4FD25005987C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				374CE50388CBF3F1AA1A03EA /* Pods_CubiCaptureDemo_CocoaPods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		607D36A22CE4FD25005987C6 = {
+			isa = PBXGroup;
+			children = (
+				607D36C32CE4FE34005987C6 /* CubiCaptureDemo */,
+				607D36AC2CE4FD25005987C6 /* Products */,
+				7B4A215699EFDEFB62041A7E /* Pods */,
+				BCA2B7437B1A3965D691E441 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		607D36AC2CE4FD25005987C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				607D36AB2CE4FD25005987C6 /* CubiCaptureDemo_CocoaPods.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		607D36C32CE4FE34005987C6 /* CubiCaptureDemo */ = {
+			isa = PBXGroup;
+			children = (
+				607D36BD2CE4FE34005987C6 /* Assets.xcassets */,
+				607D36BE2CE4FE34005987C6 /* ContentView.swift */,
+				607D36BF2CE4FE34005987C6 /* CubiCaptureDemoApp.swift */,
+				607D36C12CE4FE34005987C6 /* Localizable.strings */,
+				607D36C22CE4FE34005987C6 /* ScanCoordinator.swift */,
+			);
+			name = CubiCaptureDemo;
+			path = ../CubiCaptureDemo;
+			sourceTree = SOURCE_ROOT;
+		};
+		7B4A215699EFDEFB62041A7E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B214F93A604250948BD880C1 /* Pods-CubiCaptureDemo_CocoaPods.debug.xcconfig */,
+				E432A0D55D1DFD5B4B5CABA7 /* Pods-CubiCaptureDemo_CocoaPods.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BCA2B7437B1A3965D691E441 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7911FC1236A601E4D7C0EBF /* Pods_CubiCaptureDemo_CocoaPods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		607D36AA2CE4FD25005987C6 /* CubiCaptureDemo_CocoaPods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607D36B92CE4FD26005987C6 /* Build configuration list for PBXNativeTarget "CubiCaptureDemo_CocoaPods" */;
+			buildPhases = (
+				8D64F25BE191C12B9115D74C /* [CP] Check Pods Manifest.lock */,
+				607D36A72CE4FD25005987C6 /* Sources */,
+				607D36A82CE4FD25005987C6 /* Frameworks */,
+				607D36A92CE4FD25005987C6 /* Resources */,
+				0D4DBB349A4BA9D0AC7F37AD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CubiCaptureDemo_CocoaPods;
+			productName = CubiCaptureDemo_CocoaPods;
+			productReference = 607D36AB2CE4FD25005987C6 /* CubiCaptureDemo_CocoaPods.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		607D36A32CE4FD25005987C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					607D36AA2CE4FD25005987C6 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+				};
+			};
+			buildConfigurationList = 607D36A62CE4FD25005987C6 /* Build configuration list for PBXProject "CubiCaptureDemo_CocoaPods" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 607D36A22CE4FD25005987C6;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 607D36AC2CE4FD25005987C6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				607D36AA2CE4FD25005987C6 /* CubiCaptureDemo_CocoaPods */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		607D36A92CE4FD25005987C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				607D36C42CE4FE34005987C6 /* Assets.xcassets in Resources */,
+				607D36C52CE4FE34005987C6 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D4DBB349A4BA9D0AC7F37AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CubiCaptureDemo_CocoaPods/Pods-CubiCaptureDemo_CocoaPods-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CubiCaptureDemo_CocoaPods/Pods-CubiCaptureDemo_CocoaPods-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CubiCaptureDemo_CocoaPods/Pods-CubiCaptureDemo_CocoaPods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D64F25BE191C12B9115D74C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CubiCaptureDemo_CocoaPods-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		607D36A72CE4FD25005987C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				607D36C62CE4FE34005987C6 /* ScanCoordinator.swift in Sources */,
+				607D36C72CE4FE34005987C6 /* ContentView.swift in Sources */,
+				607D36C82CE4FE34005987C6 /* CubiCaptureDemoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		607D36C12CE4FE34005987C6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				607D36C02CE4FE34005987C6 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		607D36B72CE4FD26005987C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		607D36B82CE4FD26005987C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		607D36BA2CE4FD26005987C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B214F93A604250948BD880C1 /* Pods-CubiCaptureDemo_CocoaPods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 946R3V6A7Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to use the camera to capture your surroundings";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to use location service to determine the compass direction of the property";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "casa.cubi.CubiCaptureDemo-CocoaPods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		607D36BB2CE4FD26005987C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E432A0D55D1DFD5B4B5CABA7 /* Pods-CubiCaptureDemo_CocoaPods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 946R3V6A7Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to use the camera to capture your surroundings";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to use location service to determine the compass direction of the property";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "casa.cubi.CubiCaptureDemo-CocoaPods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		607D36A62CE4FD25005987C6 /* Build configuration list for PBXProject "CubiCaptureDemo_CocoaPods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607D36B72CE4FD26005987C6 /* Debug */,
+				607D36B82CE4FD26005987C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607D36B92CE4FD26005987C6 /* Build configuration list for PBXNativeTarget "CubiCaptureDemo_CocoaPods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607D36BA2CE4FD26005987C6 /* Debug */,
+				607D36BB2CE4FD26005987C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 607D36A32CE4FD25005987C6 /* Project object */;
+}

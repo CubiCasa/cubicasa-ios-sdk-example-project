@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/CubiCasa/ios-sdk-distribution/",
       "state" : {
-        "revision" : "abaa830854ef9fe781ee968841c1a4ed3f305470",
-        "version" : "3.0.5"
+        "branch" : "release/3.0.6",
+        "revision" : "abaa830854ef9fe781ee968841c1a4ed3f305470"
       }
     },
     {
