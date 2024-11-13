@@ -217,7 +217,7 @@ The recommended way to integrate the CubiCapture SDK is to use the Swift Package
 Make sure the Xcode build target is set to 'Embed & Sign' the `CubiCaptureSDK` library (in 'General -> Frameworks, Libraries and Embedded Content'). In the target's Build Settings, your Runpath Search Paths setting needs to contain `@executable_path/Frameworks`.
 
 ### Cocoapods
-Cocoapods is no longer supported.
+Cocoapods support is available as well but will be phased out in the future. The folder `CubiCaptureDemo_CocoaPods` contains the Cocoapods version of the demo project.
 
 ## Device Orientation
 
