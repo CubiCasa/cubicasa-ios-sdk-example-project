@@ -519,8 +519,8 @@ public enum ZippingError : Error {
     case unknown
 }
 ```
-### Validation
+### Validating the zip
 To validate the zip archive on the file system, call `validateZip` passing it the file URL. Return value is `nil` if everything is ok and a `ZippingError` if it is not. Internally this function tries to open the zip archive, read its table of contents and match the uncompressed file size for each entry with the size of the corresponding original file on the file system. If there is a mismatch in the number of entries or their sizes, an error is returned.
 
-### Recreating
+### Recreating the zip
 To recreate the zip archive, call `reZip` with the file URL of the original zip archive and an optional progress handling closure. It will return a result of `.success` with the file URL of the new zip (which may be a new file with the same name as the original) or a `.failure` with the `ZippingError`.
