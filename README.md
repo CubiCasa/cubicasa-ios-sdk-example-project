@@ -49,6 +49,9 @@
       * [Customization and Localization](#customization-and-localization)
          * [Localization](#localization)
          * [Colors](#colors)
+      * [Zip Archive Utilities](#zip-archive-utilities)
+         * [Validating the zip](#zip-validation)
+         * [Recreating the zip](#zip-recreation)
 
 # CubiCaptureDemo
 
@@ -486,3 +489,38 @@ In order to provide a consistent user experience, the CubiCasa SDK's colors can 
 |`info`| `Color` | The background color for informational messages |
 |`infoBorder`| `[Color]` | The color gradient for the border of informational messages |
 |`record`| `Color` | The color of the record button and the background of the timer |
+
+## Zip Archive Utilities
+The CubiCasa SDK includes a public class utility that can be used to validate and recreate the zip archive containing the scan data. It can be useful to validate the zip archive before upload and recreating it if it is found to be damaged.
+
+```
+public class ZipUtilities {
+    public static func validateZip(_ zipUrl: URL) async -> (any Error)?
+
+    public static func reZip(_ zipUrl: URL, progressHandler: (@Sendable (Double) -> Void)?) async -> Result<URL, CubiCapture.ZippingError>
+}
+
+public enum ZippingError : Error {
+
+    case archivingFailed(message: String)
+
+    case invalidEOCDR
+
+    case noFilesToZip
+
+    case fileNotOnDisk(fileName: String)
+
+    case sizeUnknown(fileName: String)
+
+    case wrongSize(fileName: String)
+
+    case numberOfFilesMismatched(inZip: Int, onDisk: Int)
+
+    case unknown
+}
+```
+### Validating the zip
+To validate the zip archive on the file system, call `validateZip` passing it the file URL. Return value is `nil` if everything is ok and a `ZippingError` if it is not. Internally this function tries to open the zip archive, read its table of contents and match the uncompressed file size for each entry with the size of the corresponding original file on the file system. If there is a mismatch in the number of entries or their sizes, an error is returned.
+
+### Recreating the zip
+To recreate the zip archive, call `reZip` with the file URL of the original zip archive and an optional progress handling closure. It will return a result of `.success` with the file URL of the new zip (which may be a new file with the same name as the original) or a `.failure` with the `ZippingError`.
