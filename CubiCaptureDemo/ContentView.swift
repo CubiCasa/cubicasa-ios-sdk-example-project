@@ -68,9 +68,13 @@ struct ContentView: View {
                     guard !fileName.isEmpty else {
                         return
                     }
-
+#if targetEnvironment(simulator)
+                    errorMessage = "Scanning not supported on simulator"
+                    isShowingAlert = true
+#else
                     coordinator.completion = handleResult(result:)
                     shouldScan = true
+#endif
                 }
 
                 if let url = url {
