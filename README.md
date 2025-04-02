@@ -300,6 +300,15 @@ Remember to pass an object implementing `CubiCaptureDelegate` to `CubiCaptureVie
 
 See the example project's `CubiCaptureDemo` project for details.
 
+### CubiCaptureInfo
+`CubiCaptureInfo` is a class which provides some information about the SDK and its capabilities. 
+
+- `public static var isSupportedOnDevice: Bool` will check if the current device is capable of scanning.
+- `public static var sdkVersion: String`: The version of the CubiCapture SDK. This is useful information to write to any log files your application creates.
+- `public static var sdkBuild: String`: The build number of the CubiCapture SDK.
+- `public static func canContinueScan(fileName: String) -> Bool`: check if the existing scan at the folder called `fileName` can be continued.
+
+
 ### Configuration
 CubiCasa capture session options can be configured by passing an option set to the `CubiCaptureView`:
 
