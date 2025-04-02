@@ -12,8 +12,8 @@
 		607BF3822C986E8400715AB5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BF3812C986E8400715AB5 /* ContentView.swift */; };
 		607BF3842C986E8500715AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607BF3832C986E8500715AB5 /* Assets.xcassets */; };
 		607BF3972C986FAD00715AB5 /* ScanCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BF3962C986FAD00715AB5 /* ScanCoordinator.swift */; };
-		609436862CE5106A006220C3 /* CubiCaptureSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 609436852CE5106A006220C3 /* CubiCaptureSDK */; };
-		609436872CE5108A006220C3 /* CubiCaptureSDK in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 609436852CE5106A006220C3 /* CubiCaptureSDK */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6087F1F12D9D2B7E0008D152 /* CubiCaptureSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 6087F1F02D9D2B7E0008D152 /* CubiCaptureSDK */; };
+		6087F2052D9D31230008D152 /* CubiCaptureSDK in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 6087F1F02D9D2B7E0008D152 /* CubiCaptureSDK */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +23,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				609436872CE5108A006220C3 /* CubiCaptureSDK in Embed Frameworks */,
+				6087F2052D9D31230008D152 /* CubiCaptureSDK in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				609436862CE5106A006220C3 /* CubiCaptureSDK in Frameworks */,
+				6087F1F12D9D2B7E0008D152 /* CubiCaptureSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +97,7 @@
 			);
 			name = CubiCaptureDemo;
 			packageProductDependencies = (
-				609436852CE5106A006220C3 /* CubiCaptureSDK */,
+				6087F1F02D9D2B7E0008D152 /* CubiCaptureSDK */,
 			);
 			productName = CubiCaptureDemo;
 			productReference = 607BF37C2C986E8400715AB5 /* CubiCaptureDemo.app */;
@@ -128,7 +128,7 @@
 			);
 			mainGroup = 607BF3732C986E8400715AB5;
 			packageReferences = (
-				609436842CE5106A006220C3 /* XCRemoteSwiftPackageReference "ios-sdk-distribution" */,
+				6087F1EF2D9D2B7E0008D152 /* XCRemoteSwiftPackageReference "ios-sdk-distribution" */,
 			);
 			productRefGroup = 607BF37D2C986E8400715AB5 /* Products */;
 			projectDirPath = "";
@@ -379,20 +379,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		609436842CE5106A006220C3 /* XCRemoteSwiftPackageReference "ios-sdk-distribution" */ = {
+		6087F1EF2D9D2B7E0008D152 /* XCRemoteSwiftPackageReference "ios-sdk-distribution" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CubiCasa/ios-sdk-distribution/";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.5;
+				minimumVersion = 3.1.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		609436852CE5106A006220C3 /* CubiCaptureSDK */ = {
+		6087F1F02D9D2B7E0008D152 /* CubiCaptureSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 609436842CE5106A006220C3 /* XCRemoteSwiftPackageReference "ios-sdk-distribution" */;
+			package = 6087F1EF2D9D2B7E0008D152 /* XCRemoteSwiftPackageReference "ios-sdk-distribution" */;
 			productName = CubiCaptureSDK;
 		};
 /* End XCSwiftPackageProductDependency section */

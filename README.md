@@ -5,6 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
+         * [3.1.3](#313)
          * [3.0.5](#305)
          * [3.0.3](#303)
          * [2.13.4](#2134)
@@ -68,6 +69,10 @@ For your app the next step would be to upload the scan to your server and use [C
 The Cubicasa SDK lets you add scanning to your app so you can start creating a floor plan with an iOS device. It saves the scan files into a zip file, which your app can upload to the CubiCasa back-end for processing.
 
 ## Release Notes
+
+### 3.1.3
+- Previously completed scans can be continued
+- Bug fixes and performance and stability improvements
 
 ### 3.0.5
 - Bug fixes and performance improvements
@@ -212,7 +217,7 @@ Mesh visualisation | Showing the reconstructed scene mesh on-screen, during scan
 
 ## Installation
 
-The CubiCapture SDK is distributed as an XCFramework. This framework can be copied directly into your Xcode project (remember to also include the 3rd party dependencies `Zip` and `ZIPFoundation`) but we recommend using the Swift Package Manager.
+The CubiCapture SDK is distributed as an XCFramework. This framework can be copied directly into your Xcode project (remember to also include the 3rd party dependency `ZIPFoundation`) but we recommend using the Swift Package Manager.
 
 ### Swift Package Manager
 The recommended way to integrate the CubiCapture SDK is to use the Swift Package Manager (SPM). In Xcode, select your project and open the tab Project Dependencies. Hit the '+' button and paste the CubiCapture Github URL (`https://github.com/CubiCasa/ios-sdk-distribution/`) into the search box. 
@@ -220,7 +225,7 @@ The recommended way to integrate the CubiCapture SDK is to use the Swift Package
 Make sure the Xcode build target is set to 'Embed & Sign' the `CubiCaptureSDK` library (in 'General -> Frameworks, Libraries and Embedded Content'). In the target's Build Settings, your Runpath Search Paths setting needs to contain `@executable_path/Frameworks`.
 
 ### Cocoapods
-Cocoapods support is available as well but will be phased out in the future. The folder `CubiCaptureDemo_CocoaPods` contains the Cocoapods version of the demo project.
+Cocoapods is no longer supported.
 
 ## Device Orientation
 
@@ -256,6 +261,9 @@ The warnings can be reviewed during playback using the `CubiPlaybackView`.
 ### Photo Capturing
 The CubiCapture SDK has the option to enable users to take photos while scanning. These photos are included in the Zip archive of the scan. This option is disabled by default; to enable it you need to add the `.photoCapturing` option to the `CaptureOptions` (see "Configuration")
 
+### Continuing Scans
+After users finish a scan, it often happens that when they review the scan video, they realize they have forgotten to scan a room. The CubiCapture SDK now allows continuing an existing scan.
+
 ## Permissions
 CubiCasa SDK uses the device camera to capture the surroundings so you need to add the "Privacy - Camera Usage Description" to your projects `Info.plist` if you already haven't done so. The camera permission is required for the CubiCasa SDK, it cannot function without it. 
 
@@ -281,7 +289,6 @@ YourStartView()
                 fileName: fileName,
                 address: address,
                 propertyType: selectedPropertyType,
-                usesRawDepth: false,
                 options: .defaultOptions,
                 colorSet: customColorSet)
         }
@@ -292,6 +299,15 @@ When the user presses the record button the scan starts. The SDK will ask for th
 Remember to pass an object implementing `CubiCaptureDelegate` to `CubiCaptureView` to get messages about the scan progress.
 
 See the example project's `CubiCaptureDemo` project for details.
+
+### CubiCaptureInfo
+`CubiCaptureInfo` is a class which provides some information about the SDK and its capabilities. 
+
+- `public static var isSupportedOnDevice: Bool` will check if the current device is capable of scanning.
+- `public static var sdkVersion: String`: The version of the CubiCapture SDK. This is useful information to write to any log files your application creates.
+- `public static var sdkBuild: String`: The build number of the CubiCapture SDK.
+- `public static func canContinueScan(fileName: String) -> Bool`: check if the existing scan at the folder called `fileName` can be continued.
+
 
 ### Configuration
 CubiCasa capture session options can be configured by passing an option set to the `CubiCaptureView`:
@@ -362,6 +378,24 @@ Please note that the scan may be aborted if the SDK encounters an unrecovable er
     │   └── Mesh.scn
 ```
 You can easily inspect the data but do not modify the zip file. Note that the `allDepthFrames.bin` and `Mesh.scn` will be present only for LiDAR devices.
+
+### Continuing an Existing Scan
+Continue an existing scan by passing the optional `shouldContinueScan` parameter a value of `true` when instantiating the `CubiCaptureView`. This will make the SDK look for an existing scan in the `fileName` path and if found, will trigger a relocation when starting the scan. The purpose of this relocation is to realign the scan's camera position and orientation with the existing scan so scanning can continue in the same frame of reference.
+
+```
+YourStartView()
+.fullScreenCover(isPresented: $shouldScan) {
+            CubiCaptureView(
+                delegate: coordinator,
+                fileName: fileName,
+                shouldContinueScan: true,
+                address: address,
+                propertyType: selectedPropertyType,
+                options: .defaultOptions,
+                colorSet: customColorSet)
+        }
+```
+
 
 ### Capture Events
 In the SDK the following events can be received by the `receiveEvent(_ event: CubiCaptureEvent)` delegate function (The event type is a Swift `enum`, numeric values are provided for backward compatibility with earlier versions of the CubiCapture SDK):
@@ -442,10 +476,12 @@ In the SDK the following events can be received by the `receiveEvent(_ event: Cu
 | `scanLogEndFailed`| `156` | The scan log could not be finished |
 | `rezipFailed`| `160` | Repairing the zip file failed |
 | `rezipValidationFailed`| `161` | The repaired zip was invalid |
+| `readArkitDataFailed` | `170` | The ARKitData could not be read when continuing a scan |
+| `arSessionError` | `200` | The ARSession gave an error |
 
 
 ### Errors
-Events have a severity: `info`, `warning` or `error`. When an event of severity `error` happens, the scan is aborted and the SDK will remove all files it has created.
+Events have a severity: `info`, `warning` or `error`. When an event of severity `error` happens, the scan is aborted and the SDK will remove all files it has created. When continuing an existing scan fails, the existing scan data will not be removed.
 
 ### Scan Playback
 The CubiCasa SDK can play back previously made scans, allowing users to review their scans and feedback. On LiDAR devices, the reconstructed scene mesh is shown superimposed on the video (if the `.meshVisualisation` option was enabled for the scan and scene reconstruction was not shut down due to the thermal state reaching `critical`). Also on LiDAR devices only, the proximity warning pattern will be shown superimposed on the video.
