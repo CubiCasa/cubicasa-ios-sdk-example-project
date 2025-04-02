@@ -39,8 +39,11 @@ class ScanCoordinator: NSObject, CubiCaptureDelegate {
         }
     }
 
-    func didAbortScan(withEvent event: CubiCaptureEvent) {
+    func didAbortScan(withEvent event: CubiCapture.CubiCaptureEvent, canContinue: Bool) {
         print("scan aborted with event \(event.type), message: \"\(event.message)\"")
+        if canContinue {
+            print("You can try again to continue scanning from the existing scan")
+        }
         let captureError: CaptureError = {
             if case .userAborted = event.type {
                 return .userCancel

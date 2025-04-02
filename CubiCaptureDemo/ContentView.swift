@@ -13,16 +13,19 @@ let customColorSet = ColorSet(accent: .white,
                               text: .white,
                               buttonText: .black,
                               background: .black,
+                              guideBackground: .gray.opacity(0.88),
                               warning: .orange,
                               warningBorder: warningBorder,
                               info: .black,
                               infoBorder: infoBorder,
-                              record: .red)
+                              record: .red,
+                              positive: .green)
 
 struct ContentView: View {
     @State var selectedPropertyType: CubiCapturePropertyType = .other
     @State var fileName: String = "temp"
     @State var shouldScan: Bool = false
+    @State var shouldContinueScan: Bool = false
     @State var shouldPlayback: Bool = false
     @State var url: URL? = nil
 
@@ -68,17 +71,16 @@ struct ContentView: View {
                     guard !fileName.isEmpty else {
                         return
                     }
-
-#if targetEnvironment(simulator)
-                    errorMessage = "Scanning not supported on simulator"
-                    isShowingAlert = true
-#else
-                    coordinator.completion = handleResult(result:)
-                    shouldScan = true
-#endif
+                    startScan()
                 }
 
                 if let url = url {
+                    if CubiCaptureInfo.canContinueScan(fileName: self.fileName) {
+                        Button("Continue") {
+                            startScan(continueExistingScan: true)
+                        }
+                    }
+
                     Button("Show") {
                         shouldPlayback = true
                     }
@@ -101,6 +103,7 @@ struct ContentView: View {
             CubiCaptureView(
                 delegate: coordinator,
                 fileName: fileName,
+                shouldContinueScan: shouldContinueScan,
                 address: address,
                 propertyType: selectedPropertyType,
                 usesRawDepth: false,
@@ -118,6 +121,17 @@ struct ContentView: View {
         .onAppear {
             self.url = getUrl()
         }
+    }
+
+    private func startScan(continueExistingScan: Bool = false) {
+#if targetEnvironment(simulator)
+        errorMessage = "Scanning not supported on simulator"
+        isShowingAlert = true
+#else
+        coordinator.completion = handleResult(result:)
+        shouldContinueScan = continueExistingScan
+        shouldScan = true
+#endif
     }
 
     private func handleResult(result: Result<URL, CaptureError>) {
