@@ -5,6 +5,7 @@
       * [Description](#description)
    * [Cubicasa SDK](#cubicasa-sdk)
       * [Release Notes](#release-notes)
+         * [3.2.1](#321)
          * [3.1.3](#313)
          * [3.0.5](#305)
          * [3.0.3](#303)
@@ -69,6 +70,11 @@ For your app the next step would be to upload the scan to your server and use [C
 The Cubicasa SDK lets you add scanning to your app so you can start creating a floor plan with an iOS device. It saves the scan files into a zip file, which your app can upload to the CubiCasa back-end for processing.
 
 ## Release Notes
+
+### 3.2.1
+- Missing depth data no longer fails the scan
+- Added device names for iPhone 17/Air/Pro/Pro Max
+- Bug fixes and performance improvements
 
 ### 3.1.3
 - Previously completed scans can be continued
@@ -396,6 +402,10 @@ YourStartView()
         }
 ```
 
+To determine if an existing scan can be continued, pass the scan folder name to the `CubiCaptureInfo` class as follows:
+```
+let canContinue = CubiCaptureInfo.canContinueScan(fileName: "<myScanFolderName>")
+```
 
 ### Capture Events
 In the SDK the following events can be received by the `receiveEvent(_ event: CubiCaptureEvent)` delegate function (The event type is a Swift `enum`, numeric values are provided for backward compatibility with earlier versions of the CubiCapture SDK):
@@ -428,7 +438,6 @@ In the SDK the following events can be received by the `receiveEvent(_ event: Cu
 | `filePathNotFound`| `58` | The specified file path could not be opened |
 | `notReceivingArFrames`| `62` | There are no frames arriving from ARKit |
 | `tooManyFramesSkipped`| `63` | Too many frames were skipped because the device is overloaded |
-| `fileSizeCheckFailed`| `84` | One or more files had an invalid file size |
 | `thermalStateNominal`| `70` | The device temperature is normal |
 | `thermalStateFair`| `71` | The device temperature is elevated but acceptable |
 | `thermalStateSerious`| `72` | The device temperature is very high, scan quality will be compromised |
@@ -440,6 +449,7 @@ In the SDK the following events can be received by the `receiveEvent(_ event: Cu
 | `relocationTimeout`| `80` | The relocation could not be completed in time |
 | `noArSessionConfig`| `81` | There is no ARSession configuration (internal iOS error) |
 | `noRelocationSnapshot`| `82` | There is no world map snapshot available for relocation |
+| `fileSizeCheckFailed`| `84` | One or more files had an invalid file size |
 | `tooClose`| `85` | The device is too close to the scene (walls, furniture) |
 | `fastRotation`| `87` | The device is being turned too rapidly |
 | `rangeNormal`| `88` | The device is not too close to the scene anymore |
@@ -451,6 +461,7 @@ In the SDK the following events can be received by the `receiveEvent(_ event: Cu
 | `photoLogWriteFailed`| `113` | The photo log file could not be written |
 | `sceneMeshWriteFailed`| `115` | The scene mesh file could not be written |
 | `noCameraPermission`| `120` | The user has not given permission to use the camera |
+| `cannotSetupCamera`| `121` | The camera could not be accessed |
 | `cameraTranslationFrozen`| `126` | The device position is not being updated (internal iOS error) |
 | `cameraOrientationFrozen`| `127` | The device orientation is not being updated (internal iOS error) |
 | `cameraTranslationAndOrientationFrozen`| `128` | The device position and orientation are not being updated (internal iOS error) |
