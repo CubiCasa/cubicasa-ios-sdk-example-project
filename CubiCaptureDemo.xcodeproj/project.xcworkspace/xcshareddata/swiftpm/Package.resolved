@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/CubiCasa/ios-sdk-distribution/",
       "state" : {
-        "revision" : "83ff6374848bd7637d88dead74a1cdcc50489135",
-        "version" : "3.2.1"
+        "revision" : "13c8e56a4a89cda8fd8da1be799f3d9d0cf9b754",
+        "version" : "3.4.1"
       }
     },
     {
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/weichsel/ZIPFoundation.git",
       "state" : {
-        "revision" : "02b6abe5f6eef7e3cbd5f247c5cc24e246efcfe0",
-        "version" : "0.9.19"
+        "revision" : "22787ffb59de99e5dc1fbfe80b19c97a904ad48d",
+        "version" : "0.9.20"
       }
     }
   ],
